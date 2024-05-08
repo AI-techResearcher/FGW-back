@@ -95,9 +95,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langchain.chat_models import ChatOpenAI
-from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 from langchain.vectorstores import FAISS
 from langchain_community.document_loaders import Docx2txtLoader
 
@@ -181,18 +179,11 @@ def ask_question():
 
         Helpful Answer:"""
         prompt = PromptTemplate.from_template(template)
-        
-        
 
-        model_name = "BAAI/bge-small-en"
-        model_kwargs = {"device": "cpu"}
-        encode_kwargs = {"normalize_embeddings": True}
-        hf = HuggingFaceBgeEmbeddings(
-            model_name=model_name, model_kwargs=model_kwargs, encode_kwargs=encode_kwargs
-        )
-
+        from langchain_openai import OpenAIEmbeddings
+        embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
         
-        vectorstore = FAISS.from_documents(pdf_contents, embedding=hf)
+        vectorstore = FAISS.from_documents(pdf_contents, embedding=embeddings)
         
         retriever = vectorstore.as_retriever()
         

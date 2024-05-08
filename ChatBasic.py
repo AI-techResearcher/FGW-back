@@ -72,20 +72,13 @@
 # %%
 import os
 
-from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 from langchain.vectorstores import FAISS
-
-# To help construct our Chat Messages
-from langchain.schema import HumanMessage
-from langchain.prompts import PromptTemplate, ChatPromptTemplate, HumanMessagePromptTemplate
 
 # We will be using ChatGPT model (gpt-3.5-turbo)
 from langchain.chat_models import ChatOpenAI
 
 # To parse outputs and get structured data back
-from langchain.output_parsers import StructuredOutputParser, ResponseSchema
 from langchain.chains import RetrievalQA
 from langchain_community.document_loaders import Docx2txtLoader
 from flask_cors import CORS
@@ -118,21 +111,13 @@ def extract_text_from_all_pdfs(root_folder):
         pdf_texts = text_splitter.split_documents(docs)
     return pdf_texts
 
-
-model_name = "BAAI/bge-small-en"
-model_kwargs = {"device": "cpu"}
-encode_kwargs = {"normalize_embeddings": True}
-hf = HuggingFaceBgeEmbeddings(
-    model_name=model_name, model_kwargs=model_kwargs, encode_kwargs=encode_kwargs
-)
-
-
-
 # %%
 os.environ["OPENAI_API_KEY"] = "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"
 
 chat_model = ChatOpenAI(temperature=0, model_name = 'gpt-3.5-turbo')
 
+from langchain_openai import OpenAIEmbeddings
+embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
 # %%
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -148,7 +133,7 @@ def ask_question():
         
         pdf_texts = extract_text_from_all_pdfs(root_folder)
         
-        vectorstore = FAISS.from_documents(pdf_texts, embedding=hf)
+        vectorstore = FAISS.from_documents(pdf_texts, embedding=embeddings)
         
         rag_pipeline = RetrievalQA.from_chain_type(
             llm=chat_model, chain_type='stuff',

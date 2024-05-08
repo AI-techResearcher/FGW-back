@@ -7,13 +7,13 @@
 # !pip install "langchain[docarray]"
 
 # %%
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
 # %%
-import langchain
+# import langchain
 
-langchain.debug = True
+# langchain.debug = True
 
 # %%
 # import os
@@ -345,28 +345,18 @@ chat_model = ChatOpenAI(temperature=0, model_name = 'gpt-3.5-turbo')
 # summarizedtext = map_reduce_chain({"input_documents": pdf_texts})
 
 
-# %%
-# out_text = summarizedtext["output_text"]
-# text = summarizedtext["intermediate_steps"]
-# print("intermediate: ",text)
-# #print("out: ",out_text)
-# text
+from langchain_openai import OpenAIEmbeddings
+embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
 
 # %%
 from langchain import PromptTemplate
-from langchain_community.embeddings import HuggingFaceBgeEmbeddings
+
 from langchain.retrievers.multi_query import MultiQueryRetriever
 from langchain_community.vectorstores import FAISS
 
 def generate(question_type, docs, lo, number, difficulty):
 
-    model_name = "BAAI/bge-small-en"
-    model_kwargs = {"device": "cpu"}
-    encode_kwargs = {"normalize_embeddings": True}
-    hf = HuggingFaceBgeEmbeddings(
-            model_name=model_name, model_kwargs=model_kwargs, encode_kwargs=encode_kwargs
-    )
-    vectorstore = FAISS.from_documents(docs, embedding=hf)
+    vectorstore = FAISS.from_documents(docs, embedding=embeddings)
 
     retriever = vectorstore.as_retriever()
 
@@ -500,9 +490,7 @@ Ensure to make the {number} questions.
 from langchain_core.runnables import RunnableLambda, RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 
-from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 from langchain.vectorstores import FAISS
 
 def answers_response(question, question_type, data):
@@ -537,17 +525,9 @@ def answers_response(question, question_type, data):
                         \n```{context}``` """
         
         prompt = ChatPromptTemplate.from_template(template)
-        
-
-        model_name = "BAAI/bge-small-en"
-        model_kwargs = {"device": "cpu"}
-        encode_kwargs = {"normalize_embeddings": True}
-        hf = HuggingFaceBgeEmbeddings(
-                model_name=model_name, model_kwargs=model_kwargs, encode_kwargs=encode_kwargs
-        )
 
         
-        vectorstore = FAISS.from_documents(data, embedding=hf)
+        vectorstore = FAISS.from_documents(data, embedding=embeddings)
         retriever = vectorstore.as_retriever()
         
         chain = (
@@ -745,7 +725,6 @@ Ensure to make the {math_number} questions.
 # Math answers
 
 # %%
-from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 from langchain_core.runnables import RunnableLambda, RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain.vectorstores import FAISS
@@ -757,15 +736,8 @@ def math_answers(file_path, math_question):
 
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
         math_data = text_splitter.split_documents(data)
-        
-        model_name = "BAAI/bge-small-en"
-        model_kwargs = {"device": "cpu"}
-        encode_kwargs = {"normalize_embeddings": True}
-        math_hf = HuggingFaceBgeEmbeddings(
-            model_name=model_name, model_kwargs=model_kwargs, encode_kwargs=encode_kwargs
-        )
 
-        math_vectorstore = FAISS.from_documents(math_data, embedding=math_hf)
+        math_vectorstore = FAISS.from_documents(math_data, embedding=embeddings)
         
         template = """ You are a knowledgeable assistant capable of answering multiple-choice question {math_question} using the provided context for reference.
         Given the context delimited by triple backticks, it is your job to answer the given multiple choice question with explaination of the correct answer using the context.
@@ -887,13 +859,7 @@ from langchain_community.vectorstores import FAISS
 
 def generate_flashcards(docs, lo, number, difficulty):
 
-    model_name = "BAAI/bge-small-en"
-    model_kwargs = {"device": "cpu"}
-    encode_kwargs = {"normalize_embeddings": True}
-    hf = HuggingFaceBgeEmbeddings(
-            model_name=model_name, model_kwargs=model_kwargs, encode_kwargs=encode_kwargs
-    )
-    vectorstore = FAISS.from_documents(docs, embedding=hf)
+    vectorstore = FAISS.from_documents(docs, embedding=embeddings)
 
     retriever = vectorstore.as_retriever()
 
@@ -945,7 +911,7 @@ from flask import Flask, request, jsonify
 import os
 
 import os
-import PyPDF2
+#import PyPDF2
 from docx import Document
 
 from flask_cors import CORS  # Import CORS
@@ -1094,3 +1060,5 @@ if __name__ == '__main__':
 
 
 
+
+# %%
