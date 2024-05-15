@@ -24,3 +24,4 @@ python-docx==1.1.0
 requests==2.31.0
 SQLAlchemy==2.0.29
 tokenizers==0.19.1
+waitress==1.2.1
