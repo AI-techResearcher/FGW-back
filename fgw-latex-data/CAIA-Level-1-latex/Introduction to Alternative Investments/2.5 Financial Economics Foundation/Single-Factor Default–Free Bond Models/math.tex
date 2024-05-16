@@ -1,0 +1,107 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{mathtools}
+
+\begin{document}
+\section*{APPLICATION A}
+Consider a simplified scenario in which all market interest rates are currently $5 \%$, compounded semiannually. An investor has two bonds in a portfolio:
+
+\begin{enumerate}
+  \item A $\$ 1,000$ face value one-year, $5 \%$ coupon bond (with semiannual coupon payments), and
+
+  \item a $\$ 2,000$ face value, five-year zero-coupon bond.
+
+\end{enumerate}
+
+What is the duration of the investor's portfolio?
+
+\section*{Answer and EXPLANATION}
+First, the duration of a zero-coupon bond is equal to its maturity. In the case, the zero-coupon bond matures in 5 years, so its duration is 5.0 . The duration of a fixed-coupon bond is the weighted average of the longevities of the cash flows to a coupon bond where the weight of each of the bond's cash flows is the proportion of the bond's total value attributable to that cash flow.
+
+To determine the duration of the one-year, $5 \%$ coupon bond, we can use Equation 2 :
+
+$$
+\begin{gathered}
+D=\frac{\sum_{t=1}^{T} \frac{t C(t)}{(1+y)^{t}}}{P_{0}} \\
+D=\frac{\frac{0.50 \times \$ 25}{(1.025)^{1}}+\frac{1.0 \times(\$ 1,000+\$ 25)}{(1.025)^{2}}}{\$ 1,000} \\
+D=0.988
+\end{gathered}
+$$
+
+Note that we use 0.50 for the first coupon and 1.0 for the second coupon and repayment of principal. This is because they coincide with proportion of the timeline of payments - the final payment at maturity is 1.0 and the coupon payments are in proportion to the final payment - in this case, six months relative to one year maturity.
+
+Next, we must combine the two bonds in a value-weighted portfolio, based on today's market values. The current market interest rate across all maturities is $5 \%$, so the one-year, $5 \%$ coupon bond is trading at par $(\$ 1,000)$. The five-year, zero-coupon bond will return $\$ 2,000$ at maturity, so the current market value is as follows.
+
+$$
+\text { Price of Zero Coupon Bond }=\frac{\$ 2,000}{(1.025)}=\$ 1,562.40
+$$
+
+Next, we must combine the two bonds in the portfolio to get a total portfolio value of $\$ 2,562.40(\$ 1,000+\$ 1,562.40)$.
+
+Next, we must find the weighted average duration between the two bonds. The coupon-paying bond represents $39.03 \%$ of the portfolio $(\$ 1,000 / \$ 2,562.40)$, while the zero-coupon bond represents $60.97 \%$ of the portfolio $(\$ 1,562.40$ / $\$ 2,562.40)$.
+
+Finally, we find the weighted average duration of the portfolio:
+
+Duration $=0.3903 \times 0.988+0.6097 \times 5.0$
+
+Duration $=3.43$ years
+
+\section*{APPLICATION B}
+Consider a simplified scenario in which an investor has two bonds in a portfolio:
+
+\begin{enumerate}
+  \item $\$ 1,000$ of market value in a 10-year zero-coupon bond, and
+  \item $\$ 1,000$ of market value in a five-year zero-coupon bond.
+\end{enumerate}
+
+If the investor wishes to be immunized to a horizon point of 7.0 years, what transactions should be executed?
+
+\section*{EXPLANATION}
+With zero-coupon bonds, the math becomes fairly easy. There are no intermediate cash flows to impact their durations, and we know the duration will be equal to the length of maturity. This is simply a weighted average calculation where we are solving for the weights.
+
+$$
+\begin{gathered}
+(w \times 5)+(1-w) \times 10=7.0 \\
+5 w=10-7 \\
+w=0.60
+\end{gathered}
+$$
+
+Thus, $\$ 200$ of the 10 -year bond should be sold to lower its weight to $(\$ 800 / \$ 2,000=40 \%)$ and used to purchase more of the five-year bond, to bring its weight to $\$ 1,200 / \$ 2,000=60 \%$, so that the duration is 7.0 , found as: $(0.6 \times 5.0)+(0.4 \times 10)$.
+
+\section*{APPLICATION C}
+An investor has a $\$ 1,000,000$ portfolio with long positions that form a duration of 5.0 years. The investor wishes to consider two alternatives: adding $\$ 1,000,000$ in short positions to hedge the portfolio or adding $\$ 500,000$ in short positions to hedge the portfolio. What securities would provide immunization under the two scenarios?
+
+\section*{EXPLANATION}
+Solution: the $\$ 1,000,000$ long position with a duration of 5.0 years can be hedged with $\$ 1,000,000$ in short positions if the short positions have a duration of -5.0 years (i.e., short $\$ 1,000,000$ of five-year zero-coupon bonds or other assets that would have a positive duration of 5.0 if held long). The negative position implicit in the short position will offset the positive duration exposure of the long position for an infinitesimal, parallel, and instantaneous shift in interest rates. In order to form a hedge with only $\$ 500,000$ of short positions, the positions would have to have a duration of -10.0 years, such as having $\$ 500,000$ of market value short sold in 10-year zero-coupon bonds. The proceeds of the short sales should be held in cash to avoid introducing further interest rate risk.\\
+In order to completely hedge out the risk of the $\$ 1,000,000$ portfolio of long positions, an effectively equal and opposite (i.e., short) position must be taken to bring the exposure down to 0.00 . A good way to check this quantitatively is to multiply the duration $x$ the position size, then check for answers where adding the duration $x$ a negative position size would equal zero. We can use this equation below:
+
+$$
+\begin{gathered}
+(\$ 1,000,000 \times 5.0)-(V \times D)=\$ 0 \\
+V \times D=(\$ 1,000,000 \times 5.0)-\$ 0=\$ 5,000,000
+\end{gathered}
+$$
+
+APPLICATION D
+
+An investor has a $\$ 1,000,000$ portfolio with long positions that form a duration of 5.0 years. The investor's goal for the portfolio is to have a duration of 4.0 years because the portfolio is to be liquidated at that time to fund a project. The investor wishes to add short positions to hedge the portfolio to a duration of 4.0 years.
+
+\section*{Explanation}
+There are many solutions to this problem. For example, the investor could short $\$ 200,000$ of five-year zero-coupon bonds and hold the proceeds from the short sale in cash. Any combination of dollar amount $V$ and duration $D$ that solves the following equation would lower the duration to 4.0 years:
+
+\[
+\begin{gathered}
+(\$ 1,000,000 \times 5.0)-(V \times D)=\$ 4,000,000 \\
+V \times D=(\$ 1,000,000 \times 5.0)-\$ 4,000,000=\$ 1,000,000
+\end{gathered}
+\]
+
+
+\end{document}

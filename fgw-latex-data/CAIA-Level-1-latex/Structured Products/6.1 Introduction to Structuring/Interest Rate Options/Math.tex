@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{APPLICATION A}
+Question : Firm XYZ buys an interest rate cap from Bank DEF. The cap is for five years, has a strike rate of $5 \%$, is settled quarterly, and has a notional value of $\$ 50$ million. What are the payments, if any, from Bank DEF to Firm XYZ in the first four quarters, if the reference rates for those quarters are, respectively, 4\%,5\%, $6 \%$, and $7 \%$ ?
+
+\section*{Answer and Explanation}
+The solution is found using Equation 1, with $m=4$ and the strike rate equal to $5 \%$. For the third quarter, the formula is $(6 \%-5 \%) \times \$ 50,000,000 / 4$, which is equal to $\$ 125,000$. The four answers are $\$ 0, \$ 0, \$ 125,000$, and $\$ 250,000$. Note that the formula for a cap generates no payment when the strike rate equals or exceeds the reference rate.
+
+\section*{APPLICATION B}
+Question : Firm XYZ buys an interest rate floor from Bank DEF. The floor is for three years, has a strike rate of $7 \%$, is settled quarterly, and has a notional value of $\$ 10$ million. What are the payments, if any, from Bank DEF to Firm XYZ in the first four quarters if the reference rates for those quarters are, respectively, $4 \%, 6 \%, 8 \%$, and $10 \%$ ?
+
+\section*{Answer and Explanation}
+When solving for a floor payment, remember that an interest rate floor only generates a positive payment if the reference rate is below the strike rate. Otherwise, the payment is $\$ 0$. To solve this problem, we must use Equation 2:
+
+$$
+\text { Floor Payment }=\text { Max }[(\text { Strike Rate }- \text { Reference Rate }), 0] \times \frac{\text { Notional Value }}{m}
+$$
+
+From here, we can substitute the values for the four strike rates relative to the reference rate of $7 \%$ :
+
+$$
+\begin{aligned}
+& \text { Floor Payment }=\operatorname{Max}[(7 \%-4 \%), 0] \times \frac{\$ 10,000,000}{4}=\$ 75,000 \\
+& \text { Floor Payment }=\operatorname{Max}[(7 \%-6 \%), 0] \times \frac{\$ 10,000,000}{4}=\$ 25,000
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+& \text { Floor Payment }=\operatorname{Max}[(7 \%-8 \%), 0] \times \frac{\$ 10,000,000}{4}=\$ 0 \\
+& \text { Floor Payment }=\operatorname{Max}[(7 \%-10 \%), 0] \times \frac{\$ 10,000,000}{4}=\$ 0
+\end{aligned}
+$$
+
+Notice the last two payments are $\$ 0$. This is because the reference rates are higher than the strike rates.
+
+
+\end{document}

@@ -1,0 +1,23 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{APPLICATION A}
+A returns series indicates first-order autocorrelation of 0.6 and second-order autocorrelation of 0.2 . What is the partial second-order autocorrelation coefficient?
+
+\section*{Answer and Explanation}
+In order to determine the second-order autocorrelation coefficient, we must use Equation 8.
+
+Second - Order Partial Autocorrelation Coefficient $=\frac{\rho_{2}-\rho_{1}^{2}}{1-\rho_{1}^{2}}$
+
+Inserting 0.6 for $\rho_{1}$ and 0.2 for $\rho_{2}$ generates: $[0.2-(0.6 \times 0.6)] /([1-(0.6 \times 0.6)]=-0.25$\\
+Note that even though the returns in periods $\mathrm{k}$ and $\mathrm{k}-2$ are positively correlated, that correlation is primarily driven by first-order correlation. The marginal second-order effect is captured in the partial autocorrelation coefficient and indicates a mean-reverting effect (once the first-order effects have been removed).
+
+
+\end{document}

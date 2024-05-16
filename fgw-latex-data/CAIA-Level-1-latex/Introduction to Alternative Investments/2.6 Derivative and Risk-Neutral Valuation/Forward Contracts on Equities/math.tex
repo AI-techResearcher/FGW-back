@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{APPLICATION A}
+A stock sells for $\$ 100$ and is certain not to make any cash distributions in the next year. A forward contract on that stock trades with a settlement in one year. Assuming that the interest rate corresponding to one year is $5 \%$ compounded continuously, what is the no-arbitrage price of this forward contract?
+
+\section*{Answer and EXPLANATION}
+The price of the forward contract needs to be the same as the expected price to purchase the stock in the spot market after one year assuming risk neutrality (i.e., the stock price grows at the $5 \%$ riskless rate). A stock sells for $\$ 100$, so we need to pay $\$ 100$ in the spot market for that stock. To finance that purchase it costs $5 \%$ continuously compounded, so purchase stock in the spot market and hold it one year costs $\$ 105.13$.
+
+A one-year forward contract on the stock must trade at $\$ 105.13$ using Equation 2. At settlement, a long position in the forward contract obligates the holder to pay $\$ 105.13$ in exchange for delivery of the stock. If the holder of the forward ccontract places the stock's initial value (\$100) in an account (or as collateral) offering at $5 \%$ continuously compounded return, the $\$ 100$ investment will enable the purchase of the stock at the end of the year without further cash.\\
+Note, this stock is not expected to pay a dividend in the next year. If it did, it would decrease the cost of financing.
+
+\section*{APPLICATION B}
+A stock sells for $\$ 50$ and pays a continuous dividend yield of $1 \%$ per year. Assuming a $5 \%$ continuously compounded riskless rate, what is the no-arbitrage price of this forward contract with a time to settlement or delivery of 0.25 years?
+
+\section*{Answer and Explanation}
+In order to solve this, we will need to utilize Equation 3. To find the forward price $\left(F_{t}\right)$, we need the current spot price (P0), the continuous dividend yield ( $q$ ), the continuously compounded riskless rate ( $r$ ), and the time until maturity $(T)$. Note that in order to use Equation 3 , the riskless rate and dividend yield must both be continuously compounded. If they are not, the equation will not work.
+
+$F_{t}=P_{0} \times e^{(r-q) \times T}$\\
+$F_{\mathrm{t}}=\$ 50 \times \mathrm{e}^{(0.05-0.01) \times 0.25}$
+
+$F_{t}=\$ 50.5025$
+
+\section*{APPLICATION C}
+If the spot price of an equity index that pays a dividend yields equal to the riskless rate is $\$ 500$, what is the one-year forward price on the equity index?
+
+\section*{Answer and Explanation}
+Applying Equation 3, we find that the exponential of 0 equals 1 . If the dividend yield equals the riskless rate, the ( $r$-q) will always be $0.00 \%$. Regardless of the time horizon $(\mathrm{T})$, the exponent will still equal 0 . Therefore, the spot price of the equity index of $\$ 500$ multiplied by 1 equals $\$ 500$, which is the one-year forward price on the equity index.
+
+Using Equation 3:
+
+$F_{t}=P_{o} \times e^{(r-q) \times T}$
+
+$F_{\mathrm{t}}=\$ 500 \times \mathrm{e}^{(0.02-0.02) \times 1}$
+
+$F_{t}=\$ 500$
+
+\section*{APPLICATION D}
+Assuming a continuously compounded annual interest rate of $5 \%$, if the spot price of an equity index with $2 \%$ continuously paid dividends is $\$ 500$, what would be the forward price on the equity index with settlement in three months?
+
+The price of every forward contract on that index for every time to settlement would be $\$ 500 \mathrm{e}(0.05-0.02) \mathrm{T}$. The three-month forward price would be $\$ 500 \mathrm{e}(0.03 \times$ $0.25)$, or $\$ 503.76$. Six-month and 12 -month forward prices would be $\$ 507.56$ and $\$ 515.23$, respectively (found by inserting 0.50 and 1.00 for $\mathrm{T}$, and 0.03 for $\mathrm{r}-\mathrm{q}$ ).
+
+\section*{Answer and Explanation}
+The price of every forward contract on that index for every time to settlement would be $\$ 500 \mathrm{e}(0.05-0.02) \mathrm{T}$. The three-month forward price would be $\$ 500 \mathrm{e}(0.03 \times$ $0.25)$, or $\$ 503.76$. Six-month and 12 -month forward prices would be $\$ 507.56$ and $\$ 515.23$, respectively (found by inserting 0.50 and 1.00 for $\mathrm{T}$, and 0.03 for $\mathrm{r}-\mathrm{q}$ )
+
+\section*{APPLICATION E}
+Assuming a continuously compounded annual interest rate of $2 \%$, if the spot price of an equity index with $3 \%$ continuously paid dividends is $\$ 500$, what would be the forward price of a contract with settlement in three months?
+
+\section*{Answer and Explanation}
+The price of every forward contract of every time to delivery would be $\$ 500 e^{(-0.01) \mathrm{T}}$, with $(r-q)=-1 \%$. The three-month forward price would be $\$ 500 e-0.01 \times$ 0.25 , or $\$ 498.75$. Six-month and 12 -month forward prices would be $\$ 497.51$ and $\$ 495.02$, respectively (found by inserting 0.50 and 1.00 for $\mathrm{T}$ ).
+
+
+\end{document}

@@ -1,0 +1,53 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{Reading}
+Option Sensitivities
+
+The sensitivities of option prices to the variables that determine their prices are important inputs to many hedging strategies and risk management techniques. These sensitivities can be derived for all of the option pricing models discussed in the Option Exposures lesson. This section discusses these sensitivities primarily in the context of the Black-Scholes option pricing model of call and put options on an underlying asset, such as a share of stock.
+
+\section*{The Five Most Popular Sensitivities}
+Call and put options usually have four underlying variables that normally change: the underlying asset $(S)$, the return volatility of the underlying asset, the time to expiration, and the riskless interest rate. For the purposes of this analysis, it is assumed that the strike price cannot change and that there are no dividends. The partial derivatives of a call option's price, $c$, with respect to each of these four variables are assigned names as follows:
+
+$$
+\begin{aligned}
+\text { Delta } & =\partial c / \partial S \\
+\text { Vega } & =\partial c / \partial \sigma_{s} \\
+\text { Theta } & =\partial c / \partial T \\
+\text { Rho } & =\partial c / \partial r
+\end{aligned}
+$$
+
+Delta, the first partial derivative of the option price with respect to the price of its underlying asset, is so important that the second derivative is also commonly used:
+
+$$
+\text { Gamma }=\partial^{2} c / \partial S^{2}
+$$
+
+Delta, gamma, vega, and theta are discussed in more detail in the sections on hedge fund strategies, including convertible bond hedging, in the session entitled Relative Value Hedge Funds. Rho is the sensitivity of an option price with respect to changes in the riskless interest rate. Option sensitivities are also discussed in other parts of this curriculum, including the session Relative Value Hedge Funds.
+
+\section*{Unlimited Sensitivities}
+An infinite number of potential option sensitivities can be formed by inserting additional variables into an option pricing model or by using higher-order derivatives. Second-order partial derivatives are common, and some third-order derivatives, although usually uncommon, have been named. Other first-order partial derivatives can be formed by assuming that the price of the underlying asset to an option is itself a function of other variables. For example, consider an option on an asset that in turn is a function of several variables, such as a credit spread. By inserting the underlying security price formula in place of the price of the underlying asset, $S$, a first-order partial derivative can be formed for each variable contained in the formula for $S$. For example, omicron is the partial derivative of an option or a position containing an option to a change in the credit spread and is useful for analyzing option positions on credit-risky assets.
+
+Most option sensitivities indicate value changes, such as a delta of 0.4 , indicating that the price of a call option will rise 0.4 units for each 1 unit change in the underlying asset (for infinitesimal changes). Ignoring nonlinearity, a call option with a delta of 0.7 would therefore rise in price by 7 cents if the underlying asset rose 10 cents.
+
+Another measure of option price sensitivity can be formed by computing the elasticity rather than the partial derivative. An elasticity is the percentage change in a value with respect to a percentage change in another value. Generally, the elasticity of $x$ with respect to $y$ can be formed by multiplying the derivative of $x$ with respect to $y$ by the ratio of $y$ to $x$. For example, a call option price elasticity of 2.0 with respect to the underlying asset would indicate that the call option price would change by $2 \%$ when the underlying asset changed by $1 \%$.
+
+Lambda and omega are often used to indicate the elasticity of an option price with respect to the price of the option's underlying asset. Elasticities can be formed by multiplying the partial derivative by the ratio of the price of the asset in the denominator of the partial derivative to the price of the asset in the numerator. Thus, lambda or omega for a call option is the elasticity of an option price with respect to the price of the underlying asset and is equal to delta multiplied times the quantity $(S / C)$. Another type of sensitivity is cross-derivatives. For example, an analyst may be concerned about how delta changes when volatility changes $\left(\partial^{2} c /\right.$ $\left.\partial S \partial \sigma_{S}\right)$.
+
+\section*{Using Option Sensitivities for Risk Management}
+Option sensitivities have multiple uses. A convertible bond trader may focus on a particular risk, such as the risk that the stock price underlying the convertible bond will change. The trader uses the sensitivities to establish hedge ratios. Option sensitivities may also be integrated into a comprehensive approach to managing all potential risk exposures. For example, many portfolios or strategies can be well represented as responding to a specific set of factors or underlying prices.
+
+The risk manager can analyze the risk of the portfolio by taking the total derivative of the portfolio with respect to each potential source of risk. Unlike a partial derivative, a total derivative does not assume that all other variables remain constant. A total derivative measures the direction of the change and is accurate for infinitesimal changes. In many cases, the total derivative depends only on first-order derivatives, discussed in the previous section.
+
+Another approach involves attempting to incorporate the effect of finite changes in the value of a position. In those applications, the analyst may use the concept of a total differential, which would generally include the higher-order effects, such as gamma in the case of an option and convexity in the case of a bond.
+
+
+\end{document}

@@ -1,0 +1,27 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{APPLICATION A}
+The continuously compounded spot rates corresponding to years 3 and 5 are $6 \%$ and $7 \%$, respectively. What is the implied continuously compounded annual interest rate from years 3 to 5 ?
+
+\section*{Answer and EXLANATION}
+As it is explained in the curriculum, there should be no difference between investing for T years (the longer dated bond) or combining an investment for t years (shorter dated bond) and a forward for T-t years. In this case, the choice is to invest in a 5-year bond or a 3-year bond + 2-year forward contract in year 3 (which gets you to five years). We are given the 5-year (T) and 3-year (t) spot rates, so we must solve for the 2-year (T-t) forward contract. The spot rates are continuously compounded, so we must use Equation 5:
+
+$$
+\begin{gathered}
+F(t, T)=\frac{r_{T} T-r_{t}}{T-t} \\
+F(t, T)=\frac{(7 \%)(5)-(6 \%)(3)}{5-3}=8.5 \%
+\end{gathered}
+$$
+
+The investor in a five-year bond locks in an implied incremental (forward) $8.5 \%$ yield each year for two years by selecting the bond with the higher maturity.
+
+
+\end{document}

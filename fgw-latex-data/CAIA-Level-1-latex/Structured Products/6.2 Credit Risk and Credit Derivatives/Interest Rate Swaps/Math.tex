@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{APPLICATION A}
+On January 1, ABC pension fund enters a one-year swap, agreeing to pay $4.3464 \%$ fixed rate on a notional amount of $\$ 10$ million and receive a floating payment based on three-month LIBOR. Both the fixed and the floating payments will be made on a quarterly basis. The three-month LIBOR rate on January 1 is observed to be $4 \%$. In addition, the interest rate futures market indicates the following rates for the next three quarters: $4.20 \%, 4.40 \%$, and $4.80 \%$. Calculate the expected payments for the swap. The expected payments for both fixed and floating payments are displayed in the exhibit, Fixed and Floating Payments.
+
+\section*{ Answer and Explanation}
+The exhibit, Fixed and Floating Payments is displayed below:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+(1) & $(2)$ & (3) & (4) & (5) & (6) & $(7)=(6) \times 10 M$ & \begin{tabular}{c}
+$(8)=4.3464 \% \times$ \\
+$(3) / 360 \times 10 \mathrm{M}$ \\
+\end{tabular} \\
+\hline
+\begin{tabular}{l}
+Quarter \\
+Starts \\
+\end{tabular} & \begin{tabular}{l}
+Quarter \\
+Ends \\
+\end{tabular} & \begin{tabular}{c}
+Number of Days in \\
+Quarter \\
+\end{tabular} & \begin{tabular}{l}
+Current \\
+LIBOR \\
+\end{tabular} & \begin{tabular}{c}
+Future LIBOR Rates \\
+Start of Quarter \\
+\end{tabular} & \begin{tabular}{l}
+Quarterly Future LIBOR \\
+Start of Quarter \\
+\end{tabular} & \begin{tabular}{l}
+Floating Payment End \\
+of Quarter \\
+\end{tabular} & \begin{tabular}{l}
+Fixed Payment End \\
+of Quarter \\
+\end{tabular} \\
+\hline
+January 1 & March 31 & 90 & $4.00 \%$ &  & $1.00 \%$ & 100,000 & 108,660 \\
+\hline
+April 1 & June 30 & 90 &  & $4.20 \%$ & $1.05 \%$ & 105,000 & 108,660 \\
+\hline
+July 1 & \begin{tabular}{l}
+September \\
+30 \\
+\end{tabular} & 90 &  & $4.40 \%$ & $1.10 \%$ & 110,000 & 108,660 \\
+\hline
+October 1 & \begin{tabular}{l}
+December \\
+31 \\
+\end{tabular} & 90 &  & $4.80 \%$ & $1.20 \%$ & 120,000 & 108,660 \\
+\hline
+\end{tabular}
+\end{center}
+
+It is important to remember that the floating-rate payments are determined based on the LIBOR rate at the beginning of the quarter. To use the first payment as an example, the January 1 LIBOR rate is 4\%, but the payment is not made until March 31 . To calculate the payments, we simply multiply the notional value by the interest rates, adjusted for time. These payments are shown above, but for illustration purposes, here is the equation worked out:
+
+$$
+\$ 100,000=\frac{90}{360} \times 4.0 \% \times \$ 10,000,000
+$$
+
+The fixed-rate payments are similar, although the fixed rate has been determined to be $4.3464 \%$.
+
+$$
+\$ 108,660=\frac{90}{360} \times 4.3464 \% \times \$ 10,000,000
+$$
+
+\section*{APPLICATION B}
+Question : Given the cash flows and interest rates from the exhibit, Fixed and Floating Payments, calculate the value of the swap as the discounted values of the expected cash flows. To value the expected future cash flows of the swap, it is necessary to specify the discount rate that needs to be applied to future cash flows. It turns out that the interest rates obtained from the futures contracts can provide us with the information needed to calculate these present values. the exhibit, Fixed and Floating Payments is based on the figures displayed in the exhibit, Interest Rate Swap Example, but three new columns have been added and columns 3-5 have been removed because of space concerns. The exhibit displays all the information needed to calculate the present values of the two streams of cash flows.
+
+\section*{ Answer and EXPLanation}
+While this looks complex, this is simply another present value calculation. The difference is that the interest rates are not constant over each period, and so each floating and fixed-rate payment will have be discounted using multiple rates.
+
+The first step would be to take the annualized LIBOR rates of $4.0 \%, 4.20 \%, 4.40 \%$, and $4.80 \%$ and make them quarterly: $1.00 \%, 1.05 \%, 1.10 \%$, and $1.20 \%$. This is because we are only discounting each payment on a quarterly basis.
+
+Next, we must solve for the discount factor that will multiply against the floating- and fixed-rate payments. Each payment away from time 0 will add another interest rate to the denominator:
+
+$$
+\begin{gathered}
+\text { March Payment Discount Factor }=0.990099=\frac{1}{1+1.00 \%} \\
+\text { June Payment Discount Factor }=0.979811=\frac{1}{(1+1.00 \%) \times(1+1.05 \%)} \\
+\text { September Payment Discount Factor }=0.969150=\frac{1}{(1+1.00 \%) \times(1+1.05 \%) \times(1+1.10 \%)} \\
+\text { December Payment Discount Factor }=0.957658=\frac{1}{(1+1.00 \%) \times(1+1.05 \%) \times(1+1.10 \%) \times(1+1.20 \%)}
+\end{gathered}
+$$
+
+The next step is to apply these discount rates to their relevant floating-rate payments:
+
+PV of March Floating Payment $=0.990099 \times \$ 100,000 \times \$ 99,010$
+
+PV of June Floating Payment $=0.979811 \times \$ 105,000 \times \$ 102,880$
+
+PV of September Floating Payment $=0.969150 \times \$ 110,000 \times \$ 106,607$
+
+PV of December Floating Payment $=0.957658 \times \$ 120,000 \times \$ 114,919$
+
+Finally, we must apply these same discount factors to the fixed-rate payments.
+
+PV of March Fixed Payment $=0.990099 \times \$ 108,660 \times \$ 107,584$
+
+PV of June Fixed Payment $=0.979811 \times \$ 108,660 \times \$ 106,466$
+
+PV of September Fixed Payment $=0.969150 \times \$ 108,660 \times \$ 105,307$
+
+PV of December Fixed Payment $=0.957658 \times \$ 108,660 \times \$ 104,059$
+
+Notice, if you separately add up the present values of the fixed payments and the present values of the floating payments, you will see the same answer: $\$ 423,416$. This is how it should be at the initiation of a fixed-floating swap contract. The value of the swap upon initiation (represented by the difference between the two PV of payments) should be $\$ 0.00$.
+
+
+\end{document}

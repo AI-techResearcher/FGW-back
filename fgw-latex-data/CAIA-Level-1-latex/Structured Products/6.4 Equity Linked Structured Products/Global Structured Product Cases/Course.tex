@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+Global Structured Product Cases
+
+This lesson describes three stylized products abstracted from descriptions of actual products that have been offered throughout the world. The descriptions are not intended to be precise specifications of the actual products issued by a particular institution but simplified illustrations of the spectrum of structured products available. Also, the geographic location attributed to each product is not intended to suggest that the particular product is more highly available in that jurisdiction or not available in the other jurisdictions. Rather, the cases are presented to indicate the diversity of regions and types of structured products. Generally, most structured products are issued in and available within most jurisdictions.
+
+\section*{A U.S.-Based Structured Product with Multiple Kinks}
+This product is a hypothetical example based on some of the properties of a product offered by MetLife, a major U.S. insurance company. The product has an annuity wrapper from an insurance company. An investor can choose an underlying asset from a set of indices, including a broad U.S. equity index, a small-cap index, an international equity index, and a commodity index. The investor also selects a maturity term of one, three, or six years. The payout to the contract depends on the performance of the index over the contract term. The distinguishing feature of the structuring is that the payout diagram has kinks at up to three price levels, based on a cap and a floor that can be selected by the investor from a set of available values. A kink may be viewed as the location in a payoff diagram where the slope changes.
+
+The investor may be viewed as first selecting a partial floor of $x \%$. The floor is termed here as "partial" because the issuer covers only the first $x \%$ of losses if the index experiences a decline at the end of the term. For losses beyond $x \%$, the investor is at risk (unless the investor selects $x \%=100 \%$ protection). Thus, if $x \%=10 \%$, the investor breaks even if the index has losses smaller than $10 \%$. If the index declines by more than $10 \%$, say $35 \%$, the investor loses the excess of the losses beyond $10 \%$ (in this instance, 25\%).
+
+Based on the investor's other choices and market conditions, the issuer will impose a cap on profits. For example, a product on the S\&P 500 Index with a partial loss floor of $10 \%$ and a term of three years might offer a cap of $20 \%$. The cap determines the maximum possible payout. Suppose that at the end of the three-year term, the S\&P 500 has experienced a capital gain or loss of $r \%$. Here is the payout of the hypothetical product with a partial loss floor of $10 \%$ and a cap of $20 \%$ :
+
+$$
+\begin{array}{ll}
+-100 \%<r \leq-10 \% & \text { Return payout }=r+10 \% \\
+-10 \%<r \leq 0 \% & \text { Return payout }=0 \% \\
+0 \%<r \leq 20 \% & \text { Return payout }=r \\
+r>20 \% & \text { Return payout }=20 \%
+\end{array}
+$$
+
+The product offers investors an ability to tailor their investment as a trade-off between loss protection (the partial floor) and limited profit potential (the cap). The product can be replicated in theory with European options and therefore, despite its complexity, it does not contain exotic options:
+
+$$
+\text { Product }=\text { Underlying Asset }+ \text { Bear Put Spread }- \text { Out-of-the-Money Call }
+$$
+
+By placing this product in an insurance wrapper, U.S. residents are able to enjoy tax deferral of any gains until the investor receives distributions from the insurance plan.
+
+\section*{A German-Based Structured Product with Leverage}
+The product discussed in this section is a hypothetical example based on some of the properties of a similar product offered in Germany. According to Deutsche Bank Research, certificates are wrappers that offer low trading costs, liquidity, versatile structures, and permanent bid and offer quotes by issuers. ${ }^{1}$ Deutsche Bank Research, "Retail Certificates: A German Success Story," EU Monitor 43 (March 19, 2007).
+
+The spectrum of products offered in Germany rivals those of other jurisdictions. As an example, a Sprint product combines a long position in an underlying asset with a long call option position at a relatively low strike price that provides upside leverage (e.g., a double participation rate of $200 \%$ ). The product's double upside protection is capped via short call positions at a relatively high strike price. The result is a somewhat collar-like payoff diagram that offers leveraged participation over a prespecified range but with limited profit potential at very high values:
+
+$$
+\text { Product }=\text { Underlying Asset }+ \text { Bull Spread }
+$$
+
+By placing this product in a certificate wrapper, investors may be able to enjoy a substantial degree of liquidity and low trading costs.
+
+\section*{A Japan-Based Structured Product Based on Multiple Currencies}
+Japan's Nomura Securities is part of the Nomura Group, which includes world-class investment and banking activities. Major world financial services firms, including Nomura Securities, offer structured products based on foreign exchange rates and interest rate differentials between currencies.
+
+Consider a power reverse dual-currency note. At its core, in a power reverse dual-currency note (PRDC), an investor pays a fixed interest rate in one currency in exchange for receiving a payment based on a fixed interest rate in another currency. However, the payment that the investor receives is increased or decreased proportionately as the exchange rate between the two currencies changes. For example, if the exchange rate during the life of the note rises to 1.25 from an exchange rate of 1.00 at the inception of the note, the cash payments received by the investor will be changed by the same proportion (25\%). Typically, the deal includes various option features, such as caps and floors. For example, the issuer may structure the deal so that any net cash flow of payments from the investor to the issuer is limited.
+
+From the perspective of the investor, the structured product allows for a leveraged carry trade in which the investor attempts to benefit from receiving higher coupon payments than the investor is paying. The product would, therefore, be attractive to an observer of interest rate differentials between nations who believes they will persist and thus generate benefits that will not be offset by changes in exchange rates.
+
+
+\end{document}

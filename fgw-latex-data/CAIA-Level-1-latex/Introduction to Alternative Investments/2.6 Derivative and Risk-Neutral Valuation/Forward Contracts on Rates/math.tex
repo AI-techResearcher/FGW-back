@@ -1,0 +1,42 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{APPLICATION A}
+A three-year riskless security trades at a yield of $3.4 \%$, whereas a forward contract on a two-year riskless security that settles in three years trades at a forward rate of $2.4 \%$. Assuming that the rates are continuously compounded, what is the no-arbitrage yield of a five-year riskless security?
+
+\section*{Answer and Expalnation}
+We need to manipulate Equation 1 to solve for $\mathrm{R}_{\mathrm{T}}$
+
+$$
+\begin{gathered}
+F_{T-t}=\frac{\left(T \times R_{T}-t \times R_{t}\right)}{(T-t)} \\
+F_{T-t} \times(T-t)=\left(T \times R_{T}-t \times R_{t}\right) \\
+F_{T-t} \times(T-t)+t \times R_{t}=T \times R_{t} \\
+R_{T}=\frac{\left.F_{T-t} \times(T-t)+t \times R_{t}\right)}{T}
+\end{gathered}
+$$
+
+We have solved for $\mathrm{R}_{\mathrm{T}}$. Now $\mathrm{R}_{\mathrm{t}}=3.4 \%, \mathrm{~F}_{\mathrm{T}-\mathrm{t}}=2.4 \%, \mathrm{~T}=5$, and $\mathrm{t}=3$
+
+$$
+\begin{gathered}
+R_{T}=\frac{0.024 \times(5-3)+3 \times 0.034)}{5} \\
+R_{T}=\frac{0.024 \times(2)+3 \times 0.034)}{5} \\
+R_{T}=\frac{0.048+3 \times 0.034)}{5} \\
+R_{T}=\frac{0.048+0.102}{5} \\
+R_{T}=\frac{0.15}{5} \\
+R_{T}=0.03
+\end{gathered}
+$$
+
+Inserting 3.4\% as the shorter-term rate in Equation 1 and 2.4\% as the left side of Equation 1, the longer-term rate, RT, can be solved as $3.0 \%$, noting that $\mathrm{T}=5$ and $\mathrm{t}$ $=3$. Note that earning $3.0 \%$ for five years ( $15 \%$ ) is equal to the sum of earning $3.4 \%$ for three years $(10.2 \%)$ and $2.4 \%$ for two years ( $4.8 \%)$. The rates may be summed due to the assumption of continuous compounding.
+
+
+\end{document}

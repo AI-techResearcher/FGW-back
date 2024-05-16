@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{Reading}
+Foundations of Forward Contracts
+
+This session discusses basic financial derivatives. The lesson begins with forward and futures contracts that represent agreements for deferred delivery; it concludes with options-contracts that allow their owner the right to execute a transaction at one or more points in the future.
+
+Forward contracts are important financial derivatives that facilitate risk management by transferring risk between the two parties to the contract.
+
+\section*{Forward Contracts, Delivery, and Settlement}
+A forward contract is simply an agreement calling for deferred delivery of an asset or a payoff at a prespecified time, at a fixed price or rate on a prespecified date (i.e., the settlement or delivery date) or for an economically equivalent cash settlement. In the case of settlement by delivery, the entity holding the short side of the contract promises to deliver a specified asset to the entity holding the long side of the contract in exchange for the prespecified price (the forward contract price). Alternatively, the two parties may agree to cash settle the contract by exchanging the difference between the forward price and the market price at the settlement date in the case of a forward contract on a price. In the case of a forward contract on a rate, the settlement takes place according to the size and other details specified by the contract.
+
+The long side of a forward contract on an asset is the participant who is obligated to buy the specified asset at the specified and fixed price (the forward price) on the delivery or settlement date. The short side of the forward contract is obligated to deliver the asset in exchange for receiving the forward price set in the contract at the contract's inception. Forward contracts are usually formed with no immediate cash exchange between the two parties (although parties may negotiate posting of collateral). In these cases, the forward contract price (i.e., the forward price) is set to a value that sets the value of the contract to zero. Throughout this session it is assumed that the forward contract is initiated with a zero market value so there is no immediate payment between the two parties.
+
+A simple example of a forward contract is an agreement for a major bank to deliver a three-month U.S. Treasury bill (T-bill) with a face value (principal value) of $\$ 100,000$ in exchange for $F$ dollars from a bond investor, with delivery to take place in six months. $F$ in this example denotes the forward price.
+
+\section*{The No-Arbitrage Approach to Determining Forward Prices}
+Forward contracts on prices of financial assets are perhaps the simplest derivatives to model.
+
+Arbitrage-free modeling, discussed in the session entitled Financial Economics Foundations, demonstrates that the current spot market interest rates of six-month and nine-month U.S. Treasury bills can be used to determine the implied forward rate between their maturity dates. Similarly, spot market prices of the two bonds can be used to find the implied price for a forward contract based on prices. The forward price is set when the contract is formed to be equal to the implied forward price from spot prices because it is the only price for that forward contract that is arbitrage-free, with zero cash being exchanged to initiate the contract (i.e., for which arbitrageurs will not be able to earn a riskless profit in excess of the riskless rate).
+
+The key to arbitrage-free modeling is to identify two identical assets or strategies that must offer the same returns. If two identical strategies can be identified with identical payoffs and returns they must have identical market prices; otherwise, there would be an arbitrage opportunity. The arbitrageur could profit from buying the relatively underpriced asset and shorting the relatively overpriced asset.
+
+In an efficient market, the return of investing in a default-free bond that offers a total return of $R_{0, T}$ over the time interval from 0 to $T$ (with maturity at $T$ ) must be the same as a strategy that offers: (1) a default-free total bond return of $R_{0, t}$ over the time interval (with maturity at $t$ ) from 0 to $t$ (with $T>t$ ), and (2) uses a long position in a forward contract locking in the return $R_{t, T}$ over the time interval from $t$ to $T$ (assuming that the forward contract is initiated at time 0 with a value of zero):
+
+
+\begin{equation*}
+\left(1+R_{0, T}\right)=\left(1+R_{0, t}\right) \times\left(1+R_{t, T}\right) \tag{1}
+\end{equation*}
+
+
+Equation 1 indicates that a relatively long-term zero-coupon bond will offer the same total return as a strategy of investing in a shorter zero-coupon bond and using a forward contract to lock in the return from the maturity of the shorter bond to the maturity of the longer bond. Since both strategies offer riskless returns from time 0 to $T$, their prices must be such in a perfectly competitive market that the total returns will be equal (i.e., there will be no arbitrage opportunities).
+
+\section*{Determining the Forward Contract Price of a Zero-Coupon Default-Free Bond}
+Let's return to the forward contract to deliver a three-month U.S. Treasury bill (T-bill) with a face value (principal value) of $\$ 100,000$ in exchange for $F$ dollars from a bond investor, with delivery to take place in six months. Let's find a no-arbitrage forward price $(F)$ to deliver the three-month T-bill in six months given the cash market prices of two bonds that correspond to the starting and ending dates of a forward contract. Assume that a six-month T-bill has a market price of $\$ 98,000$, and a nine-month T-bill has a market price of $\$ 96,900$ (both with zero coupons and $\$ 100,000$ face values). Assume that there are no transaction costs, taxes, or other imperfections, and that there is no risk that either side to a forward contract will default on its responsibilities.
+
+Let's examine two strategies that have a nine-month life (i.e., $T=9$ months). The first strategy is to simply invest in the nine-month T-bill. The second strategy is to invest in the six-month T-bill and roll the proceeds at maturity into a three-month T-bill using the forward price guaranteed through the forward contract. Both strategies have riskless returns at the nine-month horizon and must have identical returns to prevent arbitrage opportunities. Equation 1 can be used to solve for the return on the forward contract, $R_{t, T}$, from which the implied forward price will be $\$ 100,000 /\left(1+R_{t, T}\right)$.
+
+The wealth ratio (i.e., one plus the non-annualized return) of buying and holding the nine-month T-bill to maturity is $\$ 100,000 / \$ 96,900$. The wealth ratio of the second strategy is the product of (1) the wealth ratio of buying and holding the six-month T-bill to maturity, and (2) the wealth ratio of reinvesting in the three-month T-bill using the forward contract. Setting the wealth ratios of the two strategies equal generates:
+
+$$
+\$ 100,000 / \$ 96,900=(\$ 100,000 / \$ 98,000)\left(\$ 100,000 / F_{t, T}\right)
+$$
+
+where $\$ 98,000$ is the current market value of the six-month T-bill and $F_{t, T}$ is the forward price at which the three-month T-bill is exchanged according to the forward contract. Note that the right side of the equation does not imply that the investor purchases $\$ 98,000$ of the six-month T-bill. In fact, to make the dollar investments equal, the investor would purchase $\$ 96,900$ of the six-month T-bill. But the scale of each investment does not change the values of the wealth ratios; thus, for simplicity, it is ignored. Solving for $F_{t, T}$ generates $F_{t, T}=\$ 98,878$.
+
+This section has demonstrated that the forward price of a default-free zero-coupon bond is a function of the spot prices of two default-free zero-coupon bonds corresponding to the inception and termination of the forward contract.
+
+\section*{Forward Prices, Expected Spot Prices, and Risk Neutrality}
+This section introduces the analysis of expected spot prices. Note the prices per $\$ 100$ of principal amount that were assumed or derived in the previous application:
+
+\begin{center}
+\begin{tabular}{|lr|}
+\hline
+Spot price of 9-month zero-coupon bond: & $\$ 97.00$ \\
+Spot price of 12-month zero-coupon bond: & $\$ 96.03$ \\
+Forward price of 3-month bond in 9 months: & $\$ 99.00$ \\
+\hline
+\end{tabular}
+\end{center}
+
+There are no explicit assumptions or predictions regarding the expected future prices of the bonds in the previous section (prior to their maturities). A key question is the relationship, if any, between the forward price of $\$ 99$ and the expected spot price of the three-month bond in nine months. Note that the solution (\$99) to the forward price of the three-month bond did not require knowledge of the current three-month bond price or how much added return investors require for bearing interest rate risk or any other risk!
+
+While no assumptions were made regarding investor attitudes toward risk, it is highly instructive to consider a scenario that specifies that investors are neutral toward risk. In a risk-neutral world (in which investors do not require risk premiums for bearing risks), the forward price will be driven toward equaling the expected spot price because any other relationship would allow trading that offered abnormal expected return (note that due to the assumption of risk neutrality there would be no concern regarding risk). Specifically, trading by arbitrageurs in a world of risk neutrality will force all forward prices to equal their corresponding expected spot prices (i.e., the expected price of the contract's underlying bond at time of settlement). Thus, in a risk-neutral world, the expected price of the underlying bond is equal to the forward price ( $\$ 99$ ) of a forward contract on that bond. This relationship is consistent with the unbiased expectations theory detailed in the lesson entitled The Three Primary Theories of the Term Structure of Interest Rates but is inconsistent with a world dominated by risk aversion, as explained in the next section.
+
+\section*{Forward Prices, Expected Bond Prices, and Term-Structure Theories}
+Note that the long side of a forward contract on the price of a bond is taking the risk that the value of the bond (e.g., a three-month bond received at the end of the contract) will be less than the forward price at which the long side must buy the bond at the delivery date. The short side of the contract takes the opposite risk. A forward contract therefore is a transfer of risk between the two parties with regard to the market price of the bond at settlement. In this case, the long side is taking the classic interest rate risk in which there will be gains when interest rates decline and losses when interest rates rise. This classic fixed-income exposure to rising interest rates has been generally regarded as requiring and offering a risk premium as expressed in the liquidity premium hypothesis discussed in the lesson entitled The Three Primary Theories of the Term Structure of Interest Rates. Conversely, the short side to this forward contract is laying off interest rate risk and should expect in an efficient market that there is an expected cost to this protection.
+
+In an unbiased expectations world, forward bond prices (whether implied by spot rates or observed in the forward prices of forward contracts) are unbiased estimates of subsequent spot or cash market prices. In a liquidity premium world, investors are compensated for bearing the risks of rising interest rates by being offered higher expected returns. So forward bond prices (yields) will understate (overstate) expected spot prices (yields) in order to provide an expected risk premium to the long side for bearing the risk of rising rates (and to exact an expected cost to the short side of the contract for laying off the risk of rising rates). The market segmentation or preferred habitat theory does not predict a monotonic spread between forward prices and expected spot prices since the theory assumes that forward prices and rates cannot be perfectly arbitraged because there are impediments or limits to the ability of arbitrageurs to form hedges across different sections of the term structure.
+
+
+\end{document}

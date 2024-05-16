@@ -1,0 +1,64 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+Fixed-Income Analysis
+
+Much of the investment capital allocated to private credit and distressed debt is invested in unrated debt or debt that is rated as below investment grade. Given the prevalence of these lower-quality credits in the private debt space, it is important to understand the risks and rewards of this debt, which requires an understanding of appropriate credit spreads and the bankruptcy and recovery rate processes.
+
+\section*{Three Key Differences between Bonds and Loans}
+Investment banks underwrite bond issues and sell the bonds to external investors. The borrowers receive capital today, and the lenders receive an annuity of coupons and a return of the face value at maturity. Loans are privately traded debt instruments that are underwritten by a bank. After the bank has made the loan, it can either retain that loan on its balance sheet or sell it to other investors. Syndicated loans involve multiple lenders for a single borrower, which gives borrowers access to larger loans, especially those used for buyout transactions. Loans are private placements that are not subject to the same regulatory oversight as securities issued in the public bond market, and are less liquid than publicly traded bonds.
+
+Corporate bonds and loans have several key differences from an investment perspective.
+
+\begin{enumerate}
+  \item Liquidity: Bonds are publicly traded debt securities with relatively high liquidity, which leads to bonds generally offering higher prices and lower yields compared to some other instruments in the private loan market. Therefore, some investors may be attracted to loans, as they may earn an illiquidity premium that would increase the yield above that of a bond with similar credit quality and features.
+
+  \item Default risk: Loans are typically the most senior debt instrument in the capital structure and are often secured by significant collateral. Bonds are typically more junior in the capital structure relative to loans and may be unsecured, meaning that loans might have higher recovery rates.
+
+  \item Interest rate risk: Most bonds are fixed-rate, meaning that the coupon rate set when the bond is issued will not change during the life of the bond. Most bonds are non-callable, at least for some time period, so the borrower cannot immediately refinance or repay the principal on the bonds before the maturity or call date. Many loans are callable, meaning they can be prepaid at any time without prepayment penalties. Loans are also likely to have floating rates, so the interest rate on the loan increases when the market level of interest rates rises. This means that bonds tend to have higher interest rate risk.
+
+\end{enumerate}
+
+\section*{Implications of Floating Rates versus Fixed Rates on Interest Rate Risk}
+Fixed-rate debt declines in value as interest rates rise. This risk is measured by duration, which is introduced in the Financial Economics Foundation session on financial economics and the Relative Value Hedge Funds session on relative value funds. Duration in the case of a simple fixed-rate bond is the average time to receive the cash flows of a bond, and is closely related to the maturity of fixed-rate debt.
+
+When interest rates rise, the price of debt with fixed-rate coupons falls because the present value of each cash flow is diminished. The effect of rising interest rates on the prices of seasoned bond issues can also be seen by considering the valuation of newly issued debt. Newly issued debt must be issued at higher yields when market interest rates rise. In order to issue the new debt at a price near par, the newly issued debts must offer relatively high coupons when market interest rates rise. Therefore, seasoned coupon bonds must decline in price (i.e., rise in yields) so that the yields of seasoned debt approximate the yields of newly issued debt, ceteris paribus.
+
+For example, consider a seasoned $4 \%$ coupon bond in a $4 \%$ market that is priced at par (i.e., $100 \%$ of the bond's principal or maturity value). What happens when interest rates rise? When interest rates are 5\%, newly issued bonds available in the market must offer a higher level of coupon income (i.e., $5 \%$ ) to be issued at a price near its face value. For a seasoned $4 \%$ coupon bond to trade in equilibrium with a recently issued $5 \%$ coupon bond, the price of that $4 \%$ bond must decline until its yield approaches the new competitive level of $5 \%$.
+
+\section*{Implications of Floating Rates versus Fixed Rates on Duration}
+Floating-rate notes respond differently to interest rate shifts than fixed-rate notes do, as discussed in the Financial Economics Foundations session. Floating-rate coupons reset periodically to new market interest rates levels, thereby avoiding the level of interest rate risk inherent in fixed-rate notes. Therefore, floating-rate note prices are less volatile and have lower durations.
+
+For example, consider a floating-rate note that resets semiannually to a new interest rate of $1 \%$ above LIBOR, which is a benchmark interest rate for many floatingrate notes trading at or near par. If the floating-rate note resets to this new interest rate level every six months, its price will move to par at each reset because the note at that point in time will be offering the market yield. In the time period between coupon resets, there's not a lot of time for the interest rate on the loan to move far away from the market level of interest rates. As detailed in the Financial Economics Foundations session, the duration of a floating-rate note is equal to its remaining time to reset. Therefore, a floating-rate note with a semiannual reset will have a duration that declines from roughly 0.5 years (immediately after each reset) to roughly zero as the time to the next reset declines from 0.5 years to zero.
+
+In summary, with a semiannual reset, the worst thing that could happen from the perspective of an investor in that loan is that the market rate increases the day after the semiannual reset, which means that it will be earning a below-market interest rate for the next six months. However, six months from now, that interest rate is going to adjust to the now-higher level of market interest rates. Duration risk only exists during that length of time between now and the next reset date. Thus,\\
+floating-rate notes have a lower price risk relative to a change in interest rates than a fixed-rate note does. When interest rates rise, notes with shorter durations decline less in value than notes with longer durations. When interest rates fall, notes with longer durations rise more in value than notes with shorter durations. Fixed-rate bonds have longer durations and floating rate loans have shorter durations even if their maturities are the same (and it is prior to the last reset period). Note that, ignoring possible default risk, a floating-rate bond that resets continuously to short-term (overnight) market interest rates has the same interest rate risk profile as cash.
+
+\section*{Implications of Compounding Conventions on Modified Duration}
+The discussion of duration in the Financial Economics Foundations session (as well as the previous example), focused on bond price volatility based on shifts in continuously compounded interest rates. One reason for the focus on continuously compounded rates is that the duration of a bond (times negative one) equals its price elasticity only with respect to a shift in continuously compounded rates (as demonstrated in Equation 8 in the Financial Economics Foundations session).
+
+In debt markets, interest rates are typically expressed based on semiannual compounding. Modified duration is an interest rate risk measure very similar to regular duration that adjusts duration for discrete compounding in order to reflect the differing effects of various compounding conventions on measuring interest rate risk. Modified duration is calculated as shown in Equation 1:
+
+
+\begin{equation*}
+\text { Modified Duration }=\text { Duration } /[1+(y / m)] \tag{1}
+\end{equation*}
+
+
+where $m$ is the number of compounding periods per year, $y$ is the stated annual yield or interest rate, and $(y / m)$ is the periodic non-annualized rate. For example, assume that the non-annualized yield or interest rate is $5 \%$ over a six-month period. First, note that $m=2$, since there are two six-month periods in a year. Second, note that $y / m=5 \%$ (i.e., the periodic non-annualized rate, which is the stated annual rate divided by $m$ ). Third, the stated annual yield or rate $(y)$ would simply be $10 \%$. Note that the stated annual rate does not include the effects of interest compounded on interest. Finally, note that the effective annual rate would be $10.25 \%$ because effective annual rates reflect the effects of compounding (adding compounded interest of $5 \% \times 5 \%$ to the stated annual rate).
+
+Equation 1 adjusts the measure of price volatility to reflect the compounding assumption. For example, consider a position with a regular duration that is exactly 10 and in which the stated annual interest rate or yield $(y)$ is exactly $10 \%$. In bond markets with stated annual rates of $10 \%$ that use semiannual compounding (i.e., $m=$ 2), the modified duration would be $10.0 / 1.05$ or 9.52 . Using annual compounding (i.e., $m=1$ ), the modified duration would be $10.0 / 1.10$ or 9.09 . Using continuous compounding (i.e., $m \rightarrow 0$ ), the modified duration would be $10.0 / 1.0$ or 10 . Note that if the stated annual interest rate is $10 \%$ in an example with continuous compounding, the effective annual rate would be $10.52 \%$.
+
+The intuition of Equation 1 is best understood by starting with the case of continuous compounding. A $1 \%$ shift in continuously compounded rates has a relatively large effect on bond prices because effective annual rates (which include the effects of compounding) are more responsive to shifts in continuously compounded rates than to shifts in rates that are not compounded. Therefore, the modified duration of a bond with a 10-year duration is highest (10.0) when based on continuously compounded rates. When modified duration is reported based on annually compounded rates $(m=1)$, the modified duration is lesser ( 9.09$)$, reflecting that, say, a $1 \%$ shift in a stated annual rate has a smaller effect on effective annual rates than a $1 \%$ shift in a continuously compounded rate.
+
+Finally, note that while floating-rate debt has less interest rate risk than fixed-rate debt, the majority of floating-rate debt may be unrated or of lower credit quality. When moving from fixed-rate debt to floating-rate debt to reduce interest rate risk, investors have to understand that they may be increasing credit risk as a result of this reallocation. That is, investors may trade increased credit risk for reduced interest rate risk when moving from relatively higher-rated fixed-rate bonds to relatively lower-rated floating-rate loans.
+
+
+\end{document}

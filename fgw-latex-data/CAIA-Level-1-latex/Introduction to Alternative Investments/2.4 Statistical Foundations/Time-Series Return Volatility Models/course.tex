@@ -1,0 +1,35 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{Reading}
+Time-Series Return Volatility Models
+
+The previous sections often focused on the use of the past or historical standard deviation to express or measure risk. In most cases, however, analysts are concerned more with forecasting future risk than with estimating past risk. This section briefly reviews an approach to estimating future volatility based on past data.
+
+Time-series models are often used in finance to describe the process by which price levels move through time. However, the analysis of how price variation moves through time is increasingly studied. Time-series models of how risk evolves through time are numerous and diverse. We will briefly summarize one of the most popular methods. GARCH (generalized autoregressive conditional heteroskedasticity) is an example of a time-series method that adjusts for varying volatility.
+
+Let's examine generalized autoregressive conditional heteroskedasticity one word at a time. Heteroskedasticity is when the variance of a variable changes with respect to a variable, such as itself or time. Homoskedasticity is when the variance of a variable is constant. Clearly, equity markets and other markets go through periods of high volatility and low volatility, wherein each day's volatility is more likely to remain near recent levels than to immediately revert to historical norms. Thus, risky assets appear at least at times to exhibit heteroskedastic return variation. The GARCH method allows for heteroskedasticity and can be used when it is believed that risk is changing over time.
+
+Autoregressive refers to when subsequent values to a variable are explained by past values of the same variable. In this case, autoregressive means that the next level of return variation is being explained at least in part by modeling the past variation, in addition to being determined by randomness. Casual observation of equity markets and other financial markets appears to support the idea that one day's variation, or volatility, can at least partially determine the next day's variation.
+
+The term conditional in GARCH refers to a particular lack of predictability of future variation. Some securities have return variation that is somewhat predictable. For example, a default-free zero-coupon bond (e.g., a Treasury bill) can be expected to decline in return variation and price variation as it approaches maturity and as its price approaches face value. Conditioned on the time to maturity, the variance of a Treasury bill is at least somewhat predictable. Hence, the Treasury bill might only be unpredictable on an unconditional basis. Other financial values, however, do not exhibit a pattern like the default-free zero-coupon bond. For example, there is no apparent pattern to the volatility of the price of a barrel of oil or the value of an equity index.
+
+When a financial asset exhibits a clear pattern of return variation, such as in the example of a Treasury bill near maturity, its variation is said to be unconditionally heteroskedastic. Most financial market prices are conditionally heteroskedastic, meaning that they have different levels of return variation even when specified conditions are similar (e.g., when they are viewed at similar price levels).
+
+An example of conditional heteroskedasticity is as follows. Perhaps a major equity index reaches a similar price level, such as 800 , several times in the course of a decade. There is no reason to believe, however, that the index will experience similar levels of return variation each time it nears that 800 level. Sometimes the index might be quite volatile at the 800 level, and other times the index might be quite stable at the same level, as a result of, for example, different macroeconomic environments. Thus, the asset's return variation is heteroskedastic even when such conditions as price levels are held constant. Hence, the index, like most financial assets, is conditionally heteroskedastic because its return variation is heteroskedastic even under similar conditions (i.e., even when conditioned on another variable).
+
+Finally, generalized refers to the model's ability to describe wide varieties of behavior, also known as robustness. A less robust time-series model of volatility is ARCH (autoregressive conditional heteroskedasticity), a special case of GARCH that allows future variances to rely only on past disturbances, whereas GARCH allows future variances to depend on past covariances as well. Developed subsequently to ARCH, GARCH is now generally the more popular approach in most financial asset applications.
+
+Now we can summarize all of the terms in GARCH together. In the context of financial returns, GARCH is a robust method that can model return variation through time in a way that allows that variation to change based on the variable's past history and even when some conditions, such as price level, have not changed.
+
+It has parameters that the researcher can set to allow closer fitting of the model to various types of patterns. The GARCH model is usually specified by two parameters like this: $\operatorname{GARCH}(p, q)$. The first parameter in the parentheses, $p$, defines the number of time periods for which past return variations are included in the modeling equation, and the second, $q$, defines the number of time periods for which autoregressive terms are included.
+
+
+\end{document}

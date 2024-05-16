@@ -59,8 +59,8 @@ def ask_question():
     try:
         data = request.get_json()
         
-        root_folder = '/Users/alphatech/Desktop/FGW_latexData'
-        exam_name = "CAIA Level 1"
+        root_folder = '/app/fgw-latex-data'
+        exam_name = "CAIA-Level-1-latex"
         root_folder = os.path.join(root_folder, exam_name)
         
         pdf_texts = extract_text_from_all_pdfs(root_folder)

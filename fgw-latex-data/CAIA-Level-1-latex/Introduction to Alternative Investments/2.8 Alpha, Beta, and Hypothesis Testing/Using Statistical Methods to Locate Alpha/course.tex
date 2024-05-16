@@ -1,0 +1,111 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{Reading}
+Using Statistical Methods to Locate Alpha
+
+Suppose that a manager running a fund called the Trick Fund claims the ability to consistently outperform the S\&P 500 Index using a secret strategy. It turns out that for each $\$ 100$ of value in the fund, the manager initially holds $\$ 100$ in a portfolio that mimics the S\&P 500 , and then on the first of each month, the fund manager writes a $\$ 0.50$ call option on the S\&P 500 that is far out-of-the-money and expires in a few days. If the fund manager has bad luck and the S\&P 500 rises dramatically during the first week, so that the call option rises to, say, $\$ 2.50$, and is about to be exercised, the fund manager purchases the call at a loss (covering the option position). The fund manager purchases the call option back using money obtained from writing large quantities of new out-of-the-money call options for the second week at combined prices of $\$ 2.50$. If the second group of options rises in value to, say, $\$ 12.50$, the fund manager repeats the process belling even more call options for the third week to generate proceeds of $\$ 12.50$, which are used to cover the second option positions. The strategy continues into the fourth week, such that if the third set of short options rises to, say, $\$ 62.50$, a fourth set of out-of-the-money options is sold for $\$ 62.50$. By the end of the fourth week, either the fourth set of options is worthless or the fund is ruined.
+
+If at any point during the month one of the sets of options expires worthless, the fund manager ceases writing options for the rest of the month, and the fund is $\$ 0.50$ (i.e., 50 basis points) ahead of its benchmark for the month. There is very little likelihood (perhaps once every 200 months) that all four sets of options would finish inthe-money and therefore that the option strategy would lose a large amount of money. In perhaps 199 of every 200 months, the fund outperforms the S\&P 500 by 50 basis points (ignoring any transaction costs or fees). Since there is no open option position at the end of any month, the fund manager's strategy has been kept a secret; the manager shows the fund's positions and risks only at the end of each month.
+
+If we assume that the options market is efficient, this manager is not generating ex ante alpha; the manager is simply taking a gamble on a very large chance of making a small amount of money and a very small chance of losing a very large amount of money (relative to the benchmark). But the returns that this manager generates would typically be very hard to distinguish from those of a manager who truly generated a small but consistent return advantage. Could statistical analysis of the fund's returns help us figure out what the Trick Fund was doing and help us differentiate truly superior performance from luck?
+
+\section*{Four Steps of Hypothesis Testing}
+Hypotheses are propositions that serve as a foundation on which to analyze an issue. Two hypotheses regarding the Trick Fund example could be that the fund has a system that generates ex ante alpha or that it does not have such a system. Hypothesis testing is the process of developing and interpreting evidence to support and refute the various hypotheses. Hypothesis tests typically follow the same four steps, in which the analyst does the following:
+
+\begin{enumerate}
+  \item States a null hypothesis and an alternative hypothesis to be tested
+
+  \item Designs a statistical test
+
+  \item Uses sample data to perform the statistical test
+
+  \item Rejects or fails to reject the null hypothesis based on results of the analysis
+
+\end{enumerate}
+
+Stating the Hypotheses: Hypothesis testing requires the analyst to state a null hypothesis and an alternative hypothesis. The null hypothesis is usually a statement that the analyst is attempting to reject, typically that a particular variable has no effect or that a parameter's true value is equal to zero. For example, common null hypotheses are that a fund's alpha is zero or that a fund's exposure to a particular risk factor, or beta, is zero.
+
+The alternative hypothesis is the behavior that the analyst assumes would be true if the null hypothesis were rejected. The alternative and null hypotheses are often stated in such a way that they are mutually exclusive. That is, if one is true, the other must be false, and vice versa. For example, if the null hypothesis is that an alpha, beta, or other variable is zero, the alternative hypothesis is that the variable is not equal to zero.
+
+Designing a Test of the Hypotheses: The test's plan describes how to use sample data to reject or to not reject the null hypothesis. This stage involves specifying the variables for a model, the relationships between the variables, and the statistical properties of the variables. Typically, the test involves a test statistic, which is a function of observed values of the random variables and typically has a known distribution under the null hypothesis. The test statistic is the variable that is analyzed to make an inference with regard to rejecting or failing to reject a null hypothesis. Given a test statistic and its sampling distribution, an analyst can assess the probability that the observed values of the random variables of interest could come from the assumed distribution and can determine if the null hypothesis should be rejected.
+
+The plan should specify a significance level for the test before the test is run. Generally, the term significance level is used in hypothesis testing to denote a small number, such as $1 \%, 5 \%$, or $10 \%$, that reflects the probability (that a researcher will tolerate) of the null hypothesis being rejected when in fact it is true. The selection of a smaller probability for the significance level is intended to reduce the probability that an unusual statistical result will be mistakenly used to reject a true null hypothesis. For example, a hypothesis tested with a significance level of $1 \%$ has a $1 \%$ likelihood of rejecting a true null hypothesis.
+
+Statistical analyses of parameter estimates often utilize confidence intervals. A confidence interval is a range of values within which a parameter estimate is expected to lie with a given probability. The confidence interval is typically based on a large probability, such as $90 \%, 95 \%$, or $99 \%$. A $90 \%$ confidence interval defines the range within which a parameter estimate is anticipated to lie in $90 \%$ of the tests given that the null hypothesis is true. An outcome outside the confidence interval provides the researcher with an indication that the true parameter lies outside the confidence interval. For example, suppose that a $95 \%$ confidence interval for the estimated beta of an asset ranges from 0.8 to 1.2 . If the null hypothesis is true, a statistical estimate of that beta has a $95 \%$ chance of falling within that range and a $5 \%$ chance of falling outside that range.
+
+Running the Test to Analyze Sample Data: Using sample data, the analyst performs computations called for in the plan. These computations allow calculation of the test statistic that is often standardized in the following form:
+
+Test statistic $=($ Estimated value - Hypothesized value $) /($ Standard error of statistic $)$
+
+This standardization creates a test statistic that has zero mean and unit standard deviation under the null hypothesis. The assumptions of the model are used to derive a probability distribution for the test statistic. Using that distribution, a $p$-value is estimated based on the data. The $p$-value is a result generated by the\\
+statistical test that indicates the probability of obtaining a test statistic by chance that is equal to or more extreme than the one that was actually observed (under the condition that the null hypothesis is true). The $p$-value that the test generated is then compared to the level of significance that the researcher chose.
+
+Rejecting or Failing to Reject the Null Hypothesis: The analyst rejects the null hypothesis when the $p$-value is less than the level of significance. A $p$-value of $2 \%$ obtained in a statistical test indicates that there is only a $2 \%$ chance that the estimated value would occur by chance (under the assumption that the null hypothesis is true). So a $p$-value of $2 \%$ in a test with a significance level of $5 \%$ would reject the null hypothesis in favor of the alternative hypothesis. However, that same $p$-value of $2 \%$ would fail to reject the null hypothesis if the significance level of the test had been set at $1 \%$.
+
+\section*{The Error of Accepting a Hypothesis}
+In the previous example, the $p$-value of $2 \%$ was referred to as "fail[ing] to reject the null hypothesis" when the significance level was set at $1 \%$. Why wouldn't the analyst simply conclude that the null hypothesis was accepted? If a test indicates that a variable has not been found to be statistically different from the predictions of the null hypothesis, it does not mean that the null hypothesis is true or even that it is true with some known probability. For example, the test may assume that returns are normally distributed and that the means are equal. If the test indicates inequality, it could mean simply that the returns were not normally distributed.
+
+The results of statistical tests are misunderstood or misused in many investment applications. The famous twentieth-century philosopher Karl Popper helped formulate the modern scientific view that knowledge progresses by proving that propositions are false and that no important proposition can be proven to be true. Popper's philosophy should be used in conducting empirical analyses of alternative investments.
+
+Tests should be designed to disprove things that are thought possibly to be true, not to try to confirm those things that are hoped to be true. Unfortunately, the strong desire of investors to confirm their beliefs and to locate an investment that offers positive alpha can lead them to search for confirmation of their hopes and beliefs. Popper's philosophy encourages research that focuses on refuting one's beliefs and is viewed by some as the recipe for greater success in alternative investing.
+
+\section*{Four Common Problems Using Inferential Statistics}
+Results of hypothesis testing are very often interpreted incorrectly. A discussion of four common problems with interpreting $p$-values follows.
+
+First, outcomes with lower $p$-values are sometimes interpreted as having stronger relationships than those with higher $p$-values; for example, an outcome of $p<0.01$ is interpreted as indicating a stronger relationship than an outcome of $p<0.05$. But at best, a $p$-value indicates whether a relationship exists; it is not a reliable indicator of the size and strength of the relationship.
+
+A second major problem is failure to distinguish between statistical significance and economic significance. Economic significance describes the extent to which a variable in an economic model has a meaningful impact on another variable in a practical sense. One can be very statistically confident that one variable is related to another, but the size of the estimated parameter and the degree of dispersion in the explanatory variable may indicate that the parameter has only a minor economic effect in the model. Conversely, one might be less statistically confident that another variable has a true relationship, but given the absolute size of the estimated parameter and the dispersion in the related explanatory variable, we might determine that the relationship, if true, would have a very substantial impact on the model.
+
+Third, the $p$-value is only as meaningful as the validity of the assumption regarding the distribution of test statistic. Researchers should carefully examine the data for indications that the distributional assumptions are violated.
+
+Finally, a major problem is when the $p$-value from a test is interpreted as the unconditional probability that a statistically significant result it true. For example, assume that an analyst has a null hypothesis that hedge fund managers cannot earn superior returns using skill and an alternative hypothesis that hedge fund managers can earn superior returns using skill. Assume that the analyst has correctly applied a statistical procedure and finds that the mean performance of the hedge fund managers is higher than the benchmark's mean performance with a $p$-value of $1 \%$.
+
+The incorrect statement that is often made regarding such a result is that the research indicates that there is a 99\% probability that fund managers are able to outperform the benchmark using skill, or that there is a 99\% probability that fund managers will earn higher expected returns than the benchmark. In fact, researchers have no reasonable basis for making this assertion. The relatively uncharted waters of alternative investments make these erroneous assertions even more problematic.
+
+Since the body of knowledge is less well-established, false beliefs based on erroneous statistical interpretations are less easily identified and corrected with alternative investment analytics. To explain this important concept carefully, the next section details two types of errors.
+
+\section*{Type I and Type II Errors}
+Two types of errors can be made in traditional statistical tests: type I errors and type II errors. A type I error, also known as a false positive, is when an analyst makes the mistake of falsely rejecting a true null hypothesis. The term $\alpha$ is usually used to denote the probability of a type I error and should not be confused with investment alpha. The symbol $\alpha$ is the level of statistical significance of the test, and $1-\alpha$ is defined as the specificity of the test.
+
+A type Il error, also known as a false negative, is failing to reject the null hypothesis when it is false. The symbol $\beta$ is usually used to denote the probability of a type II error and should not be confused with the use of that symbol to denote systematic risk. The statistical power of a test is equal to $1-\beta$. An analyst may lower the chances of both types of errors by increasing the sample size. The next exhibit shows a matrix that is often used to denote the four possible outcomes.
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{2}{|c|}{Errors in Hypothesis Testing} &  \\
+\hline
+ & Null Hypothesis True & Null Hypothesis False \\
+\hline
+Reject null hypothesis & Type I error & Correct \\
+\cline { 3 - 3 }
+Fail to reject null hypothesis & Correct & Type II error \\
+\hline
+\end{tabular}
+\end{center}
+
+When a statistical test is performed with a significance level of 5\%, it can best be viewed as differentiating between the upper left and lower left shaded boxes of the matrix. Given that the null hypothesis is true, there is a 5\% probability that the null hypothesis will be mistakenly rejected (upper left shaded box) and a $95 \%$\\
+probability that the correct decision will be made and the null hypothesis will not be rejected (lower left shaded box).
+
+But the key is that the probability that the truth lies on the left-hand side of the matrix is not known. Accordingly, the unconditional probability of the error rate is not known. It cannot be claimed unconditionally that there is only a 5\% chance of error in the test, because it is not certain that the null hypothesis is true. It can only be known that if the null hypothesis is true, one has only a $5 \%$ chance of error, if that is the significance level. The next section provides an example of this important point.
+
+\section*{An Example of Erroneous Conclusions with Statistical Testing}
+Assume that all traders have equal skill but that one of every 10,000 traders cheats by using inside information. Thus, the probability of picking a trader at random who uses inside information is one in 10,000 , or $0.01 \%$. The null hypothesis is that a trader is honest and does not use inside information. A test has been developed that, when applied to an honest trader's transaction record, gives a correct answer that the person does not trade illegally $99 \%$ of the time and a false accusation $1 \%$ of the time.
+
+This test has a type I error rate of $1 \%$, meaning the probability of falsely rejecting the null hypothesis by alleging that an honest trader is cheating is $1 \%$. To simplify the problem, assume that when the test is given to a dishonest trader, the test always correctly identifies the trader as a cheater. In other words, there is no possibility of a type II error. What is the probability that a trader whose transaction record indicates cheating, according to the test, has actually cheated? The answer is not $99 \%$; it is only $1 \%$.
+
+To understand this astounding result, note the assumption that only $0.01 \%$ of traders (10 traders out of 100,000 traders) actually cheat. However, from a population of 100,000 honest traders who are tested, the test would falsely indicate that 1,000 of the traders have cheated, since the test has a $1 \%$ type I error rate. Since, on average, 10 traders in a sample of 100,000 traders have actually cheated, whereas 1,000 have been falsely accused, approximately $99 \%$ of the indications of cheating will be false.
+
+In summary, many analysts interpret a significance level or confidence interval as indicating the probability that a test has reached a correct conclusion. For example, an analyst using a 5\% significance level or $95 \%$ confidence interval might interpret the finding of a nonzero mean or a nonzero coefficient as being $95 \%$ indicative that the mean is not zero or the coefficient is not zero. But this would be an erroneous interpretation of the test results.
+
+Using a $5 \%$ level of significance as an example, this is what is known: If the null hypothesis is true, then there is only a $5 \%$ chance that the null hypothesis will be incorrectly rejected.
+
+
+\end{document}

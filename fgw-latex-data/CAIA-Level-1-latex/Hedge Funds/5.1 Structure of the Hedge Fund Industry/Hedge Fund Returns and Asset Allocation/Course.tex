@@ -1,0 +1,97 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\title{Reading }
+
+\author{}
+\date{}
+
+
+\begin{document}
+\maketitle
+Hedge Fund Returns and Asset Allocation
+
+This lesson overviews the process of designing and implementing a hedge fund program. A hedge fund program refers to the processes and procedures for the construction, monitoring, and maintenance of a portfolio of hedge funds. We begin by providing an overview of available funds and strategies.
+
+A starting point of hedge fund analysis is to organize and analyze funds by their type of strategy. Before hedge funds are included in a portfolio, the risks of various hedge fund strategies should be understood. Specifically, the historical distribution of returns of each hedge fund strategy should be analyzed to determine its shape and properties. Empirical evidence presented in later sessions shows that many hedge fund return distributions have exhibited properties that are distinctly nonnormal. The issue is how to apply this information in constructing a hedge fund program.
+
+One observation is as follows: Do not construct a hedge fund program based on only one type of hedge fund strategy, as each hedge fund style exhibits different return distributions. Therefore, benefits can be obtained by diversifying across hedge fund strategies. This is classic portfolio theory: Do not put all of your eggs into one hedge fund basket.
+
+An alternative to aggregating the returns of individual hedge funds into hypothetical portfolios is to observe the return of actual portfolios of hedge funds, known as funds of funds (FoFs). A fund of funds (or fund of hedge funds) is a hedge fund that has other hedge funds as its underlying investments. The three advantages of observing the returns of funds of funds are that (1) FoFs directly reflect the actual investment experience of diversified investors in hedge funds, ${ }^{1}$ William Fung and David Hsieh, "Performance Characteristics of Hedge Funds and Commodity Funds: Natural versus Spurious Biases," Journal of Financial and Quantitative Analysis 25 (2000): 291-307. (2) the databases on FOFs have fewer biases than those on individual hedge funds, and (3) the net performance of FoFs is net of the costs of due diligence and portfolio construction from investing in hedge funds. These costs, which are borne directly by investors who invest directly in individual hedge funds, are not reflected in the returns of individual hedge funds.
+
+\section*{Grouping Strategies by Systematic Risk}
+For the purposes of risk management and asset allocation, the various hedge fund strategies are often grouped according to their risk exposures. Within this view there are generally four groupings of hedge fund strategies: (1) equity strategies, which exhibit substantial market risk; (2) event-driven strategies, which seek to earn returns by taking on event risk, such as failed mergers, that other investors are not willing or prepared to take, and relative value strategies, which seek to earn returns by taking risks regarding the convergence of values between securities; (3) absolute return strategies, which seek to minimize market risk and total risk; and (4) diversified strategies, which seek to diversify across a number of different investment themes. This grouping of hedge fund strategies is designed to facilitate risk management and asset allocation rather than to serve as detailed classification system, such as the CAIA classification system discussed in the lesson entitled, Hedge Fund Classification. The next four sections detail each group.
+
+\section*{Equity Strategies}
+Hedge funds that are substantially exposed to stock market risk include equity hedge and short bias funds. These hedge fund strategies invest primarily in equities and always retain some net stock market exposure. For example, many long/short equity funds may have $100 \%$ gross long exposures, $60 \%$ gross short exposures, and $40 \%$ net market exposure. While the fund is exposed to only $40 \%$ of the beta risk of the underlying market, investors are taking $160 \%$ exposure to the manager's stock selection skill. Note that funds with such low net exposure are likely to outperform stocks in a rapidly declining market while underperforming stocks in a strong bull market.
+
+Short bias funds average a strong negative beta to global equity markets, essentially holding all stocks in a short sale position. These funds, with a negative correlation to global stocks, are a great risk reducer, serving to substantially reduce losses in a time of equity bear markets. However, these funds offer the lowest returns of any hedge fund strategy, underperforming global stocks over a full market cycle. While this may seem to be a disappointing return, short sellers may be highly skilled at stock selection, as evidenced by a large estimated alpha. In other words, the historical average returns of short sellers are estimated to be higher than the returns of the market portfolio when adjusted for their negative systematic risk.
+
+\section*{Event-Driven and Relative Value Strategies}
+Returns of hedge funds in the event-driven and relative value categories have historically experienced the lowest standard deviation as well as the largest values of negative skewness and excess kurtosis. These strategies have consistently earned small profits but are prone to posting large losses over short periods of time. The return pattern is similar to what is earned by an insurance company that collects small premiums on a regular basis but once in a while experiences a large negative return. Event-driven and relative value strategies typically hold hedged positions.
+
+\section*{Merger Arbitrage}
+In merger arbitrage, managers seek to hold equal and offsetting amounts of stock market risk in their long and short positions involved in a merger. Similarly, positions with substantially offsetting risks are used in fixed-income and convertible bond arbitrage strategies that seek to minimize some risks, such as equity market and interest rate risk, but are exposed to other risks, such as credit risks.
+
+Consider merger arbitrage, wherein the majority of the time investors experienced monthly returns in the $0 \%-2 \%$ range. These results are very favorable, as evidenced by their standard deviation being less than one-third of the MSCI World Index compared to equity markets, in which the returns are much more dispersed. The consistency with which merger arbitrage funds delivered moderately positive performance indicates less risk relative to overall equity market performance.
+
+However, merger arbitrage is exposed to extreme losses due to significant event risk, as the returns exhibit large values of negative skewness and excess kurtosis. Merger arbitrage is similar to selling a put option or selling insurance, which in effect allows managers to underwrite the risk of loss associated with a failed merger or acquisition.
+
+\section*{Event Risk and Volatility}
+Many financial transactions that contain event risk, such as merger arbitrage positions, can be viewed or described as writing options, although the underlying positions do not literally contain traditional options. Actual sales of option securities, as well as the effective sale of options through event-related arbitrage strategies, are known as short volatility exposures.
+
+\section*{Short Volatility}
+Short volatility exposure is any risk exposure that causes losses when underlying asset return volatilities increase. Event risk and short volatility trading strategies tend to have short volatility exposures because they are negatively exposed to event risk, and events cause market volatility.
+
+During stable or normal market conditions, a short volatility exposure makes a profit through the collection of premiums as long as realized volatility is less than the market's anticipated volatility. But in rare cases, short volatility strategies incur a substantial loss when the unexpected happens and event-driven hedge funds experience losses associated with the failure of the expected event. Losses occur when volatility increases beyond expectations or when anticipated events do not materialize.
+
+\section*{Insurance Contract}
+Another way to consider the risk of event-driven strategies is that it is similar to the risk incurred in the sale of an insurance contract. Insurers sell insurance policies and collect premiums. In return for collecting the insurance premium, they take on the risk of unfortunate economic events. If nothing happens, the insurance company gets to keep the insurance/option premium. However, if there is an event, the insurance policyholder can put the policy back to the insurance company in return for a payout. The insurance company must then pay the face value, or the strike price, of the insurance contract and bear a loss.
+
+\section*{Off-Balance-Sheet Risk}
+Event risk is effectively an off-balance-sheet risk-that is, a risk exposure that is not explicitly reflected in the statement of financial positions. The balance sheet of a typical merger arbitrage hedge fund manager would have offsetting long and short equity positions reflecting the purchase of the target company's stock and the sale of the acquiring company's stock. Looking at these offsetting long and short equity positions, an investor might conclude that the hedge fund manager has a hedged portfolio with long positions in stock balanced against short positions in stock. Yet the balance sheet positions alone do not explicitly indicate the true risk of merger arbitrage: The fund has effectively issued financial market insurance against the possibility that the deal will break down. This short volatility strategy will not show up from just a casual observation of the hedge fund manager's investment statement.
+
+\section*{Relative Value}
+Although merger arbitrage was used as an example to highlight the downside risk exposure, the risks are similar for relative value or event-driven strategies. Each of these strategies has a similar short put option exposure with outlier event risk. Relative value trading strategies bet that the prices of two similar securities will converge in valuation over the investment holding period. These strategies often earn a return premium for holding the less liquid or lower-credit-quality security while going short the more liquid or creditworthy security. Through time, the strategy is a speculation that the two securities will converge in valuation and the hedge fund manager will earn a spread, or premium, that once existed between the two securities. Convergent strategies profit when relative value spreads move tighter, meaning that two securities move toward relative values that are perceived to be more appropriate.
+
+\section*{Event Risk and Insurance Contracts}
+Convergent strategies may be viewed as selling financial market insurance against market events. If unusual market events do not occur, the hedge fund manager earns an insurance premium for betting correctly that the spread between the two securities will decline through time. However, if there is an unusual or unexpected event in the financial markets, the two securities are likely to diverge in valuation, and the hedge fund manager loses on the trade. Relative value strategies are essentially short volatility strategies, much like event-driven hedge fund strategies.
+
+\section*{Long-Term Capital Management and the Russian Default}
+Consider the demise of Long-Term Capital Management (LTCM), a prestigious relative value hedge fund manager established in the mid-1990s. Its strategy was simple: Securities with similar economic profiles should tend to converge in price subsequent to perceived dislocations. Year in and year out, LTCM was able to collect option-like premiums in the financial markets for insuring that the valuations of similar securities would converge.
+
+However, a disastrous economic event eventually occurred: the default by the Russian government on its bonds in the summer of 1998. A rapid flight to quality ensued in the financial markets as investors sought the safety of the most liquid and creditworthy instruments. Instead of valuations converging as LTCM had bet they would, valuations of many similar securities diverged. The hedge fund's short put option profile worked against it, and it lost massive amounts of
+
+capital. ${ }^{2}$ Philippe Jorion, "Risk Management Lessons from Long-Term Capital Management" (working paper, University of California at Irvine, January 2000). The huge leverage LTCM employed exacerbated its short put option exposure, and it was forced to liquidate its positions, realize its massive losses, and close. This collapse further disrupted financial markets, vividly illustrating the dangers of short volatility exposure.
+
+\section*{Credit}
+Event-driven and relative value hedge fund strategies may also be viewed as bearing similarities to investing in credit-risky securities, such as high-yield bonds. Credit risk distributions are generally exposed to significant downside risk. This risk is embodied in the form of credit events, such as downgrades, defaults, and bankruptcies. Consequently, credit-risky investments are also similar to insurance contracts or the sale of put options.
+
+An investment in high-yield bonds is essentially the sale of an insurance contract (or put option) that says that the insurance seller (or option writer) is liable for losses due to credit events that may occur. Under normal market conditions, the investor collects the high coupons (insurance or option premiums) associated with the high-yield bond. But if large or numerous credit events occur, such as defaults, downgrades of credit ratings, or bankruptcy filings, the high-yield investor is liable for the losses.
+
+Credit-risky investments experience negative skew and leptokurtosis because they are exposed to event risk: the risk of downgrades, defaults, and bankruptcies. These events cause more of the probability mass to be concentrated in the extreme left-hand tail of the return distribution, leading to the negative skew. The combination of leptokurtosis and negative skew reflects the considerable downside risk. This downside risk is sometimes referred to as fat tail risk because it reflects the fact that credit-risky investments have a relatively large probability mass in the downside tail of their return distributions.
+
+In summary, many types of hedge funds act like insurance companies or option writers: If there is a disastrous financial event, they bear the loss. ${ }^{3}$ See William Fung and David Hsieh, "A Primer on Hedge Funds," Journal of Empirical Finance 6, no. 3 (1999): 309-31. This exposure is exacerbated to the extent that arbitrage funds apply leverage.
+
+\section*{Absolute Return Strategies}
+Many hedge funds are often described as absolute return products. Absolute return products are investments in which the returns are designed to be consistently positive rather than being linked to or assessed against broad market performance. Hedge fund managers generally claim that their investment returns are derived from their skill at security selection, with the market risk of the portfolio hedged by short positions in broad indices or overvalued stocks from the same industry. Therefore, the returns should be evaluated on an absolute basis, meaning whether or not they were positive, rather than on a relative basis, meaning whether or not they exceeded a broad market index.
+
+Many hedge fund managers build concentrated portfolios of relatively few investment positions and do not attempt to ensure that their returns match the returns of a particular stock or bond index. Some hedge funds appear to have been able to minimize their exposure to credit risk and equity market risk. These hedge funds tend to have a small skew or none at all and to exhibit low values of leptokurtosis or even generate platykurtosis, in which the tails of the distribution are thinner than in a normal distribution.
+
+Hedge funds can offer a quite different return profile than mutual funds, which are often described as relative return products. A relative return product is an investment with returns that are substantially driven by broad market returns and that should therefore be evaluated on the basis of how the investment's return compares with broad market returns. Given that most mutual funds are constrained to hold long positions and follow a narrow mandate, they are destined to lose money when their market segment declines. Many hedge fund managers are judged by their level of consistently positive returns, whereas mutual fund managers are judged by their return relative to their benchmark index.
+
+A single-strategy hedge fund may struggle to earn positive absolute returns in any and all market conditions, especially if its strategy is event driven or directional. Carefully selected diversification across hedge fund strategies should allow investors to earn more consistent absolute returns. Two strategies that seem to come close to meeting this goal of absolute returns are equity market-neutral and market-defensive funds of funds. These strategies stand out for their low standard deviations, low drawdowns, low correlations to equity markets, and skewness and kurtosis statistics that are close to indicating normality.
+
+\section*{Diversified Fund Strategies}
+Global macro, systematic diversified funds (i.e., managed futures funds), multistrategy funds, and funds of hedge funds can be an attractive addition to an investor's portfolio from the perspective of diversification. These funds can offer high returns, reasonable risks, and low drawdowns. In addition, global macro and systematic diversified funds have exhibited a return pattern that is remarkably symmetrical, very close to the normal distribution-an elusive pattern sought by asset managers. For risk-averse investors, these would be the ideal investment from a risk perspective, provided that attractive performance persists.
+
+When conducting risk management, one of the questions that should be asked is: What is the worst that can happen to this strategy? The returns generated by various funds and fund strategies in 2008 may provide examples of near-worst-case outcomes. An analysis of hedge fund return patterns shows that managed futures funds profited in 2008, whereas macro funds generally maintained their value. Undoubtedly, the credit and liquidity crisis that swept through global financial markets had an impact on other hedge fund returns, potentially skewing those returns toward the negative side and expanding the tails of the distributions.
+
+
+\end{document}

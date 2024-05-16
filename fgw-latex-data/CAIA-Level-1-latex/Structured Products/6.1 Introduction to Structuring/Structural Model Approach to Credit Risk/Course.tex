@@ -1,0 +1,104 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+Structural Model Approach to Credit Risk
+
+A key approach to understanding and analyzing credit risk uses structural models. Structural credit risk models use option theory to explicitly take into account credit risk and the various underlying factors that drive the default process, such as (1) the behavior of the underlying assets, and (2) the structuring of the cash flows (i.e., debt levels). Typically, structural models directly relate valuation of debt securities to financial characteristics of the economic entity that has issued the credit security. These factors include firm-level variables, such as the debt-to-equity ratio and the volatility of asset values or cash flows. The key is that credit risk is understood through analysis and observation of the entity's underlying assets and its financial structure.
+
+\section*{The Intuition of Merton's Structural Model}
+Robert Merton pioneered the understanding of the option-like aspects of capital structure. ${ }^{1}$ Robert C. Merton, "On the Pricing of Corporate Debt: The Risk Structure of Interest Rates," Journal of Finance 29, no. 2 (1974): 449-70. The key to Merton's approach is to recognize the option-like characteristics of structured cash flows, especially the option-like characteristics of credit risk that are inherent in the simplified capital structure of a traditional operating firm.
+
+For simplicity, assume that a levered operating firm has only two securities: a single issue of zero-coupon debt and a single class of equity. Perhaps the most intuitive way of seeing the option-like nature of traditional corporate securities is based on call options. The call option view of capital structure views the equity of a levered firm as a call option on the assets of the firm. The call option implicit in equity has a strike price equal to the face value of the debt and an expiration date equal to the maturity date of the debt. If the firm does well, the firm pays its debt holders fully when the debt matures, and the assets of the firm belong to the shareholders. If the firm does poorly, the shareholders can declare bankruptcy and walk away from the firm, leaving the assets to the debt holders. The situation is highly analogous to a traditional call option, in which the owner of the call either pays the strike price of the option to claim the underlying asset or lets the option expire worthless. Equity holders are like the owner of a call option who enjoys unlimited upside potential from gains in the underlying asset but has limited loss exposure to declines in the underlying asset, since the option can be allowed to expire. This situation is depicted in Equation 1:
+
+Equity of Levered Firm = Call Option on Firm's Assets
+
+The view of the equity of a corporation as a call option also leads to an option-based view of the corporation's debt. Specifically, if the value of the assets of the firm equals the sum of the liabilities plus equity, and if equity is a call option, then owning debt is equivalent to owning the assets and writing a call option. In other words, owning debt is equivalent to owning a covered call, meaning being long assets and short a call option on those assets.
+
+An analogous application of options theory can be performed using put options rather than call options. Note that due to put-call parity (see the Derivatives and Risk-Neutral Valuatio session), a call option can be viewed as a long position in a put option and the underlying assets financed with a riskless bond. By inserting these positions in place of the call options from the call option view of capital structure, the relationship is changed to the put option view of capital structure. The put option view of capital structure views the equity holders of a levered firm as owning the firm's assets through riskless financing and having a put option to deliver those assets to the debt holders. As depicted in Equation 2, the risky debt of a levered firm can be viewed as being equivalent to owning a riskless bond and writing a put option that allows the stockholders to put the assets of the firm to the debt holders without further liability (i.e., in exchange for the debt).
+
+Debt of Levered Firm $=$ Riskless Bond-Put Option on Firm's Assets
+
+In Equation 2, the put option reflects the ability of equity owners to declare bankruptcy and enjoy limited liability. If the assets fall sufficiently, the debt holders suffer losses because they must pay a strike price to the stockholders that equals the face value of the riskless bond. In default, debt holders receive only the depleted value of the underlying assets rather than the face value of their debt, a risk that is captured by the short put position that debt holders have in the put option view of capital structure (part of which is shown in Equation 2).
+
+Within either the call option view or the put option view of the levered firm, the value of the securities of a firm can be viewed in terms of the values of the underlying assets and the options on those assets. Accordingly, arbitrage-free option pricing models such as the Black-Scholes option pricing model (discussed in the session, Derivatives and Risk-Neutral Valuation) may be used to analyze credit instruments. The analyst implementing the structural approach examines market prices to find reasonable values of the model's parameters, such as asset volatility and interest rate levels, and inserts those parameters into the structural model to generate prices for assets with credit risk.
+
+\section*{The Conflict of Interest Regarding Risk in Structuring}
+There is an inherent conflict between the stockholders and the bondholders with regard to the optimal level of risk for a firm's assets. The equity holders, with their long position in a call option, prefer higher levels of risk, especially when the value of the firm's assets is near or below the face value of the debt. This is because the value of the equity at the maturity of the debt is the maximum of zero and the difference between the value of the firm's assets and the face value of the debt. As long as there is time before the debt matures and volatility in the value of the underlying assets, the implicit call option of the equity has time value. Importantly, the time value of the equity as a call option monotonically increases with higher asset volatilities (everything else being equal). Especially when the credit risk of the debt is high, equity holders may have a strong incentive to encourage managers to invest in risky projects, because if the projects fail, the bondholders are the losers, whereas the shareholders gain more when the projects succeed. Conversely, bondholders prefer safer projects and reduced asset volatility, as seen through their short position in a put option. The conflict of interest may be viewed as a zero-sum game in which managers can transfer wealth from bondholders to stockholders by increasing the risk of the firm's assets (or vice versa).
+
+The conflict of interest between stockholders and bondholders in the capital structure of a firm is similar to the case of structured products with multiple tranches. The manager of the collateral pool can cause wealth transfers between tranches by altering the risk of the assets. In most structures, high levels of asset risk benefit junior tranche holders at the expense of senior tranche holders.
+
+\section*{The Mechanics of Merton's Structural Model}
+This section takes a more precise look at Merton's application of option theory to credit risk. Throughout this discussion, it is assumed that the firm has a simple capital structure consisting of a single issue of debt in the form of a zero-coupon bond and a single issue of equity. The structural model view of the firm's capital structure expresses the firm's debt and equity in terms of a hypothetical call option and put option on the firm's assets, with a strike price equal to the face value of the zero coupon bond and an expiration date equal to the maturity of the bond.
+
+Inserting the call option view of the equity of a firm and the put option view of the debt into the fundamental relationship that the value of the firm equals the sum of the value of the equity and the debt produces the relation in Equation 3:
+
+
+\begin{equation*}
+\text { Assets }=[\text { Call }]+[\text { Riskless Bond }- \text { Put }] \tag{3}
+\end{equation*}
+
+
+The term in the first bracket on the right-hand side of Equation 3 represents the equity, and the terms in the second bracket represent the firm's risky debt. Note that the value of the risky debt is equal to the value of an otherwise identical riskless bond reduced by the value of the put. The reduction in the value of the debt by the value of the put option is the market's price for bearing the credit risk of the firm.
+
+Equation 3 illustrates the conflict of interest between stockholders and bondholders. Consider a change in the anticipated volatility of the firm's assets that leaves the current value of the firm's assets unchanged. Perhaps the firm embarked on a risky venture with a net present value of zero. Equation 3 indicates that the equity is a long position in a call option on the underlying assets of a levered firm. Thus, the value of the equity, like any call option, will rise when the volatility of the underlying assets increases (everything else being equal). Equation 3 indicates that for every dollar that the equity increases in value, the firm's risky debt must fall in value by $\$ 1$. The decline in the value of the firm's debt is captured in Equation 3 as an increase in the value of the put option. Equity's increase when volatility increases is due to its long vega exposure, while the decline in the value of the debt is due to its short vega exposure.
+
+\section*{Valuing Risky Debt with Black-Scholes Option Pricing}
+The Black-Scholes option pricing model can be used along with Equation 3 to derive estimates of the value of debt that contains credit risk. In other words, fixedincome analysts can value risky debt using option pricing models. For example, a credit analyst wishes to value the risk of Firm XYZ's only issue of debt. The analyst follows a four-step process, which involves estimating the volatility of the firm's assets and using the estimated volatility to price the debt:
+
+\begin{enumerate}
+  \item Estimating the volatility of Firm XYZ's equity: This estimate may be derived through analysis of XYZ's historical stock volatility, through the implied volatility of options on XYZ's stock, or through a combination of the two approaches.
+
+  \item Unlevering XYZ's estimated equity volatility (from step 1) based on XYZ's capital structure: XYZ's estimated asset volatility, $\sigma_{\text {assets }}$, can be approximated as XYZ's estimated equity volatility, $\sigma_{\text {equity }}$, times the ratio of the value of XYZ's equity to the value of the firm's assets, as illustrated in Equation 4 (assuming that the debt is riskless for simplicity).
+
+\end{enumerate}
+
+
+\begin{equation*}
+\sigma_{\text {assets }} \approx \sigma_{\text {equity }} \times(\text { Equity } / \text { Assets }) \tag{4}
+\end{equation*}
+
+
+\begin{enumerate}
+  \setcounter{enumi}{2}
+  \item Solving for the price of a call and put on the firm's assets: The estimated asset volatility can be inserted into the Black-Scholes option pricing model along with observable parameters to generate call and put prices.
+
+  \item Using the call price as the value of XYZ's stock, and subtracting the put price from the price of a riskless bond to value XYZ's debt.
+
+\end{enumerate}
+
+Note that the accuracy of estimated option values may be reduced to the extent that the assumptions of the model are violated. Three assumptions are particularly troublesome: (1) that the percentage changes in the values of the firm's underlying assets through time are lognormally distributed, (2) that the volatility of the firm's assets can be accurately estimated, and (3) that there is a single issue of debt with no coupon. Nevertheless, option pricing models can be especially useful in providing normative guidance of relative yields within the same firm or between similar firms.
+
+\section*{Binomial Trees and Structured Product Valuation}
+The application of the structural model is not limited to the use of the Black-Scholes option pricing model. The session, Natural Resources and Land discussed the application of binomial option pricing to real options-that is, options regarding real assets. As introduced in the Financial Economics Foundations session, binomial tree models are extremely flexible and valuable tools for analyzing assets with embedded options. In the case of credit instruments, binomial tree models allow analysts to estimate prices based on volatilities and observable parameters using the principles of risk-neutral pricing.
+
+For example, the value of credit-risky securities in a capital structure or a structured product can often be well estimated using two underlying binomial trees: one for the value of the assets, and one for interest rates. The analyst simply estimates future cash flows contingent on the asset values and then prices the securities through backward induction. Whereas the Black-Scholes option pricing model is often used in simple option analysis, it is the binomial tree approach that serves as the primary valuation tool in the case of most structured products with complex optionalities.
+
+\section*{Advantages and Disadvantages of Structural Model Applications}
+Merton's structural model and its extensions have two major potential advantages:
+
+\begin{enumerate}
+  \item The structural approach tends to rely on data from equity markets, such as observed stock price volatilities or implied stock price volatilities backed out of option prices. Since equity markets are generally more liquid and transparent than corporate bond markets, some argue that equity markets provide more reliable information than credit markets provide.
+
+  \item Structural models are well suited for handling different securities of the same issuer, including bonds of various seniorities and convertible bonds. The different securities or tranches rely on the same assets with the same asset parameters.
+
+\end{enumerate}
+
+The structural model has three major disadvantages as well:
+
+\begin{enumerate}
+  \item If equity prices are highly unreliable, then estimates of asset volatility and values are also highly unreliable. For example, private equity or real estate equity valuations may be unreliable sources to the extent that the valuations are not based on liquid markets.
+
+  \item Current data on a firm's or structure's liabilities may be unreliable and, in the case of sovereign issuers, may be unworkable.
+
+  \item The valuations generated by simple structural models are sometimes unreasonable, especially for short-term, very high-quality debt and for debt that is very near default.
+
+\end{enumerate}
+
+\end{document}
