@@ -416,8 +416,8 @@ def fetch_pdfs(root_folder, exam_name, topic_name, chapter_name, subchapter_name
 def fetch_data():
     data = request.json
     
-    root_folder = '/Users/alphatech/Desktop/FGW_latexData'
-    exam_name = "CAIA Level 1"
+    root_folder = '/app/fgw-latex-data'
+    exam_name = "CAIA-Level-1-latex"
     #exam_name = data.get('exam')
     
     chapter_name = data['subChapter']

@@ -82,8 +82,8 @@ def ask_question():
         if question is None or question.strip() == '':
                 raise ValueError("Invalid or empty question")
         
-        root_folder = '/Users/alphatech/Desktop/FGW_latexData'
-        exam_name = "CAIA Level 1"
+        root_folder = '/app/fgw-latex-data'
+        exam_name = "CAIA-Level-1-latex"
         
         pdf_contents = fetch_pdfs(root_folder, exam_name, topic, chapter, subChapter)
 
