@@ -18,6 +18,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import FAISS
 from langchain_community.document_loaders import TextLoader
+from waitress import serve
 
 app = Flask(__name__)
 #run_with_ngrok(app)  # Initialize ngrok when the app is run
@@ -81,8 +82,8 @@ def ask_question():
         if question is None or question.strip() == '':
                 raise ValueError("Invalid or empty question")
         
-        root_folder = '/Users/alphatech/Desktop/FGW_latexData'
-        exam_name = "CAIA Level 1"
+        root_folder = '/app/fgw-latex-data'
+        exam_name = "CAIA-Level-1-latex"
         
         pdf_contents = fetch_pdfs(root_folder, exam_name, topic, chapter, subChapter)
 
@@ -100,7 +101,7 @@ def ask_question():
         Helpful Answer:"""
         prompt = PromptTemplate.from_template(template)
 
-        from langchain_openai import OpenAIEmbeddings
+        from langchain_community.chat_models import OpenAIEmbeddings
         embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
         
         vectorstore = FAISS.from_documents(pdf_contents, embedding=embeddings)
@@ -126,7 +127,10 @@ def ask_question():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(port=5001)
+    if os.environ["ENVIRONMENT"] == "production":
+        serve(app, listen='*:5002')
+    else:
+        app.run(port = 5002)
 
 
 

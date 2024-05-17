@@ -1,0 +1,35 @@
+name: ecbuild
+on:
+  push:
+    tags:
+      - v**
+      - do**
+      - fix**
+      - tmp**
+      - dev**
+jobs:
+  ecbuild:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: docker-compose -f docker/docker-compose.yml build
+      - name: Discovery Docker Images
+        run: docker image ls
+      - name: Login to Container Registry
+        run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
+      - name: Push chat-basic
+        run: |
+          docker tag chat-basic ghcr.io/ai-techresearcher/fgw-chat-basic && docker push ghcr.io/ai-techresearcher/fgw-chat-basic
+          docker tag chat-basic ghcr.io/ai-techresearcher/fgw-chat-basic:$GITHUB_REF_NAME && docker push ghcr.io/ai-techresearcher/fgw-chat-basic:$GITHUB_REF_NAME     
+      - name: Push chat-pro
+        run: |
+          docker tag chat-pro ghcr.io/ai-techresearcher/fgw-chat-pro && docker push ghcr.io/ai-techresearcher/fgw-chat-pro
+          docker tag chat-pro ghcr.io/ai-techresearcher/fgw-chat-pro:$GITHUB_REF_NAME && docker push ghcr.io/ai-techresearcher/fgw-chat-pro:$GITHUB_REF_NAME
+      - name: Push chat-advance
+        run: |
+          docker tag chat-advance ghcr.io/ai-techresearcher/fgw-chat-advance && docker push ghcr.io/ai-techresearcher/fgw-chat-advance
+          docker tag chat-advance ghcr.io/ai-techresearcher/fgw-chat-advance:$GITHUB_REF_NAME && docker push ghcr.io/ai-techresearcher/fgw-chat-advance:$GITHUB_REF_NAME

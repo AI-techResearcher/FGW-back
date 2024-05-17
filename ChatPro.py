@@ -7,13 +7,17 @@ from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
 
 # We will be using ChatGPT model (gpt-3.5-turbo)
 from langchain.chat_models import ChatOpenAI
+from flask import Flask, request, jsonify
+from waitress import serve
+
+app = Flask(__name__)
 
 os.environ["OPENAI_API_KEY"] = "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"
 
 # %%
 chat_model = ChatOpenAI(temperature=0, model_name = 'gpt-3.5-turbo')
 
-from langchain_openai import OpenAIEmbeddings
+from langchain.embeddings.openai import OpenAIEmbeddings
 embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
 
 # %%
@@ -412,8 +416,8 @@ def fetch_pdfs(root_folder, exam_name, topic_name, chapter_name, subchapter_name
 def fetch_data():
     data = request.json
     
-    root_folder = '/Users/alphatech/Desktop/FGW_latexData'
-    exam_name = "CAIA Level 1"
+    root_folder = '/app/fgw-latex-data'
+    exam_name = "CAIA-Level-1-latex"
     #exam_name = data.get('exam')
     
     chapter_name = data['subChapter']
@@ -492,4 +496,7 @@ def fetch_data():
         
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    if os.environ["ENVIRONMENT"] == "production":
+        serve(app, listen='*:5001')
+    else:
+        app.run(port = 5001)

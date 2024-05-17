@@ -13,7 +13,9 @@ from langchain.chains import RetrievalQA
 from langchain_community.document_loaders import TextLoader
 from flask_cors import CORS
 from flask import Flask, request, jsonify
+from waitress import serve
 
+app = Flask(__name__)
 
 def extract_text_from_pdf(file_path):
     
@@ -46,7 +48,7 @@ os.environ["OPENAI_API_KEY"] = "sk-KQ2ZHvQJmrCCQYJQHeQBT3BlbkFJ0RBJ7tcthIB8t92kn
 
 chat_model = ChatOpenAI(temperature=0, model_name = 'gpt-3.5-turbo')
 
-from langchain_openai import OpenAIEmbeddings
+from langchain.embeddings.openai import OpenAIEmbeddings
 embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
 # %%
 app = Flask(__name__)
@@ -57,8 +59,8 @@ def ask_question():
     try:
         data = request.get_json()
         
-        root_folder = '/Users/alphatech/Desktop/FGW_latexData'
-        exam_name = "CAIA Level 1"
+        root_folder = '/app/fgw-latex-data'
+        exam_name = "CAIA-Level-1-latex"
         root_folder = os.path.join(root_folder, exam_name)
         
         pdf_texts = extract_text_from_all_pdfs(root_folder)
@@ -84,6 +86,9 @@ def ask_question():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(port = 5002)
+    if os.environ["ENVIRONMENT"] == "production":
+        serve(app, listen='*:5000')
+    else:
+        app.run(port = 5000)
 
 

@@ -1,0 +1,34 @@
+version: '3.4'
+services:
+ base:
+  image: base
+  build:
+   context: ..
+   dockerfile: ./docker/base.Dockerfile
+ chat-basic:
+  image: chat-basic
+  build:
+   context: ..
+   dockerfile: ./docker/chatBasic.Dockerfile
+  depends_on:
+    - base
+  ports: 
+    - 8000:5000
+ chat-pro:
+  image: chat-pro
+  build:
+   context: ..
+   dockerfile: ./docker/chatPro.Dockerfile
+  depends_on:
+    - base
+  ports: 
+    - 8001:5001
+ chat-advance:
+  image: chat-advance
+  build:
+   context: ..
+   dockerfile: ./docker/chatAdvance.Dockerfile
+  depends_on:
+    - base
+  ports: 
+    - 8002:5002
