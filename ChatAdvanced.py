@@ -101,7 +101,7 @@ def ask_question():
         Helpful Answer:"""
         prompt = PromptTemplate.from_template(template)
 
-        from langchain_community.chat_models import OpenAIEmbeddings
+        from langchain.embeddings.openai import OpenAIEmbeddings
         embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
         
         vectorstore = FAISS.from_documents(pdf_contents, embedding=embeddings)
