@@ -1,0 +1,96 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{APPLICATION A}
+Find the value of a $\$ 50$ five-year zero-coupon bond for $m=1,2,4,12,365$, and $\infty$, given an annual interest rate of $9 \%$.
+
+\section*{Answer and Explanation}
+Simply insert $\$ 50$ in place of $\$ 1.9 \%$ in place of $r, 5$ for $t$, and the given value for $m<\infty$ in Equation 2 (and analogously in Equation 4) to produce: $\$ 32.497, \$ 32.196$, $\$ 32.041, \$ 31.935$, and $\$ 31.883$ (and \$31.881 for continuous compounding).
+
+In order to find the value of the zero-coupon bonds, when $m=1,2,4,12$, and 365 we will need to use Equation 2:
+
+$$
+B(t)=F V\left[1+\left(\frac{r_{t}^{m}}{m}\right)\right]^{-t m}
+$$
+
+To find the value of the zero-coupon bond when $m=I$, we calculate the following:
+
+$$
+\begin{gathered}
+B(t)=\$ 50\left[1+\left(\frac{0.09}{1}\right)\right]^{-5 x 1} \\
+\$ 32.497=\$ 50\left[1+\left(\frac{0.09}{1}\right)\right]^{-5 x 1}
+\end{gathered}
+$$
+
+To find the value of the zero-coupon bond when $m=2$, we calculate the following:
+
+$$
+\begin{gathered}
+B(t)=\$ 50\left[1+\left(\frac{0.09}{2}\right)\right]^{-5 x 2} \\
+\$ 32.196=\$ 50\left[1+\left(\frac{0.09}{2}\right)\right]^{-5 x 2}
+\end{gathered}
+$$
+
+To find the value of the zero-coupon bond when $m=4$, we calculate the following:
+
+$$
+\begin{gathered}
+B(t)=\$ 50\left[1+\left(\frac{0.09}{4}\right)\right]^{-5 x 4} \\
+\$ 32.041=\$ 50\left[1+\left(\frac{0.09}{4}\right)\right]^{-5 x 4}
+\end{gathered}
+$$
+
+To find the value of the zero-coupon bond when $m=12$, we calculate the following:
+
+$$
+\begin{gathered}
+B(t)=\$ 50\left[1+\left(\frac{0.09}{12}\right)\right]^{-5 x 12} \\
+\$ 31.935=\$ 50\left[1+\left(\frac{0.09}{12}\right)\right]^{-5 x 12}
+\end{gathered}
+$$
+
+To find the value of the zero-coupon bond when $m=365$, we calculate the following:
+
+$$
+\begin{gathered}
+B(t)=\$ 50\left[1+\left(\frac{0.09}{1}\right)\right]^{-5 x 365} \\
+\$ 31.883=\$ 50\left[1+\left(\frac{0.09}{365}\right)\right]^{-5 x 365}
+\end{gathered}
+$$
+
+To find the value of the zero-coupon bond for $m=\infty$, we must use Equation 4:
+
+$$
+\begin{gathered}
+B(t)=F V_{e}^{-r_{t}^{m=\infty} t} \\
+\$ 31.881=\$ 50 e^{-0.09 \times 5}
+\end{gathered}
+$$
+
+APPLICATION B
+
+A six-month zero-coupon bond has a price of $\$ 97$, while a 12 -month $7.00 \%$ annual coupon bond (paid semiannually) has a price of $\$ 100.50$. Both bonds have a face value of $\$ 100$. Find the 12 -month spot rate based on annual compounding, semiannual compounding, and continuous compounding.
+
+\section*{Answer and Explanation}
+In this problem, we are trying to determine the term structure of interest rates by bootstrapping zero- coupon bonds at the short-end and coupon bonds at the medium to long-end of the term structure. We are told that all six-month cash flows are worth $97 \%$ of their face value since the zero-coupon bond is priced at $\$ 97$ ( $\$ 100$ par), but we must use this information to find the 12 -month spot rate. Since the coupon bond pays semi-annually, the bond's first coupon can be discounted to $0.97^{\star} \$ 3.50=\$ 3.395$. Next, we must subtract the present value of this coupon from the current bond price, or $\$ 100.50-\$ 3.395=\$ 97.105$, to isolate the 12 month cash flows. The undiscounted 12-month cash flows are equal to the final coupon payment and return of par value $=\$ 3.50+\$ 100=\$ 103.50$.
+
+We then find the discount factor of the 12 -month cash flow by dividing this value by the coupon bond's face value $\$ 103.50$ ( $\$ 100$ par value $+\$ 3.50$ final coupon at maturity) means that 12 -month cash flows are worth $\$ 97.105 / \$ 103.50=93.821 \%$ of face value. In order to find the annually compounded yield, the semiannual compounded yield, and continuously compounded yield, we must use Equations 3 (annual and semiannual) and 5 (continuous). These are pictured below, respectively:
+
+$$
+\begin{aligned}
+& r_{t}^{m}=\left\{\left[\frac{B(t)}{F V}\right]^{-\frac{1}{m t}}-1\right\} m \\
+& r_{t}^{m=\infty}=-\left(\frac{1}{t}\right) \ln \left[\frac{B(t)}{F V}\right]
+\end{aligned}
+$$
+
+A 12-month discount factor of 0.93821 implies a $6.59 \%$ annually compounded yield, a $6.48 \%$ semiannually compounded yield, and a $6.38 \%$ continuously compounded yield
+
+
+\end{document}

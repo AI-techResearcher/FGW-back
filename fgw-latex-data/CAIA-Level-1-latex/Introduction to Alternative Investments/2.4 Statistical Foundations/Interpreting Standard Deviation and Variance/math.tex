@@ -1,0 +1,77 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{APPLICATION A}
+The daily returns of Fund $A$ have a variance of 0.0001 . What is the variance of the weekly returns of Fund $A$ assuming that the returns are uncorrelated through time?
+
+\section*{Answer and EXPLANATION}
+The daily returns have a variance of 0.0001 and are uncorrelated through time. The uncorrelated through time allows us to use Equation 5:
+
+$$
+V\left(R_{T}\right)=T \times V\left(R_{1}\right) \quad \text { when, } \rho_{t, t-k}=0
+$$
+
+Therefore, the variance of weekly returns of Fund $A$ is equal to 0.0001 multiplied by 5 (number of trading days in a week) for a product of 0.0005 . Simply put, variance grows linearly with time horizon when returns are uncorrelated.
+
+APPLICATION B
+
+The daily returns of Fund A have a standard deviation of $1.4 \%$. What is the standard deviation of a position that contains only Fund A and is leveraged with $\$ 3$ of assets for each $\$ 1$ of equity (net worth)?
+
+\section*{Answer and EXPLANATION}
+Utilizing Equation 8,
+
+$$
+\sigma_{1}=L \times \sigma_{u}
+$$
+
+we multiply $1.4 \%$ (the standard deviation) by $3 / 1$ or 3 for a product of $4.2 \%$, which is the standard deviation of levered returns. Simply put, being levered with $\$ 3$ of assets to $\$ 1$ of equity causes the volatility of the equity to be 3 times the volity.
+
+APPLICATION C
+
+The daily returns of Fund A have a standard deviation of $1.4 \%$. What is the standard deviation of a position that contains $40 \%$ Fund A and $60 \%$ cash?
+
+\section*{Answer and EXPLANATION}
+To solve this application, it is important to understand that cash has a standard deviation of 0 . Therefore, we can utilize Equation 10,
+
+$$
+\sigma_{p}=L \times \sigma_{m}
+$$
+
+and multiply $40 \%$ (the proportion of the fund with a standard deviation of $1.4 \%$ ) by $1.4 \%$ for a product of $0.56 \%$, which is the standard deviation of the unlevered returns.
+
+APPLICATION D
+
+The daily returns of Fund A have a standard deviation of 1.2\%. What is the standard deviation of the returns of Fund A over a four-day period if the returns are uncorrelated through time? What is the maximum standard deviation for other correlation assumptions?
+
+With zero autocorrelation, the standard deviation of four-day returns is $2.4 \%$ (based on the square root of the number of time periods). As the correlation approaches +1 , the upper bound would be $4.8 \%$.
+
+\section*{Answer and EXPLANATION}
+The key to understanding these problems is that this is when the returns are uncorrelated through time volatility grows with the square root of the time horizon. In this case, we can use the equations:
+
+$$
+\sigma_{T}=\sigma_{1} \times \sqrt{T} \text { when } \rho_{\mathrm{t}, \mathrm{t}-\mathrm{k}}=0
+$$
+
+Therefore, we multiply the standard deviation of daily returns of $1.2 \%$ by the square root of 4 , the number of days in the period
+
+(NOTE: the unit number is days. If the standard deviation were of annual returns, we would multiply the standard deviation by the square root of the number of years in the period).
+
+This will give us a product of $2.4 \%$, which is the standard deviation of four-day returns.
+
+To find the maximum standard deviation we need to assume that the correlation of returns approaches 1 , or perfect correlation. When that happens, we can use the equation:
+
+$$
+\sigma_{T}=\sigma_{1} \times T \text { when } \rho_{\mathrm{t}, \mathrm{t}-\mathrm{k}}=1
+$$
+
+Applying this equation, we multiply $1.2 \%$ by 4 for a product of $4.8 \%$.
+
+
+\end{document}

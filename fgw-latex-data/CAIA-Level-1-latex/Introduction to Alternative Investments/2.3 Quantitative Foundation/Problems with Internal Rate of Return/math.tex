@@ -1,0 +1,50 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{APPLICATION A}
+Assume that a private equity project has the following cash flows:
+
+$$
+C_{0}=-200, C_{1}=50, C_{2}=-50, C_{3}=100, C_{4}=0, C_{5}=250
+$$
+
+Compute the IRR and MIRR given RR $=10 \%$ and $\mathrm{CC}=8 \%$.
+
+\section*{Answer and Explanation}
+Regarding the IRR calculation, please see the explanation for Application A in the lesson, Internal Rate of Return.
+
+To find the Modified Internal Rate of Return (MIRR), we must use Equation 1:
+
+$$
+\operatorname{MIRR}_{T}=\left(\frac{\text { FV of Positive Cash Flows Using the Reinvestment Rate }}{- \text { PVof Negative Cash Flows Using the Cost of Capital }}\right)^{\frac{1}{T}}-1
+$$
+
+To find the future value of positive cash flows using the reinvestment rate, we use the reinvestment rate (RR) instead of the IRR. Note that we must find the future values of the positive cash flows. For example, $\mathrm{C} 1=50$ must compound for four years at the RR rate, while $\mathrm{C} 5=250$ does not need to compounded at all. The math is below.
+
+$$
+\$ 50 \times(1+10 \%)^{4}+\$ 100 \times(1+10 \%)^{2}+\$ 250=\$ 444.205
+$$
+
+Next, we must find the present value of the negative cash flows using the cost of capital (CC). Again, we use a similar equation to the IRR, except we substitute the CC for IRR:
+
+$$
+-\$ 200+\frac{-\$ 50}{(1+8 \%)^{2}}=-\$ 242.867
+$$
+
+The MIRR is calculated by plugging these two numbers into the numerator and denominator, respectively:
+
+$$
+M I R R_{T}=\left(\frac{\$ 444.205}{-(-\$ 242.867)}\right)^{\frac{1}{5}}-1=12.83 \%
+$$
+
+The IRR is $14.38 \%$ (which can be found iteratively or on an advanced calculator). To find the MIRR, first find the PV of the outflows and the FV of the inflows. The sum of the present values (at time 0 ) of $C_{0}=-200$ and $C_{2}=-50$ at $8 \%$ is -242.867 . The sum of the future values (time $T=5$ ) of $C_{1}=50, C_{3}=100$, and $C_{5}=$ 250 at $10 \%$ is 444.205 . Given $P V=-242.867, F V=444.205$, and $T=5$, the MIRR is $12.83 \%$, found by applying the lump sum time value of money formula or using a financial calculator.
+
+
+\end{document}

@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+Systematic Futures Portfolio Construction
+
+Position taking is a particular feature of futures trading, which differs from investment in traditional assets. In futures markets, one takes positions as opposed to holding underlying assets. The way futures markets approach risk has important implications for the way CTAs do business and for the way someone may choose to invest in these markets: (1) futures markets require gains and losses to be settled in cash daily, (2) futures contracts have no net liquidating value, and (3) futures markets require participants to post collateral to cover potential daily losses. For systematic futures trading portfolios, the key is in building a system for determining positions in futures markets. This lesson is dedicated to taking a closer look at the basic building blocks in a systematic futures trading system.
+
+\section*{The Four Core Decisions of a Futures Trading System}
+The typical futures trading system is composed of the following four core decisions:
+
+\begin{enumerate}
+  \item Entry: When to enter a position
+
+  \item Position sizing: How large a position to take on
+
+  \item Exit: When to get out of a position
+
+  \item Market allocation: How much risk or capital to allocate to different sectors and markets
+
+\end{enumerate}
+
+Given these four core decisions, a systematic futures trading system is a dynamic system that processes price data inputs, generates trading signals, and outputs automated executable trading decisions. A trading system can simultaneously take into account large amounts of data, process the data, create trading signals, and calculate and allocate risks, as well as determine position sizes, stops, and limits across futures positions. Inside these systems, there are several components that are integrated into portfolio construction: (1) data processing, (2) position sizing, (3) market allocation, and (4) trading execution. Each of these is described in the following sections.
+
+\section*{Data Processing in Futures Portfolio Construction}
+Data inputs for futures trading systems can include both fundamental and technical data. When dealing with futures prices, the aspect of rolling forward futures contracts must be taken into consideration. More specifically, positions will need to be rolled from expiring contracts to newer ones. The rolling aspect of futures contracts creates gaps in price series, requiring adjustments around futures expiration dates. Continuous price series are created by removing these gaps.
+
+\section*{Position Sizing in Futures Portfolio Construction}
+Futures trading systems systematically allocate capital to positions across many different asset classes. Position sizing must take into account the volatility of a particular market. One approach to this is volatility targeting, where the size of the position is determined by the trader's conviction in the signal, the volatility of the particular futures market, and a volatility target that is determined by the trader. In particular,
+
+
+\begin{equation*}
+\text { Number of Futures Contracts }=\text { Sizing Function } \times \frac{\text { Risk Loading } \times \text { Equity }}{\text { Notional Value }} \times \frac{\mathrm{RVol}_{T}}{\mathrm{RVol}_{R}} \tag{1}
+\end{equation*}
+
+
+where the sizing function reflects the direction of the bet (i.e., long or short) as well as the confidence that the trader has in the signal (i.e., signal strength). For example, a value of 1 indicates that a long position should be taken and that the signal is strong, whereas a value of 0.5 indicates a long position when the signal is not as strong. The risk loading is a parameter selected by traders to reflect the amount of exposure they want to have to the particular market. The value of risk loading is determined by the trader, based on the market environment and the amount of risk the trader wishes to take. Notice that risk loading is multiplied by the amount of equity in the portfolio. The risk loading times the equity or capital is sometimes termed the capital at risk. For example, if $\$ 1$ million is the available equity or capital, and the risk loading is 0.02 , then $\$ 20,000$ is the capital at risk. The denominator is the notional value of the futures contract. The last term on the righthand side of 1 is related to volatility targeting. Here, $\mathrm{RVOl}_{T}$ is the realized volatility target, and $\mathrm{RVol}_{R}$ is an estimate of future volatility. This estimate could either be obtained from implied volatility of option prices or be based on realized volatility, calculated using a prespecified window (e.g., 30 daily observations).
+
+An alternative approach would be to determine the position size based on a range of factors other than a volatility target. This approach can be expressed as follows:
+
+
+\begin{equation*}
+\text { Number of Contracts }=\text { Sizing Function } \times \frac{\text { Risk Loading } \times \text { Capital }}{\mathrm{PVol}_{R} \times \text { Contract Size }} \tag{2}
+\end{equation*}
+
+
+In this expression, the sizing function is similar to what was discussed in Equation 1, and it reflects the direction of the bet (i.e., long or short) as well as the confidence that the trader has in the signal (i.e., signal strength). In this case, the risk loading is a parameter selected by the trader to reflect the amount of exposure she wants to have to the particular market and will incorporate a volatility target as well as other information she wants to take into account when determining allocation to this market. Similar to the previous case, the risk loading is multiplied by the amount of equity or capital to determine the allocation to this market. In the denominator of Equation 2, $\mathrm{PVol}_{R}$ is daily price volatility of the futures contract, which is multiplied by the size of the futures contract.
+
+In Equation 2, the sizing function is multiplied by the total adjusted dollar risk allocated, which is equal to the allocated dollar risk (risk loading times capital) divided by the volatility of price changes measured over the last $K$ trading periods times the point value of the contract. The point value is the gain or loss in the contract from a one-point change (e.g., \$1) in the futures prices. The allocated dollar risk is the amount of capital that is put into active risk, which is the notional amount times the scalar for how much risk will be taken (risk loading). This amount of risk must then be divided by the futures contract dollar risk. The futures contract dollar risk is a measure of the riskiness of the underlying asset of the futures contract during the most recent $K$ trading periods and is the denominator in Equation 2 . It depends on the contract size or point value and volatility of each particular futures contract. It is important to remember that the notional value of one contract is equal to the point value (multiplier) times the contract price. For example, given the size of the Brent Crude Oil futures contract (1,000 barrels) and the price per barrel ( $\$ 50$ ), the notional value of each contract is $\$ 50,000$.
+
+\section*{Market Allocation in Futures Portfolio Construction}
+Market allocation is the process with which both risk and capital are allocated across various futures positions. The process of allocation comes from both capital allocation schemes and risk allocation. Using the equations for the nominal positions in the previous section, there are two avenues by which market allocation can be adjusted based on risk. Risks can be adjusted by the risk loading and the volatility adjustment for risk per contract.
+
+In the simplest case, the risk loading can be set to be equal for all markets. The risk loading is set up in this way to allow for a simple increase or decrease in the overall exposure of the futures trading system. Capital allocation can also vary from market to market. In the simplest case, capital allocation can equal dollar risk weighted. This means that the capital for an individual market is equal to the total capital divided by the number of traded markets.
+
+Consider a $\$ 100$ million portfolio that is trading 100 futures markets. If each strategy trades equal dollar risk, each market will be allocated $\$ 100$ million/100, or $\$ 1$ million. The size of the position for each market will depend on the allocated risk and the amount of realized volatility in each market. This means that the notional exposure in each market can vary substantially depending on each market's volatility. Although the risk allocation will be equal, the notional exposures may differ.
+
+There is a wide range of methodologies for implementing capital allocation. Several of these methods fit easily into the simple structure proposed in this section. Others may require either more complicated or new structures to implement them. The main ways to allocate risk are through equal dollar risk allocation; equal risk contribution, which is similar to risk parity, a topic discussed earlier in this book; and market capacity weighting, in which an allocation is adjusted to reduce the market impact of the futures trading system. In summary:
+
+\begin{itemize}
+  \item Equal dollar risk allocation is a strategy that allocates the same amount of dollar risk to each market. This approach does not consider the correlation between markets and is similar to the $1 / N$ approach.
+  \item Equal risk contribution is a strategy that allocates risk based on the risk contribution of each market, taking correlation into account. This approach is similar to risk parity.
+  \item Market capacity weighting is an approach in which capital is allocated as a function of individual market capacity. In futures markets, a market capacity weighting will depend on the market size, as measured by both daily volume and price volatility.
+\end{itemize}
+
+A managed futures fund with larger assets under management cannot allocate capital to markets with lower open interest and volumes. These constraints may cause a larger managed futures fund to tend to allocate risk similarly to market capacity weighting.
+
+\section*{Trading Execution in Futures Portfolio Construction}
+The final component of a futures trading system is trading execution. Implementation approaches for turning trading signals into actual positions can vary from one system to another. Alpha decay is the speed with which performance degrades as execution is delayed. In the long-term perspective, alpha decay is much less important for trend following than it is for many shorter-term futures strategies. As a result, the more important consideration related to execution for trendfollowing systems is cost rather than execution speed. Slower futures trading systems create orders that can be executed in a rather passive manner. Some managers\\
+may also choose to sample the price throughout the liquid periods of the day to generate signals, and split daily orders into several intraday orders. For the case of trend following, execution is generally done via simple market orders. Stop-loss orders and more complicated limit orders are less commonly used.
+
+
+\end{document}

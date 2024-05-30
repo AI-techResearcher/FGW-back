@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{APPLICATION A}
+Consider a six-month forward contract on a commodity that trades at a spot price of $\$ 50$. The commodity has market-wide convenience yields of $3 \%$, storage costs of $2 \%$, and financing costs (interest rates) of $7 \%$. What is the price of the six-month forward contract on the commodity?
+
+\section*{Answer and Explanation}
+The forward price is $\$ 51.52$, found by placing $0.5(7 \%+2 \%-3 \%)$ in as the exponent of Equation $1, \$ 50$ as $\mathrm{P}_{0}$, and solving for $\mathrm{F}_{\mathrm{T}}$.
+
+Application A involves solving for the left side of Equation 4 in the lesson, Forward Contracts on Equities given all of the values on the right side. Note that the solution involved the exponential function ( $\mathrm{e}^{\mathrm{x}}$ ). To solve for $\mathrm{e}^{\mathrm{x}}$ simply enter the value of $\mathrm{x}$ into the calculator and then press the $\mathrm{e}^{\mathrm{x}}$ button (example $\mathrm{e}^{\mathrm{x}+\mathrm{y}}$ when $\mathrm{x}$ has a value of 2.1 and $y$ has a value of 3.1 has the keystrokes: $2.1+3.1=e^{x}$.)
+
+Proficiency in applications involving Equation 2 in the lesson, Intellectual Property Overview may include the ability to solve for one of the values on the right side of Equation 2 in the lesson, Intellectual Property Overview give all of the other values (including the left side). This can be accomplished by rearranging the formula so that the missing value is alone on the left side. For $S$ this is easy: $S=F(T) e-(r+c-y) T$ (note that a term with a negative exponent is equivalent to placing the term in a denominator (e.g., $e-(r+c-y) T=(1 / e(r+c-y) T)$. For $r, c$, and y the term must be brought out of the exponent by taking the natural logarithm of each side of the equation. Dividing $F(T)$ by $S$ in Equation 4 in the lesson, Forward Contracts on Equities and taking the natural logarithm of each side produces: $\ln [F(T) / S]=$ $(r+c-y)$ T.
+
+This resulting equation can be easily factored to solve for $\mathrm{r}, \mathrm{c}, \mathrm{y}$, or $\mathrm{T}$. For example, so solve for $\mathrm{r}$ the equation is: $\mathrm{r}=\{\ln [\mathrm{F}(\mathrm{T}) / \mathrm{S}]-(\mathrm{c}-\mathrm{y}) \mathrm{T}\} / \mathrm{T}$. Consider a problem where $F(T)=\$ 52, S=\$ 50, c=6 \%, y=4 \%$ and $T=0.25$. Therefore $r=\left[\ln (52 / 50)-(.06-.04)^{\star} 0.25\right] / 0.25$.
+
+${ }^{\star * \star}$. Note that the natural logarithm of $\mathrm{x}$ is found with the keystrokes; $\mathrm{x} \ln$.
+
+\section*{APPLICATION B}
+Consider a forward contract with three-month delivery on a commodity that currently trades at a spot price of $\$ 110$. The commodity has a current marketwide convenience yield of $2 \%$, storage costs of $4 \%$, and financing costs (interest rates) of $6 \%$. If the forward price in the contract is $\$ 101.00$, what is the value of the contract to the long side assuming that the underlying commodity can be readily short sold?
+
+\section*{Answer and Explanation}
+To solve this problem, we must simply enter the given variables into Equation 2:
+
+$F_{t}=P_{t} e^{r+c-y)(T-t)}-F_{0}$
+
+$F_{t}=110 e^{(0.06+0.04-0.02)(0.25)}-101$
+
+$F_{t}=112.22-101=11.22$
+
+The future value of the contract is higher than the current forward price. Therefore, the long side of the contact has positive value. If we were calculating the short side of the contract, the value would be negative.
+
+
+\end{document}

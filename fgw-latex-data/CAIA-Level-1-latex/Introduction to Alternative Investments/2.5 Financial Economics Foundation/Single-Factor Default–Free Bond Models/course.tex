@@ -1,0 +1,96 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{Reading}
+Single-Factor Default-Free Bond Models
+
+A single-factor default-free bond model explains the systematic dispersion in bond returns using a single explanatory variable. This section discusses the most common single factor risk measure: bond duration.
+
+\section*{Traditional Duration}
+The most popular single-factor approach to modeling default-free bond returns is traditional duration. Like any other single-factor measure of interest rate risk, duration is limited in its effectiveness to the type or types of interest rate risks for which it is designed. Throughout this section, the single interest rate risk being addressed is the risk of an instantaneous, parallel (or additive), and infinitesimal shift in the term structure of interest rates. Default risk is disregarded. These assumptions enable derivation of a bond's duration for a wide spectrum of securities. Duration-like risk measures exist for other types of shifts, but traditional duration is the most common such risk measure. Duration can be defined or interpreted in three primary ways, as detailed in this and subsequent sections.
+
+The general definition of duration is the elasticity of a bond price with respect to a shift in its yield (or a uniform shift in the spot rates, corresponding to each prospective cash flow). Equation 1 expresses this general definition.
+
+
+\begin{equation*}
+-\left(1 / P_{0}\right) \times\left(d P_{0} / d y\right)=D \tag{1}
+\end{equation*}
+
+
+where $D$ is the duration, $P_{0}$ is the current bond price, and $y$ is the bond yield. A key assumption of the preceding formula is the compounding assumption on which yields (or spot rates) are calculated. For simplicity, this section assumes that $y$ (or each spot rate) is expressed as a continuously compounded rate.
+
+Note that the elasticity described in Equation 1 is based on the bond's yield to maturity. Previous sections of this session noted the inconsistency of discounting each prospective cash flow of a bond using the same discount rate. In theory, each cash flow of a bond should be discounted with a spot rate based on its time to receipt. However, the use of spot rates raises two practical problems: (1) spot rates can be difficult to estimate, and (2) if spot rates are used to value each cash flow, the sum of the present values of each cash flow, in practice, will generally not be exactly equal to the bond's market price. So the use of yields in the computation of duration should be viewed as a practical approximation.
+
+In the case of a fixed-coupon bond, the elasticity in Equation 1 can be expressed as the weighted average of the longevity of the bond's cash flows, as detailed in the next section.
+
+\section*{Duration for a Fixed-Coupon Bond}
+The second common definition or characteristic of duration indicates how it is calculated in the case of fixed-coupon securities. The duration of a fixed-coupon bond is the weighted average of the longevities of the cash flows to a coupon bond where the weight of each of the bond's cash flows is the proportion of the bond's total value attributable to that cash flow. This standard formula for duration, $D$, is shown in Equation 2 for a fixed-coupon bond (with annual coupon payment and annual compounding for exposition simplicity):
+
+
+\begin{equation*}
+D=\frac{\sum_{t=1}^{T} \frac{t C(t)}{(1+y)^{t}}}{P_{0}} \tag{2}
+\end{equation*}
+
+
+where $t$ is time, $C(t)$ is the bond's promised cash flow for time $t$, $y$ is the bond's yield to maturity, and $P_{0}$ is the bond's current value. Note that in the case of a fixedcoupon bond, the cash flows prior to $T$ are coupons and the cash flow at period $T$ is the principal payment.
+
+But two important features involve challenges. First, when the interest rate compounding assumption is discrete (e.g., semiannual compounding), it introduces the need to adjust $D$ in Equation 2 through division by $(1+y / m)$, to create a risk measure entitled modified duration. Modified duration is a risk measure used with discrete compounding applications in which the traditional duration formula is adjusted through division by $(1+y / m)$. Modified duration is discussed further in the session entitled Private Credit and Distressed Debt. With continuous compounding, the adjustment factor disappears (as $m$ approaches infinity).
+
+Second, the underlying assumption of the earlier duration formula is that the volatility of a default-free bond with respect to term-structure shifts is directly proportional to its longevity. This assumption is consistent with a parallel (or additive), instantaneous, and infinitesimal term-structure shift. In this case, each zerocoupon bond will shift in proportion to its maturity. Therefore, a fixed-coupon bond-which is equivalent to a portfolio of zero-coupon bonds-will experience a percentage price change directly proportional to its duration. The formula for duration in Equation 2 views a coupon bond as a portfolio of zero-coupon bonds and forming the risk of the portfolio as a value-weighted average of its components. The resulting duration is a measure of the bond's price sensitivity to a uniform shiftup or down-in interest rates, corresponding to all longevities.
+
+Note that a bond that has a coupon rate that adjusts or floats to current interest rate levels can have a substantial average longevity but little or no interest rate risk. This exemplifies the importance of other definitions for duration that are detailed in subsequent sections.
+
+\section*{Duration for a Bond Portfolio}
+Investors can use duration to manage the risk of a portfolio to a target level or to attempt to eliminate risk (hedge). Interest rate immunization is the process of protecting the value of a position against shifts in interest rates. A portfolio is said to be immunized with respect to specified shifts (or in some cases all interest rate shifts), if the value of the portfolio is independent of the shifts.
+
+The traditional approach to interest rate risk management involves managing a portfolio's duration. The duration for a portfolio is simply a weighted average of the durations of the portfolio's constituent assets, much like the duration for a coupon bond is a weighted average of the durations of its prospective cash flows.
+
+\section*{Managing the Duration of a Long-Only Bond Portfolio to a Target}
+Traditional investing tends to focus on long-only positions in bonds. This section discusses the use of duration to manage interest rate risk in which the investor has a duration target. The target duration of the investor may emanate from several goals: (1) the investor has a horizon point in time at which she is concerned with the uncertainty of the portfolio's value, such as the end of a reporting period, (2) the investor has a set of projected cash needs and wants to be assured those needs can be funded by the portfolio, or (3) the investor views duration as a measure of short-term price risk and wishes to control the short-term price risk by controlling the duration-perhaps in tandem with efforts to predict interest rate shifts and use market timing in an attempt to add return.
+
+For example, a pension fund likely prefers to have assets that hedge their liabilities in terms of interest rate risk. Accordingly, a pension fund with liabilities that average $T$ years will be immunized by selecting assets with matching interest rate sensitivity (i.e., a duration of $T$ years). As another example, an endowment attempting to fund a commitment in $T$ years is concerned about the endowment's value in $T$ years. The investor typically selects a target duration for the portfolio and manages the portfolio's duration to meet her goals through protection against infinitesimal, parallel, instantaneous shifts in interest rates.
+
+\section*{Duration for Securities with Stochastic Cash Flows}
+This section explores the challenges and solutions when the future cash flows of securities are stochastic. The section begins with floating-rate bonds and then discusses securities with embedded options. In a nutshell, the duration for securities with stochastic cash flows is calculated directly as an elasticity (based on Equation 1), not as the solution to the elasticity expressed in Equation 1 for the case of a fixed-coupon bond.
+
+The responsiveness of the price of a floating-rate bond (i.e., with coupon rates that adjust with interest rate levels) to interest rate shifts approaches zero, as the speed with which the coupon adjusts to the short-term interest rate approaches zero. The idea that a floating-rate bond's duration is based on its coupon-reset period rather than its maturity is best understood by focusing on the sensitivity of the bond's price to interest rate changes. Simply put, fixed-coupon bonds are interest rate sensitive because their cash flows are fixed. Floating-rate bonds are only interest rate sensitive when their coupons adjust slowly or partially to interest rate changes.
+
+Consider the cash flows from a hypothetical money market account that continuously pays its owners the short-term interest rate on its principal amount. The value of this fund is immunized against interest rate shifts. A money market asset paying a rate that instantaneously floats up and down with the short-term market interest rate is immunized with respect to any term-structure shift. A floating-rate or adjustable-rate bond offers the same future cash flow stream as this hypothetical money market account and is therefore fully immunized against any interest rate shifts, to the extent that the bond's rate adjusts instantaneously to\\
+market interest rate changes. However, a floating rate or adjustable rate bond that adjusts its coupon rate with a delay of $t$ years will have the same interest rate sensitivity as a $t$-year zero-coupon bond:
+
+Duration of Floating-Rate Bond $=$ The Time to the Next Reset Period
+
+The interest rate risks of floating-rate securities are discussed further in the session entitled Private Credit and Distressed Debt.
+
+Many fixed-income securities contain options such as the prepayment option of a mortgage borrower and the callability of many corporate bonds. The durations for these securities require a valuation model for which the analysts may calculate an elasticity. Similarly, other securities potentially requiring advanced modeling include options on bond prices and interest rates.
+
+\section*{Duration as the Longevity of a Zero-Coupon Bond of Equivalent Risk}
+A third interpretation of duration relates the risk of a given instrument to a zero-coupon bond. The duration of a zero-coupon bond is equal to its time to maturity, as is easily verified by examining the formula for duration in Equation 2 when the coupon rate is set to zero. There is only one cash flow (the principal at maturity) and so the weighted-average life of the zero-coupon bond is $T$-its time to maturity.
+
+A coupon bond or other bond with a duration of, say, 5.0 years, responds identically to a parallel, infinitesimal, and instantaneous shift in the term structure as a 5.0year zero-coupon bond. This can be verified from inspection of Equation 2 for both bonds. For a bond with a duration of, say, 5.4 years, its interest rate risk can be approximated as a portfolio with $60 \%$ in a five-year zero-coupon bond and $40 \%$ in a six-year zero-coupon bond. This interpretation of duration assists bond risk managers by allowing every security to be expressed using a reduced number of zero-coupon bonds.
+
+An important feature of long-only bond portfolios that are immunized is that they tend to remain immunized as time passes, unless cash is received by the investor (i.e., coupon or principal payments). For example, consider the earlier example of matching a 7.0 -year duration target with $60 \%$ of a portfolio invested in a five-year bond zero-coupon bond and $40 \%$ in a 10 -year zero-coupon bond. As one year passes, for example, the 5 - and 10 -year bonds become 4 - and 9 -year bonds, leaving a weighted average of six years. It is likely that the investment horizon of the investor has also declined from seven years to six years. The portfolio's duration would tend to decline in line with the investor's target time horizon until the five-year zero-coupon bond matures. The point is that long-only portfolios tend to be somewhat reasonably hedged as time passes, but require rebalancing when cash flows are received.
+
+\section*{Hedging or Immunizing a Long-Short Portfolio with Duration through Time}
+A portfolio with long and short positions (long-short) would be hedged and immunized if the long positions had a duration equal to the duration of the short positions. Further, a long-short portfolio can be immunized if the portfolio has a duration equal to the horizon point at which the investor anticipated using the proceeds from the portfolio. However, long-short portfolios raise a challenge with regard to the passage of time. This is a major reason why duration is said to be a perfect measure of risk when, among other things, there is an instantaneous term structure shift.
+
+The following two applications illustrate these risk management techniques.
+
+The previous section noted that long-only bond portfolios matched to a horizon point duration tend to experience a decline in their duration that roughly matches the rate at which the time-to-the-horizon point is declining (until a cash flow occurs). The same cannot be said of a long-short portfolio. Take, for example, the portfolio in Application C in which a five-year duration $\$ 1,000,000$ portfolio is hedged with a $\$ 500,000$ short position in a 10 -year duration portfolio. Note that after one year the long side of the portfolio would tend (in the absence of intervening cash flows) to decline to having a duration of 4.0 , while the short side would tend toward a duration of 9.0. The 2-1 hedge would no longer provide immunization.
+
+The session, Event-Driven Relative Value Hedge Funds on relative value funds and the session Private Credit and Distressed Debt on private credit explore durationbased hedging further.
+
+\section*{Extensions to Traditional Duration}
+As indicated previously, single (scalar) duration measures can be derived for any particular shift in the term structure. For example, the term structure often shifts in a non-parallel (i.e., non-additive) manner, so alternative duration measures for slope shifts and curvature shifts in the term structure have been engineered. However, this section discusses the challenge of controlling the risk of finite interest rate shifts. Duration was shown earlier to be an elasticity based on a first-order partial derivative. As a first-order derivative to a nonlinear function, traditional duration hedging is subject to errors that are nonlinearly related to the size of the interest rate shift.
+
+The risk of finite-sized shifts in the term structure are typically managed by considering higher moments. Thus, whereas traditional duration is a first-order elasticity, financial engineers use convexity to address second-order shifts. Convexity is discussed in detail in Level II of the CAIA program. In a nutshell, risk managers can use convexity (in addition to duration) to provide better hedging or management of the risks of large interest rate shifts. Convexity functions as a second-order derivative.
+
+
+\end{document}

@@ -1,0 +1,64 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{Application A}
+Consider a portfolio that earns $10 \%$ per year and has an annual standard deviation of $20 \%$ when the risk-free rate is $3 \%$. The Sharpe ratio is $(10 \%-3 \%) / 20 \%$, or 0.35. When using annual returns and an annual standard deviation of returns, the Sharpe ratio may be interpreted as the annual risk premium that the investment earned per percentage point in annual standard deviation.
+
+\section*{Answer and EXPLANATION}
+The Sharpe ratio in this application is calculated by finding the difference between $10 \%$ and 3\% (the portfolio return and the risk free rate otherwise known as excess return), then dividing by $20 \%$ for a quotient of 0.35 . This follows Equation 1.
+
+$$
+S R=\left[E\left(R_{p}\right)-R_{f}\right] / \sigma_{p}
+$$
+
+In this case, the investment's return exceeded the riskless rate by 35 basis points for each percentage point in standard deviation. In an analysis of past data, the mean return of the portfolio is used as an estimate of its expected return, and the historical standard deviation of the sample is used as an estimate of the asset's true risk. Throughout the remainder of this analysis of performance measures, the analysis may be viewed as interchangeable between using historical estimates and using expectations.
+
+\section*{APPLICATION B}
+Ignoring compounding for simplicity, and assuming statistically independent returns through time, the Sharpe ratios based on semiannual returns and quarterly returns are, using the same annual values as illustrated earlier.
+
+\section*{Answer and EXPLANATION}
+Recall the values in Application A, a portfolio earns $10 \%$ per year and has an annual standard deviation of $20 \%$ when the risk-free rate is $3 \%$. Let's also assume that returns are statistically independent through time. The key for this application is the understand how to adjust an annual statistic for different time periods.
+
+The solution for the annual Sharpe ratio is as explained for Application A.
+
+The solution for the semiannual Sharpe ratio is calculated by finding the difference between $10 \%$ and $3 \%$ (the annual excess return), then dividing by 2 in order to find the semiannual excess return. Next, we need to divide the semiannual excess return by the product of the annual standard deviation multiplied by the square root of $1 / 2$ or 0.5 (the semiannual standard deviation).
+
+The end result is a semiannual Sharpe ratio of . 247 .
+
+The solution for the quarterly Sharpe ratio is calculated by finding the difference between $10 \%$ and $3 \%$ (the annual excess return), then dividing by 4 in order to find the quarterly excess return. Next, we need to divide the quarterly excess return by the product of the annual standard deviation multiplied by the square root of $1 / 4$ or 0.25 (the semiannual standard deviation). The end result is a semiannual Sharpe ratio of . 175 .
+
+\section*{APPLICATION C}
+Consider a portfolio that earns $10 \%$ per year and has a beta with respect to the market portfolio of 1.5 when the risk-free rate is $3 \%$. The Treynor ratio is (10\%$3 \%) / 1.5$, or $0.0467(4.67 \%)$. The Treynor ratio may be interpreted as the risk premium that the investment earns per unit of beta.
+
+\section*{Answer and EXPLANATION}
+To solve for the Treynor ratio, let's apply Equation 3
+
+$$
+T R=\left[E\left(R_{p}\right)-R_{f}\right] / \beta_{p}
+$$
+
+$10 \%$ minus $3 \%$ divided by $1.5 \%$ equals $4.67 \%$. Once again we are finding the excess return (portfolio return minus the risk free rate) and dividing it by a measure of risk, in this case it is beta, which is a measure of systematic risk.
+
+\section*{APPLICATION D}
+Consider a protfilo that earns $10 \%$ per year when the investor's target rate of return in $8 \%$ per year.
+
+\section*{Answer and EXPLANATION}
+The semistandard deviation based on returns relative to the target is $16 \%$ annualized. The Sortino ratio would be $(10 \%-8 \%) / 16 \%$, or 0.125 .
+
+Apply Equation 4 to find the Sortino ratio we must subtract $10 \%$ and $8 \%$, then divide the difference by $16 \%$ for a quotient of 0.125 . Once again we are finding the excess return (portfolio return minus the target rate of return) and dividing it by a measure of risk, in this case it is semistandard deviation, which is a measure of downside risk.
+
+\section*{APPLICATION E}
+If a portfolio consistently outperformed its benchmark by $4 \%$ per year, but its performance relative to that benchmark typically deviated from that $4 \%$ mean with an annualized standard deviation of $10 \%$, then its information ratio would be $4 \% / 10 \%$, or 0.40 .
+
+\section*{Answer and EXPLANATION}
+To calculate the information ratio we need to divide $4 \%$ (the amount that the portfolio outperformed the benchmark per year) by $10 \%$ (the annual standard deviation of returns of the portfolio) for an answer of 0.40 .
+
+
+\end{document}

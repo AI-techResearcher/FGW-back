@@ -1,0 +1,35 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{APPLICATION A}
+Question : A plain-vanilla note from a particular issuer carries a coupon rate of $7 \%$. The firm issues a CLN with a coupon of $4 \%$. The CLN contains an implicit call option on the S\&P GSCI (currently at 1,500) with a strike price set $10 \%$ out-of-the-money, at 1,650 . How much would the CLN distribute as a principal payment on a $\$ 1,000,000$ note under the following four scenarios: The S\&P GSCI value at the notes maturity is: $1,500,1,600,1,700$, or 1,800 ?
+
+\section*{Answer and Explanation}
+We can look at this problem like we would a regular call option on a stock. Whenever the closing price is higher than the strike price, the implicit call option will finish in the money. To solve this problem, we can use the following equation:
+
+$$
+\text { Principal } \times\left\{\left[1+\max \left(0, \frac{G S C I_{T}-G S C I_{X}}{G S C I_{X}}\right)\right]\right\}
+$$
+
+For the two scenarios where the final price was below the strike price of 1,650 (1,500 and 1,600), we can determine that the principal payment is simply the original $\$ 1,000,000$.
+
+For the other two, we can calculate the new principal payment as follows:
+
+$$
+\begin{aligned}
+& \$ 1,000,000 \times\left\{\left[1+\max \left(0, \frac{1,700-1,650}{1,650}\right)\right]\right\}=\$ 1,000,000 \times(1.0303)=\$ 1,030,303 \\
+& \$ 1,000,000 \times\left\{\left[1+\max \left(0, \frac{1,800-1,650}{1,650}\right)\right]\right\}=\$ 1,000,000 \times(1.0909)=\$ 1,090,909
+\end{aligned}
+$$
+
+Note: this problem does not ask for coupon payments. This application focuses only on the principal payment.
+
+
+\end{document}

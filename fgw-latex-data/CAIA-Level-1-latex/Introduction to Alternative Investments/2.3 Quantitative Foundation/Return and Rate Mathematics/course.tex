@@ -1,0 +1,85 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{Reading}
+Return and Rate Mathematics
+
+Quantitative tools and quantitative analysis are foundational to alternative assets. This session provides details regarding return computation and cash flows.
+
+Returns can be computed with different compounding assumptions and, over time, with intervals of different lengths. These choices have implications for the mathematics and statistics of the returns. This section demonstrates, among other things, the usefulness of basing return computations on continuous compounding, which is tantamount to saying that the returns should be expressed as log returns.
+
+\section*{The Compounding Assumption}
+Compounding is the recognition of interest on interest or, more generally, earnings on earnings. Simple interest is an interest rate computation approach that does not incorporate compounding. But returns are often compounded. For example, earning $10 \%$ over one year is equivalent to earning $9.64 \%$ per year compounded quarterly:
+
+$[1+(.0964 / 4)]^{4}=1.10$.
+
+Continuous compounding assumes that earnings can be instantaneously re-invested to generate additional earnings. Discrete compounding includes any compounding interval other than continuous compounding such as daily, monthly, or annual.
+
+\section*{FOUNDATION CHECK}
+In preparation for this material, understand the mathematics of simple, discretely compounded, and continuously compounded interest, including the computation of interest rates, present values, future values, or time intervals for applications involving single or multiple cash flows (including annuities). Net present value is especially important and should be understood from both a computation and interpretation perspective.
+
+\section*{Logarithmic Returns}
+Denote $R$ as a total (non-annualized) return or rate with no compounding. Adding 1 to $R$ forms a wealth ratio. A log return is a continuously compounded return that can be formed by taking the natural logarithm of a wealth ratio:
+
+
+\begin{equation*}
+R^{m=\infty}=\ln (1+R) \tag{1}
+\end{equation*}
+
+
+where $\ln ()$ is the natural logarithm function, $R^{m=\infty}$ is the log return, or continuously compounded return, and $m$ is the number of compounding intervals per year.
+
+For example, the rate of return that discounts a value of $\$ 110$ to be received in the future to a present value of $\$ 100$ expressed as a total (non-annualized) rate is 0.10 . Since $R=.10$, then the log return $\left(R^{m=\infty}\right)$ is 0.0953 . With continuous compounding at $9.53 \%$ for one year, $\$ 100$ grows to $\$ 110$.
+
+For very small returns, we can roughly think of $R^{m=\infty}$ and $\ln (1+R)$ as being equal to $R$ : as $R \rightarrow 0$ then $R \rightarrow R^{m=\infty}$ and $R \rightarrow \ln (1+R)$.
+
+But for larger returns, simple returns $(R)$ and log returns can differ substantially. Generally, the use of continuous compounding and log returns provides mathematical ease and generates straightforward modeling. For example, the advantages of using log returns rather than returns based on simple interest or discrete compounding are demonstrated in the next section and involve aggregation of returns over shorter periods of time into returns over longer periods of time.
+
+\section*{The Return Computation Interval and Aggregation}
+The return computation interval for a particular analysis is the smallest time interval for which returns are calculated, such as daily, monthly, or even annually. Sometimes the length of the smallest time interval for which a return is calculated is referred to as the granularity, the time resolution, or the frequency of the return measurement. While some financial studies regarding microstructure or other very short-term trading issues compute returns as often as from tick to tick (i.e., trade to trade), most studies regarding alternative investments use daily returns or returns computed over longer time intervals, such as months, quarters, or even years.
+
+Two common tasks in return analysis involve (1) aggregating a number of returns from smaller sub-periods (e.g., days) into one larger time period (e.g., months), and (2) determining an average return (e.g., finding an average daily return based on a monthly return). Different compounding assumptions typically require different formulas for these two tasks and can introduce substantial complexities. One way to simplify many analyses is to express all rates and returns using continuous compounding (i.e., using log returns).
+
+Let's look at an example of aggregating short-term returns into a longer-term return. The challenge is calculating multiperiod returns from single-period returns in a way that reflects compounding and therefore the true long-term growth rate. Our example begins by using simple interest for the sub-periods. We refer to the total return of an asset over the $T$ periods from time $t=0$ to $t=T$ as $R_{0, T}$, which can be expressed as being equal to the following product in terms of the returns of the asset over the sub-periods $\left(R_{T}\right)$ :
+
+
+\begin{equation*}
+1+R_{0, T}=\left(1+R_{1}\right) \times\left(1+R_{2}\right) \times\left(1+R_{3}\right) \times \ldots \times\left(1+R_{T}\right) \tag{2}
+\end{equation*}
+
+
+In most cases, this equation is not as easy to work with as the analogous equation using continuously compounded returns (i.e., log returns), which involves simple addition:
+
+$$
+R_{0, T}^{m=\infty}=R_{1}^{m=\infty}+R_{2}^{m=\infty}+R_{3}^{m=\infty}+\ldots+R_{T}^{m=\infty}
+$$
+
+Equations 2 and 3 demonstrate that whereas simple periodic returns require multiplication for aggregation, log returns require only addition when they are aggregated.
+
+For example, an asset earns a return of $10 \%$ in the first time period and $20 \%$ in the second time period. What is the total return over both time periods assuming discrete compounding and continuous compounding? Using discrete compounding, the total return is $32 \%$, found as $[(1.1 \times 1.2)-1]$. If the returns had been expressed with continuously compounded returns (log returns), the process would be simplified to addition as $30 \%$, found as $(10 \%+20 \%)$. Thus, an asset growing with continuous compounding for one period at $10 \%$ and a second period at $20 \%$ grows at a total rate of $30 \%$ compounded continuously. The advantage of this additivity is useful in a variety of modeling contexts, including the computation of averages. The mean of a series of log returns has special importance:
+
+
+\begin{equation*}
+\text { Arithmetic Mean Log Return }=\frac{1}{T} \sum_{t=1}^{T} R_{t}{ }^{m=\infty} \tag{4}
+\end{equation*}
+
+
+When the arithmetic mean log return is converted into an equivalent simple rate, that rate is referred to as the geometric mean return. Alternatively, geometric mean returns are computed from the total (non-annualized) return over an interval as:
+
+
+\begin{equation*}
+\text { Geometric Mean Return }=\sqrt[T]{1+R_{0, T}}-1 \tag{5}
+\end{equation*}
+
+
+The geometric mean return should be used with care in inferring long-term performance expectations.
+
+
+\end{document}

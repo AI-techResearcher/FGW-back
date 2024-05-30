@@ -1,0 +1,53 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+\section*{APPLICATION A}
+Question : A bank has extended a $\$ 50$ million one-year loan at an interest rate of $14 \%$ to a client with a BBB credit rating. Suppose that historical data indicate that the oneyear probability of default for firms with a BBB rating is $5 \%$ and that investors are typically able to recover $40 \%$ of the notional value of an unsecured loan to such firms. What is the expected credit loss?
+
+\section*{Answer and Explanation}
+The expected credit loss of the bank is as follows:
+
+$$
+\begin{aligned}
+& \mathrm{PD}=5 \% \\
+& \mathrm{EAD}=\$ 50 \text { million } \times(1+0.14)=\$ 57 \text { million } \\
+& \mathrm{RR}=0.40 \text { so that } \mathrm{LGD}=0.60 \\
+& \text { Expected Credit Loss }=0.05 \times \$ 57 \text { million } \times(1-0.40)=\$ 1.71 \text { million }
+\end{aligned}
+$$
+
+Note that this calculation is an estimate of the average loss. If a default actually occurs, then the loss in this example is $60 \% \times \$ 57$ million $=\$ 34.2$ million.
+
+\section*{APPLICATION B}
+Question : Suppose that the risk-free rate is $5 \%$ per year and that a one-year, zero-coupon corporate bond yields $6 \%$ per year. What are the precise and approximate risk neutral probabilities of default assuming a recovery rate of $80 \%$ on the corporate bond?
+
+\section*{Answer and Explanation}
+the precise risk-neutral probability of default can be estimated as shown in Equation 4 :
+
+$$
+\lambda=\frac{1}{1-0.80}\left(\frac{0.01}{1+0.05+0.01}\right)=4.7 \%
+$$
+
+If the approximation formula (the approximation in Equation 5) is used, the risk-neutral probability of default would be $5 \%$, found as $0.01 / 0.20$.
+
+\section*{APPLICATION C}
+Question : Suppose that the risk-neutral probability of default for a bond is $5 \%$ per year and that the recovery rate of the bond is $70 \%$. What is the approximate spread by which the bond should trade relative to the yield of a riskless bond?
+
+\section*{Answer and Explanation}
+The approximate credit spread (from Equation 6) is $5 \% \times(1-0.70)$, or $1.5 \%$.
+
+\section*{APPLICATION D}
+Question : Suppose that the junior debt of XYZ Corporation is frequently traded and currently trades at a credit spread of $2.50 \%$ over riskless bonds of comparable maturity. The senior debt of the firm has not been regularly traded because it was primarily held by a few institutions, and a new issue of debt that is subordinated to all other debt has been rated as speculative. The expected recovery rate of the senior debt is $80 \%$, the old junior debt is $50 \%$, and the recently issued speculative debt is $20 \%$. Using approximation formulas, what arbitrage-free credit spreads should be expected on the senior and speculative debt issues?
+
+\section*{Answer and Explanation}
+The $2.50 \%$ credit spread and $50 \%$ recovery rate of the junior debt implies a risk-neutral default probability of $5.0 \%$ using Equation 5 . The same risk-neutral default probability (in this case, $5 \%$ ) is then used with recovery rates of $80 \%$ and $20 \%$ to find credit spreads on the other debt using Equation 6 . That process generates a credit spread of $1.0 \%$ on the senior debt and $4.0 \%$ on the speculative debt.
+
+
+\end{document}

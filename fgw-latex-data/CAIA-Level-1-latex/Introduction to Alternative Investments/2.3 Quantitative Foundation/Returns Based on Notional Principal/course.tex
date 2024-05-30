@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\begin{document}
+\section*{Reading}
+Returns Based on Notional Principal
+
+Much investment analysis centers on the concept of the rate of return, defined as the rate at which an asset changes value (with any interim cash flows, such as dividends, considered). As a rate, a return is usually expressed as a portion or percentage of the asset's starting value. However, alternative investing often includes assets for which there is no clear starting value other than perhaps zero. Examples can include derivative contracts, such as forward contracts and swaps. This section describes some of the mathematics and modeling designed to address issues that arise when there is a zero starting value, or no clear starting value, to a contract.
+
+\section*{The Challenge of Returns on Positions with Zero Value}
+Subsequent sessions provide an extensive discussion of forward contract prices and returns. For the purposes of this discussion, a forward contract can be simply defined as an agreement to make an exchange at some date in the future, known as the delivery date. For example, a hedge fund with an undesired exposure to receiving a payment in Japanese yen in three months and with a preference to receive that payment in euros might enter into a forward contract with a major bank. The forward contract might require the hedge fund to deliver 100 million yen in exchange for 1 million euros at a particular date, such as in three months. The hedge fund has effectively transformed its receipt of yen into a receipt of euros.
+
+Forward contracts can usually be viewed as starting with a value of zero because the initial value of the item to be delivered is usually equal to the value of the item to be received. However, as soon as time begins to pass, it would be expected that the value of the contract would become positive to one side of the contract and negative to the other side of the contract. For example, if the value of the yen rose substantially relative to the value of the euro after the forward agreement was established, the hedge fund would perceive the commitment that it made through the forward contract as having a negative value.
+
+Assuming the hedge fund reports its performance in euros and that the change in the yen-euro exchange rate caused a loss to the fund of 1,000 euros, the rate of return on the forward contract would need to be computed. The traditional formula for the return without any interim cash flows is:
+
+$$
+\text { Return }=(\text { Ending Value }- \text { Starting Value }) / \text { Starting Value }
+$$
+
+The forward contract, however, has a starting value of zero, which would lead to division by zero. The next two sections discuss solutions to this challenge.
+
+\section*{Notional Principal and Full Collateralization}
+One solution to the problem of computing return for derivatives is to base the return on notional principal. The return on notional principal divides economic gain or loss by the notional principal of the contract. Notional principal or notional value of a contract is the value of the asset underlying, or used as a reference to, the contract or derivative position. In the case of a forward contract on currency, it would be 100 million yen, 1 million euros, or even the value of either in terms of a third currency. Selecting 1 million euros as the notional principal, the change in value in the previous example could be expressed as:
+
+$$
+\text { Change in Value }=-1,000 \text { euros } / 1,000,000 \text { euros }=-0.10 \%
+$$
+
+However, the figure of $-0.10 \%$ has little economic importance for the hedge fund, since it has not invested any capital into the contract. Usually a percentage loss is interpreted as being based on the amount of capital invested, so it has an intuitive meaning. The problem of calculating the rate of return when there is no initial investment is identical to the problem of calculating the rate of return on a fully leveraged position, such as when a position in a risky asset, like a common stock, is fully financed through borrowing.
+
+To provide greater economic meaning, the return is often expressed on a fully collateralized basis. Fully collateralized means that a position (such as a forward contract) is assumed to be paired with a quantity of capital equal in value to the notional principal of the contract. Thus, the hedge fund computes the return on the combination of the forward contract and a hypothetical investment of full collateral, meaning collateral equal to the notional principal. Often a fully collateralized position has equivalent risk and return to a long position in the underlying asset using the cash or spot market.
+
+A fully collateralized position has two components of return: (1) the change in the value of the derivative, and (2) any return on the collateral. Specifically, it is usually assumed that the investor is able to receive a short-term interest rate, such as the riskless rate on the collateral.
+
+Defining $R$ as the percentage change in the value of the derivative based on notional value and using continuous compounding (i.e., log returns), as discussed earlier in this session, the return on a fully collateralized position, $R_{\text {fcoll, }}$, can be expressed as:
+
+\begin{center}
+\includegraphics[max width=\textwidth]{2024_04_10_f0d77240f9276027738dg-2}
+\end{center}
+
+
+\begin{equation*}
+R_{f c o l l}=\ln (1+R)+R_{f} \tag{1}
+\end{equation*}
+
+
+where $R$ is the change in the derivatives price divided by its previous price or notional value.
+
+The first term on the right-hand side of Equation 1 is the continuously compounded percentage change in the fully collateralized position due to changes in the value of the derivative. The second term is the percentage change in the fully collateralized position from interest on the collateral. The sum represents the total return on the fully collateralized position. All three are expressed as continuously compounded rates (log returns) and are based on one period, such as a year.
+
+\section*{Partially Collateralized Rates of Return}
+The previous section detailed the computation of return for a fully collateralized position on a derivative contract. The concept of full collateralization is typically hypothetical; the party to the derivative has usually not actually set aside the full collateral amount in a dedicated account. However, in practice, parties to a derivative position are often required to deposit specified levels of funds to partially collateralize the position. A partially collateralized position has collateral lower in value than the notional value.
+
+Suppose that the notional principal of a derivative contract is / times the quantity of collateral required (i.e., the amount of collateral required is $1 / /$ times the notional principal). For example, with $l=10$, there would be a requirement of posting one unit of cash collateral for every 10 units of notional principal (i.e., $\$ 10,000$ would be the required or other collateral for a derivative position of $\$ 100,000)$. The formula for the log return of a partially collateralized position, $R_{p c o l l}$, reflects the same change in the derivative contract, $R$, but must be adjusted to reflect the reduced denominator (starting value) due to reduced required collateral (i.e., use of leverage). The amount of interest received on the collateral declines but remains constant as a percentage of the collateral:
+
+\section*{$\xrightarrow[\text { 三 }]{\longrightarrow}$ EQUATION EXCEPTION LIST}
+
+\begin{equation*}
+R_{\text {pcoll }}=[l \times \ln (1+R)]+R_{f} \tag{2}
+\end{equation*}
+
+
+The use of leverage magnifies the effect of changes in the derivative as a percentage of the money invested. This is expressed in Equation 2 by the use of leverage, $l$, to multiply the derivative's notional return, $R$.
+
+
+\end{document}

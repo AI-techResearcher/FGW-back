@@ -1,0 +1,159 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+Reduced-Form Modeling of Credit Risk
+
+Credit risk emanates from the structuring of cash flows. Cash flows are promised but are backed by an uncertain ability to meet those contractual obligations. Financial institutions and investors who have substantial exposure to credit risk look for effective ways to measure and manage their credit exposures consistently and accurately. This has led to a growing body of knowledge regarding credit models. Hedge funds and other institutions that take on credit exposure to enhance the risk-return profiles of their portfolios employ these models to implement various relative value and arbitrage strategies. Credit models are also employed to price illiquid securities that do not have reliable market prices and to calculate hedge ratios.
+
+\section*{Intuition of Reduced-Form Credit Risk Models}
+Speaking broadly, credit models can be divided into two groups: structural models and reduced-form models. Structural models, discussed in the session, CDO Structuring of Credit Risk, explicitly take into account underlying factors that drive the default process, such as the volatility of the underlying assets and the structuring of the cash flows (i.e., debt levels). Structural models directly relate the valuation of debt securities to the financial characteristics of the economic entity that has issued the credit security. These factors usually include firm-level variables, such as the debt-to-equity ratio and the volatility of asset values or cash flows. The key is that structural credit models describe credit risk in terms of the risks of the underlying assets and the financial structures that have claims to the underlying assets (i.e., degree of leverage).
+
+Reduced-form credit models, in contrast, do not attempt to look at the structural reasons for default risk. Therefore, reduced-form credit models do not rely extensively on asset volatility or underlying structural details, such as the degree of leverage, to analyze credit risk. Instead, reduced-form credit models focus on default probabilities based on observations of market data of similar-risk securities. In other words, reduced-form approaches typically model the observed relationships among yield spreads, default rates, recovery rates, and frequencies of rating changes throughout the market. The key feature of reduced-form credit models is that credit risk is understood through analysis and observation of market data from similar credit risks rather than through the underlying structural details of the entities, such as the amount of leverage.
+
+\section*{Expected Loss Due to Credit Risk}
+In general, the expected credit loss of a credit exposure can be determined by three factors:
+
+\begin{enumerate}
+  \item Probability of default (PD), which specifies the probability that the counterparty fails to meet its obligations
+
+  \item Exposure at default (EAD), which specifies the nominal value of the position that is exposed to default at the time of default
+
+  \item Loss given default (LGD), which specifies the economic loss in case of default ${ }^{1}$ Philippe Jorion, Financial Risk Manager Handbook (Hoboken, NJ: John Wiley \& Sons, 2010).
+
+\end{enumerate}
+
+The converse of LGD is the economic proceeds given default-that is, the recovery rate (RR). The recovery rate is the percentage of the credit exposure that the lender ultimately receives through the bankruptcy process and all available remedies. Therefore, $L G D=(1-R R)$, and RR = (1-LGD).
+
+Given these three factors, and expressing the loss given default through the recovery rate, the expected credit loss can be expressed as follows:
+
+Expected Credit Loss $=\mathrm{PD} \times \mathrm{EAD} \times(1-\mathrm{RR})$
+
+The expected loss of a portfolio of credit exposures is simply the sum of the expected credit losses of the individual exposures. In addition to expected loss exposures, analysts are generally concerned with understanding the variation in potential credit losses. Note that the variation of the potential credit losses in a portfolio of credit exposures is generally less than the sum of the variations of the individual exposures due to diversification (imperfect correlation of the individual losses).
+
+\section*{Two Key Characteristics of the Risk-Neutral Modeling Approach}
+The previous section provided a framework and terminology with which expected losses can be modeled. This section describes a risk-neutral approach to pricing a bond with credit risk. A risk-neutral approach models financial characteristics, such as asset prices, within a framework that assumes that investors are risk neutral. A\\
+risk-neutral investor is an investor that requires the same rate of return on all investments, regardless of levels and types of risk because the investor is indifferent with regard to how much risk is borne. Economic theory associates investor risk neutrality with investors whose utility or happiness is a linear function of their wealth.
+
+Few, if any, investors are risk neutral with regard to substantial financial decisions. Although the assumption of risk neutrality by investors is unrealistic, the power of risk-neutral modeling emanates from two key characteristics: (1) the risk-neutral modeling approach provides highly simplified and easily tractable modeling, and (2) in some cases, it can be shown that the prices generated by risk-neutral modeling must be the same as the prices in an economy where investors are risk averse.
+
+Let's look further at each key characteristic. One reason that the risk-neutral approach is so important to finance in general and to derivative pricing in particular is that risk-neutral price modeling is greatly simplified by not having to either differentiate between systematic and idiosyncratic risks or estimate the risk premium required to bear systematic risk. The other major reason that the risk-neutral approach to asset pricing is so essential to investments is that, as mentioned in the previous paragraph, under specific conditions, the prices obtained in a risk-neutral framework can be theoretically proven to be the same as the prices that would exist in a world of risk-averse investors. When applicable, risk-neutral pricing provides extremely simplified frameworks to price assets in a risk-averse world.
+
+\section*{Pricing Risky Bonds with a Risk-Neutral Approach}
+Consider a risky zero-coupon, one-period debt with the face value of $\mathrm{K}$ (i.e., promising a cash flow of $\mathrm{K}$ at maturity in one period). Given the expected recovery for this bond in case of default, RR, the bond has an expected payoff of $K \times$ RR in default with the probability $\lambda$ (the probability of default) and, of course, a payoff of $K$ in the absence of default with the probability of $(1-\lambda)$.
+
+Given the bond's forecasted cash flows, the current value (time 0 ) of the one-period bond, $B(0,1)$, can be expressed in a risk-neutral model as the sum of the probability-weighted and discounted cash flows, as shown in Equation 2:
+
+EQUATION EXCEPTION LIST
+
+$$
+\begin{aligned}
+B(0,1) & =\lambda \times \frac{\mathrm{K} \times \mathrm{RR}}{(1+r)}+(1-\lambda) \times \frac{\mathrm{K}}{(1+r)} \\
+& =\frac{\mathrm{K}}{(1+r)}(\mathrm{RR} \times \lambda+[1-\lambda])
+\end{aligned}
+$$
+
+The first line of Equation 2 uses $\lambda$, a probability of default, to probability weight the cash flows associated with the two outcomes (default and no default). Careful inspection of Equation 2 reveals that both potential cash flows (the cash flow in the event of default and the cash flow in the absence of default) are discounted at the riskless interest rate, $r$. Why would risky cash flows be discounted at a riskless rate? The answer is that it is due to the assumption of risk neutrality and that it is a technique used in risk-neutral arbitrage-free modeling.
+
+Equation 2 is derived under the assumption of risk neutrality: that investors do not require a premium for bearing risk. In risk-neutral modeling, every discount rate is equal to the riskless rate. In a risk-neutral model, the probability of default, $\lambda$, is known as a risk-neutral probability. A risk-neutral probability is a probability-like value that adjusts the statistical probability of default to account for risk premiums. A risk-neutral probability is equal to the statistical probability of default only when investors are risk neutral; it should not be interpreted as the probability of default that would occur if investors were risk averse. Of course, investors are not risk neutral, and they demand a premium for investing in risky investments. To account for the risk premium, risk-neutral probabilities can be used rather than statistical probabilities. Other approaches to risk adjustment include use of higher discount rates and reduction of expected cash flows (the certainty-equivalent approach).
+
+The second line of Equation 2 rearranges the first line, emphasizing the view that the price of the risky bond is equal to the price of an otherwise risk-free bond [i.e., $\mathrm{K} /(1+r)]$ times an adjustment factor that accounts for the probability of default and expected recovery, or $(R R \times \lambda+[1-\lambda])$. Clearly, the price of the risky debt declines as the probability of default, $\lambda$, increases, or the expected recovery rate, RR, declines. Risk-neutral models use a value of $\lambda$ greater than the true default probability in order to reduce the values of risky cash flows relative to safe cash flows.
+
+\section*{Credit Spreads}
+In bond markets, a bond price is often described as being determined by its credit spread, $s$. Equation 3 expresses the current price (time zero) of this debt due in one year, $B(0,1)$, using a credit spread:
+
+
+\begin{equation*}
+B(0,1)=\mathrm{K} /(1+r+s) \tag{3}
+\end{equation*}
+
+
+In Equation 3, the risk premium required to hold a risky bond is expressed through the use of a higher discount rate: the addition of the credit spread, $s$, to the riskless rate, $r$.
+
+Equations 2 and 3 express two approaches to pricing a risky bond. Equation 2 calculates the price of the risky bond by adjusting its default probability (and its expected payoff), whereas Equation 3 obtains the price by increasing the discount rate. If done properly, both should give the same price. By setting the two equations equal to each other, the risk-neutral default probability can be related to the credit spread, as is precisely shown in Equation 4 and simplified into an approximation in Equation 5:
+
+
+\begin{equation*}
+\lambda=\frac{1}{1-\mathrm{RR}}\left(\frac{s}{1+r+s}\right) \tag{4}
+\end{equation*}
+
+
+
+\begin{equation*}
+\lambda \approx \frac{s}{(1-\mathrm{RR})} \tag{5}
+\end{equation*}
+
+
+Equation 5 is an important and useful approximation. If the short-term rate and the spread are not very large, then the well-known result displayed in Equation 5 approximately holds. That is, the risk-neutral probability of default is equal to the credit spread divided by the expected loss given default, or (1 - RR). In the simple case of a risk-neutral world and a bond with no recovery $(R R=0)$, the credit spread of a bond will equal its annual probability of default!
+
+Equation 6 factors the approximation in Equation 5 to express the credit spread as depending on the probability of default and the recovery rate:
+
+
+\begin{equation*}
+s \approx \lambda \times(1-R R) \tag{6}
+\end{equation*}
+
+
+There is substantial logic and intuition to Equation 6. It indicates that $s$, the credit spread (the excess of a risky bond's yield above the riskless yield), is equal to the expected percentage loss of the one-year bond over the remaining year under the assumption of risk neutrality. The expected annual loss is the product of the riskneutral probability of default $(\lambda)$ and the proportion of loss given default (1-RR).
+
+This result makes perfect sense. In a risk-neutral world, bondholders demand a yield premium on a risky bond (i.e., a spread) that compensates them for the expected losses on the bond due to default. For example, if bonds of a particular rating class tend to default at a rate of $1 \%$ per year, and if $55 \%$ of the typical bond's nominal value can eventually be recovered, then a portfolio of such bonds tends to lose $0.45 \%$ per year due to default. A risk-neutral investor would therefore require that such bonds offer a yield that is at least $0.45 \%$ higher (approximately) than the riskless bond yield to offset these expected losses.
+
+\section*{Applying the Reduced-Form Models Using Risk Neutrality}
+Equation 4 should not be interpreted as predicting an actual probability of default (i.e., a true statistical probability that would exist in an economy in which investors require a premium for bearing risk). Rather, $\lambda$ should be viewed as a modeling tool. The actual probability of default will be less than $\lambda$ to the extent that investors demand a risk premium.
+
+Nevertheless, the risk-neutral probability of default ( $\lambda$ ) provides a valuable pricing tool. Risk-neutral modeling and risk-neutral probabilities can have tremendous value. The risk-neutral probability implied by one bond, presumably a highly liquid publicly traded bond, can be used as a tool for pricing other bonds. The reducedform credit model approach utilizes riskless interest rates as discount rates much like arbitrage-free option pricing models use riskless rates rather than discount rates that contain a risk premium. That is the essence of the reduced-form modeling approach.
+
+Consider an example in which a bond that trades in a highly efficient and liquid market has a $1 \%$ credit spread $(s)$ and an estimated $80 \%$ recovery rate. The riskneutral default probability of $4.7 \%$ is found using Equation 4 (or $5 \%$ using the approximation formula in Equation 5).
+
+The reduced-form approach generally uses pricing information obtained from more liquid segments of the market to price bonds that are less liquid. In other words, information implicit in bond prices that are observed in highly competitive markets is used to calibrate a model that is then used to price bonds that are less liquid. To calibrate a model means to establish values for the key parameters in a model, such as a default probability or an asset volatility, typically using an analysis of market prices of highly liquid assets. For example, the volatility of short-term interest rates might be calibrated in a model by using the implied volatility of highly liquid options on short-term bonds.
+
+A key application of the reduced-form model is to price alternative debt securities in the same structure, such as both senior and junior debt. Note that debt securities within the same capital structure have the same underlying assets and the same probabilities of default (either the corporation defaults or it does not). The primary difference is simply the recovery rates. Senior debt should generally be expected to have higher recovery rates than junior debt, since senior debt generally has higher priority for liquidating cash flows in the bankruptcy process. Reduced-form models relate credit spreads to recovery rates, and therefore reduced-form models can be used to determine relative prices of securities in the same structure that differ in seniority.
+
+Reduced-form models are also used to price illiquid securities based on information from liquid securities with different issuers. The credit spreads observed in competitively traded debt markets can be used to calibrate a reduced-form model and generate relatively reliable estimates of risk-neutral default probabilities. The estimated risk-neutral default probabilities can then be used to determine appropriate credit spreads for bonds of similar total risk that are not frequently traded.
+
+The examples of the previous sections discussed single-period models with simple zero-coupon bonds. In reality, a fixed-income debt instrument represents a basket of risks: the risk from changes in the term structure of interest rates that differ in size and shape; the risk that the issuer will prepay the debt issue (call risk); liquidity risks; and the risk of defaults, downgrades, and widening credit spreads (credit risk). Sophisticated reduced-form models use the prices and, in some cases, the volatilities of riskless bonds to incorporate their effects on the prices of risky bonds.
+
+\section*{Advantages and Disadvantages of Reduced-Form Models}
+Reduced-form models have two advantages:
+
+\begin{enumerate}
+  \item They can be calibrated using derivatives such as credit default swap spreads, which are highly liquid. (Credit default swaps are discussed later in the session.)
+
+  \item They are extremely tractable and are well suited for pricing derivatives and portfolio products. The models can rapidly incorporate credit rating changes and can be used in the absence of balance sheet information (e.g., for sovereign issuers).
+
+\end{enumerate}
+
+Reduced-form models have four disadvantages:
+
+\begin{enumerate}
+  \item There may be limited reliable market data with which to calibrate a model.
+
+  \item They can be sensitive to assumptions, particularly those regarding the recovery rate.
+
+  \item Information on actual historical default rates can be problematic. That is, few observations are available for defaults by major firms or sovereign states.
+
+  \item Historical default rates on classes of borrowers (e.g., borrowers of a particular ratings class) may have limited value in the prediction of future default rates to the extent that economies undergo major fundamental changes.
+
+\end{enumerate}
+
+Finally, it should be noted that hazard rate is a term often used in the context of reduced-form models to denote the default rate. The number is usually annualized and may be based on historical analysis of similar bonds or on expectations. Thus, an asset with a hazard rate of $2 \%$ is believed to have a $2 \%$ actual (i.e., statistical rather than risk-neutral) probability of default on an annual basis.
+
+\section*{Distinguishing between Structural and Reduced-Form Credit Models}
+Reduced-form credit models focus on metrics, such as yields and yield spreads. These models observe, measure, and approximate the relationship between those metrics and the characteristics of the securities being analyzed, such as differences in recovery rates. The underlying motivation is to use known information (such as yield spreads) on securities in highly liquid markets to infer corresponding information (yield spreads) for other securities, while adjusting for factors such as recovery rates.
+
+Common inputs to reduced-form credit model approaches include bond yields, yield spreads, and bond ratings, as well as historical or anticipated recovery rates and hazard rates (i.e., default rates).
+
+Structural credit models focus on valuing securities based on option pricing models. Structural models estimate underlying asset values, degrees of leverage, and the partitioning of the assets' cash flows to debt and equity claimants.
+
+Common inputs to structural credit models include the value of the underlying assets and equity of a structure, the face value of the debt, and estimates of the volatility of the underlying assets or equity. Like reduced-form credit models, structural credit models use riskless rates and the time to maturity of the debt.
+
+\textbackslash 
+
+
+\end{document}

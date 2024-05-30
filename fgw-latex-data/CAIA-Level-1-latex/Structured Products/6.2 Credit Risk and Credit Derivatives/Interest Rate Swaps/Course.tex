@@ -1,0 +1,335 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+Interest Rate Swaps
+
+A swap is a contract between two parties to exchange cash flows at specified dates in the future, according to prearranged rules.
+
+\section*{Simple Interest Rate Swaps}
+The simplest interest swap is often referred to as a "plain vanilla" interest rate swap. In a plain vanilla interest rate swap, party A agrees to pay party B cash flows based on a fixed interest rate in exchange for receiving from $B$ cash flows in accordance with a specified floating interest rate. Both payments are based on a notional principal and a specified number of years, which typically range from two to 15 years.
+
+\section*{Payers and Receivers of Interest Rate Swaps}
+The payer in a vanilla swap is the party that agrees to pay a fixed rate in exchange for receiving a floating rate. The receiver (i.e., the buyer of the fixed rate) is the party that agrees to pay a floating rate in exchange for receiving a fixed rate. Interest rate swaps are subject to interest rate risk and credit risk (counterparty risk). Ignoring the counterparty risk, the payer in a vanilla swap will benefit from a rise in interest rates and will be hurt by a decline in interest rates. As a result, these instruments can be used to speculate, hedge, and manage interest rate risk. However, the most common motivation offered to explain the rationale of an interest rate swap is the comparative advantage argument.
+
+For example, a firm may have a comparative advantage borrowing in the floating rate market but a desire to borrow at the fixed rate. The firm then issues debt at the floating rate and, by entering into a swap contract with another party, is able to convert the floating-rate loan into a fixed-rate loan. Given the borrower's comparative advantage, the net fixed interest rate paid is lower after the swap transaction than would have been available by borrowing directly at the fixed rate. An interest rate swap can also be used to convert a liability from a fixed to a floating rate. It can also be used to convert an investment from a fixed to a floating rate, or from a floating to a fixed rate.
+
+\section*{Use of Interest Rate Swaps by Pensions}
+In recent years, pension funds have become active users of interest rate swaps. Pension fund assets are managed to support liabilities that represent promises made to future retirees. In many countries, pension funds are expected to calculate the present value of these liabilities in order to determine the funding status of the fund. If the present value of liabilities exceeds the value of the pension fund's assets, then the fund may be considered to be underfunded. As a result, everything else being the same, a decline in interest rates will increase the present value of a fund's liabilities, increasing the gap between its assets and its liabilities. Pension funds have two broad options in managing this risk.
+
+First, they could reduce the interest rate risk by investing in long-term bonds. In this case, a decline in interest rates will increase the values of both their assets and liabilities, reducing the volatility in the gap between assets and liabilities. This strategy requires a pension fund to commit capital to the strategy, and therefore allocations to other asset classes have to be reduced.
+
+Second, a pension fund may decide to invest its funds in asset classes that are expected to generate higher returns (e.g., private equity, hedge funds, or public equities) and then use an interest rate swap to manage its interest rate risk. In this case, the pension fund would agree to receive fixed payments in exchange for making floating payments. Should interest rates decline, the pension fund would benefit from a decline in the value of the future floating payments that it is expected to make.
+
+\section*{The Mechanics of Interest Rate Swaps}
+The Interest Rate Swap Example exhibit illustrates the mechanics of an interest rate swap. Suppose that pension fund A has entered into an agreement to pay sixmonth LIBOR in exchange for receiving (from bank B) a fixed interest rate of $4 \%$ per annum every six months for four years, on a notional principal of $\$ 100$ million. The exhibit shows the resulting cash flows from the point of view of the pension fund, assuming the six-month LIBOR rates depicted in the second column of the table (expressed as rates per year with semiannual compounding). ${ }^{1}$ Throughout this section, we ignore the precise day count that takes place in practice. In other words, it is assumed that there are 90 days in each quarter, 180 days in each six months, and 360 days in each year.
+
+\begin{center}
+\begin{tabular}{lcccc}
+\hline
+Date & \begin{tabular}{c}
+Six-Month \\
+LIBOR \\
+\end{tabular} & \begin{tabular}{c}
+Floating \\
+Cash Flow \\
+\end{tabular} & \begin{tabular}{c}
+Fixed \\
+Cash Flow \\
+\end{tabular} & \begin{tabular}{c}
+Net \\
+Cash Flow \\
+\end{tabular} \\
+\hline
+April 3, year 1 & $3.20 \%$ &  &  &  \\
+October 3, year 1 & $3.50 \%$ & $-\$ 1,600,000$ & $\$ 2,000,000$ & $\$ 400,000$ \\
+April 3, year 2 & $4.00 \%$ & $-\$ 1,750,000$ & $\$ 2,000,000$ & $\$ 250,000$ \\
+October 3, year 2 & $4.50 \%$ & $-\$ 2,000,000$ & $\$ 2,000,000$ & $\$ 50$ \\
+April 3, year 3 & $4.60 \%$ & $-\$ 2,250,000$ & $\$ 2,000,000$ & $-\$ 250,000$ \\
+October 3, year 3 & $4.10 \%$ & $-\$ 2,300,000$ & $\$ 2,000,000$ & $-\$ 300,000$ \\
+April 3, year 4 & $3.90 \%$ & $-\$ 2,050,000$ & $\$ 2,000,000$ & $-\$ 50,000$ \\
+October 3, year 4 & $3.70 \%$ & $-\$ 1,950,000$ & $\$ 2,000,000$ & $\$ 50,000$ \\
+April 3, year 5 &  & $-\$ 1,850,000$ & $\$ 2,000,000$ & $\$ 150,000$ \\
+\hline
+\end{tabular}
+\end{center}
+
+On April 3 of year 1, the six-month LIBOR rate is $3.20 \%$. This is the rate that would be applied to the floating payment made six months later, on October 3. Therefore, the first floating cash flow paid by the pension fund is equal to $\$ 1,600,000$. This payment is calculated as follows: $(3.20 \% / 2) \times \$ 100,000,000=\$ 1,600,000$. The same procedure can be followed to find the floating rate payments that will be made in subsequent periods. The net cash flow to the pension fund is equal to the difference between the fixed cash flow to be received and the floating cash flow to be paid. The principal in a swap contract (known as notional principal) is not exchanged at the end of the life of the swap; it is used only for the computation of interest payments. In practice, only the net cash flows, or the difference between the fixed and floating rate payments, are exchanged.
+
+The fixed rate of an interest rate swap is referred to as the swap rate. Initially, the swap rate is set so that the present value of expected floating payments is equal to the present value of expected fixed payments. Ignoring counterparty risks, the expected fixed payments are known with certainty and the expected floating payments can be estimated from the currently available interest rate futures prices. Then, using all available information, the swap rate is set so that the present values of fixed and floating payments are equal. An example later in this lesson will demonstrate this procedure.
+
+Similar to other fixed-income instruments, swaps of different maturities carry different swap rates. By the same token, the swap rate curve displays the relationship between swap rates and the maturities of their corresponding contracts, having a concept analogous to that of the yield curve. The swap rate curve is an important benchmark for interest rates in the United States. It is also frequently used in Europe as the benchmark for all European government bonds. Worldwide, in terms of size and volume, interest rate swaps represent one of the most important interest rate derivative contracts.
+
+\section*{Initial Valuation of an Interest Rate Swap}
+Interest rate swaps are worth zero when the two parties agree to the transaction. Once the contract is entered into, payments from the floating-rate party or leg of the agreement will change as market interest rates change.
+
+An interest rate swap is equivalent to a bond transaction in which the fixed-rate payer issues a fixed-coupon bond and invests the proceeds in a floating-rate bond with the same payment dates and maturity. Then, on each payment date, the floating-rate payment is received and the fixed-coupon payment is made. Thus, the swap can be valued as the difference between the market value of the fixed-coupon bond and the market value of the floating-rate bond. It is important to bear in mind that interest payments are netted in the actual swap, and that the contract does not require principal payments. The procedure of estimating the market values of fixed- and floating-rate bonds is simply an artifice that facilitates the calculation of the value of the swap. The valuation of an interest rate swap will be explained using an example. ${ }^{2}$ Alternatively, interest rate swaps can be valued as a portfolio of forward rate agreements (FRAs).
+
+A question that arises from the previous example is why the swap rate is set equal to $4.3464 \%$. As discussed, given all available information, this is the rate that sets the present value of future fixed payments equal to the present value of future floating payments. In other words, $4.3464 \%$ is the swap rate that sets the net value of the swap to zero. After the swap agreement has been made, market interest rates will change and the swap's value will vary. The next example demonstrates the nonzero valuation of the swap agreement after interest rates have shifted.
+
+Fixed and Floating Payments
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+(1) & (2) & (3) & (4) & (5) & (6) & $(7)=(6) \times 10 M$ & \begin{tabular}{c}
+$(8)=4.3464 \% \times$ \\
+$(3) / 360 \times 10 \mathrm{M}$ \\
+\end{tabular} \\
+\hline
+\begin{tabular}{l}
+Quarter \\
+Starts \\
+\end{tabular} & \begin{tabular}{l}
+Quarter \\
+Ends \\
+\end{tabular} & \begin{tabular}{l}
+Number of Days in \\
+Quarter \\
+\end{tabular} & \begin{tabular}{l}
+Current \\
+LIBOR \\
+\end{tabular} & \begin{tabular}{l}
+Future LIBOR Rates \\
+Start of Quarter \\
+\end{tabular} & \begin{tabular}{l}
+Quarterly Future LIBOR \\
+Start of Quarter \\
+\end{tabular} & \begin{tabular}{l}
+Floating Payment End \\
+of Quarter \\
+\end{tabular} & \begin{tabular}{l}
+Fixed Payment End \\
+of Quarter \\
+\end{tabular} \\
+\hline
+January 1 & March 31 & 90 & $4.00 \%$ &  & $1.00 \%$ & 100,000 & 108,660 \\
+\hline
+April 1 & June 30 & 90 &  & $4.20 \%$ & $1.05 \%$ & 105,000 & 108,660 \\
+\hline
+July 1 & \begin{tabular}{l}
+September \\
+30 \\
+\end{tabular} & 90 &  & $4.40 \%$ & $1.10 \%$ & 110,000 & 108,660 \\
+\hline
+October 1 & \begin{tabular}{l}
+December \\
+31 \\
+\end{tabular} & 90 &  & $4.80 \%$ & $1.20 \%$ & 120,000 & 108,660 \\
+\hline
+\end{tabular}
+\end{center}
+
+Notice that floating payments are made at the end of each quarter based on the three-month LIBOR rate observed at the beginning or the same quarter. For instance,
+
+$$
+\begin{aligned}
+& 100,000=\frac{90}{360} \times 4.0 \% \times 10,000,000 \\
+& 105,000=\frac{90}{360} \times 4.2 \% \times 10,000,000
+\end{aligned}
+$$
+
+Similarly, the fixed payments are calculated using the swap rate of $4.3464 \%$. For instance,\\
+$108,660=\frac{90}{360} \times 4.3464 \% \times 10,000,000$
+
+\section*{Valuation of an Existing Swap}
+Suppose that after the first quarterly payments interest rates increase, changing the current and remaining three-month LIBOR rates to 4.4\%, 4.8\%, and 5.0\%, respectively. What is the gain by the fixed-rate payer? The exhibit, Interest Rate Swap Payments after a Change in Three-Month LIBOR and the exhibit, Present Values of Fixed and Floating Payments duplicate the calculations displayed in the exhibit, Fixed and Floating Payments and the exhibit, Present Values of Fixed and Floating Payments using the new three-month LIBOR rates, taking into account that the first payments have already been made.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+(1) & (2) & (6) & (7) & (8) & (9) & $(10)=(7) \times(9)$ & $(11)=(8) \times(9)$ \\
+\hline
+\begin{tabular}{l}
+Quarter \\
+Starts \\
+\end{tabular} & \begin{tabular}{l}
+Quarter \\
+Ends \\
+\end{tabular} & \begin{tabular}{l}
+Quarterly Future LIBOR \\
+Start of Quarter \\
+\end{tabular} & \begin{tabular}{l}
+Floating Payment End \\
+of Quarter \\
+\end{tabular} & \begin{tabular}{c}
+Fixed Payment End of \\
+Quarter \\
+\end{tabular} & \begin{tabular}{l}
+Forward \\
+Discount \\
+\end{tabular} & \begin{tabular}{l}
+PV of Floating \\
+Payments \\
+\end{tabular} & \begin{tabular}{l}
+PV of Fixed \\
+Payments \\
+\end{tabular} \\
+\hline
+January 1 & March 31 & $1.00 \%$ & 100,000 & 108,660 & 0.990099 & 99,010 & 107,584 \\
+\hline
+April 1 & June 30 & $1.05 \%$ & 105,000 & 108,660 & 0.979811 & 102,880 & 106,466 \\
+\hline
+July 1 & \begin{tabular}{l}
+September \\
+30 \\
+\end{tabular} & $1.10 \%$ & 110,000 & 108,660 & 0.969150 & 106,607 & 105,307 \\
+\hline
+October 1 & \begin{tabular}{l}
+December \\
+31 \\
+\end{tabular} & $1.20 \%$ & 120,000 & 108,660 & 0.957658 & 114,919 & 104,059 \\
+\hline
+Total &  &  &  &  &  & 423,416 & 423,416 \\
+\hline
+\end{tabular}
+\end{center}
+
+Present Values of Fixed and Floating Payments
+
+Note: There is a slight rounding error in the last column of this exhibit.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+(1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+\hline
+\begin{tabular}{l}
+Quarter \\
+Starts \\
+\end{tabular} & \begin{tabular}{l}
+Quarter \\
+Ends \\
+\end{tabular} & \begin{tabular}{l}
+Number of Days in \\
+Quarter \\
+\end{tabular} & \begin{tabular}{l}
+Current \\
+LIBOR \\
+\end{tabular} & \begin{tabular}{l}
+Future LIBOR Rates \\
+Start of Quarter \\
+\end{tabular} & \begin{tabular}{l}
+Quarterly Future LIBOR \\
+Start of Quarter \\
+\end{tabular} & \begin{tabular}{l}
+Floating Payment End \\
+of Quarter \\
+\end{tabular} & \begin{tabular}{l}
+Fixed Payment End \\
+of Quarter \\
+\end{tabular} \\
+\hline
+April 1 & June 30 & 90 & $4.40 \%$ &  & $1.10 \%$ & 110,000 & 108,660 \\
+\hline
+July 1 & \begin{tabular}{l}
+September \\
+30 \\
+\end{tabular} & 90 &  & $4.80 \%$ & $1.20 \%$ & 120,000 & 108,660 \\
+\hline
+October 1 & \begin{tabular}{l}
+December \\
+31 \\
+\end{tabular} & 90 &  & $5.00 \%$ & $1.25 \%$ & 125,000 & 108,660 \\
+\hline
+\end{tabular}
+\end{center}
+
+Interest Rate Swap Payments after a Change in Three-Month LIBOR
+
+Present Values of Fixed and Floating Payments
+
+\begin{center}
+\begin{tabular}{|llccccc|}
+\hline
+$(1)$ & $(2)$ & (6) & (7) & (8) & (9) & (10) \\
+\hline
+\begin{tabular}{l}
+Quarter \\
+Starts \\
+\end{tabular} & Quarter & Quarterly Future LIBOR & Floating Payment End & Fixed Payment End of & Forward & PV of Floating \\
+Ends & Start of Quarter & of Quarter & Quarter & Discount & Payments &  \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|llcccccc|}
+\hline
+(1) & (2) & (6) & (7) & (8) & (9) & (10) &  \\
+\hline
+\begin{tabular}{l}
+Quarter \\
+Starts \\
+\end{tabular} & \begin{tabular}{l}
+Quarter \\
+Ends \\
+\end{tabular} & \begin{tabular}{c}
+Quarterly Future LIBOR \\
+Start of Quarter \\
+\end{tabular} & \begin{tabular}{c}
+Floating Payment End \\
+of Quarter \\
+\end{tabular} & \begin{tabular}{c}
+Fixed Payment End of \\
+Quarter \\
+\end{tabular} & \begin{tabular}{c}
+Forward \\
+Discount \\
+\end{tabular} & \begin{tabular}{c}
+PV of Floating \\
+Payments \\
+\end{tabular} & \begin{tabular}{c}
+PV of Fixed \\
+Payments \\
+\end{tabular} \\
+\hline
+April 1 & June 30 & $1.10 \%$ & 110,000 & 108,660 & 0.989120 & 108,803 & 107,478 \\
+July 1 & September & $1.20 \%$ & 120,000 & 108,660 & 0.977391 & 117,287 & 106,203 \\
+ & 30 & $1.25 \%$ & 125,000 & 108,660 & 0.965324 & 104,892 &  \\
+October 1 & December &  &  &  &  & 346,756 &  \\
+\hline
+Total & 31 &  &  &  &  & 318,573 &  \\
+\hline
+\end{tabular}
+\end{center}
+
+It can be seen that while the fixed payments remain the same, the floating payments have increased, benefiting the party that pays the fixed rate. Given the new structure of the three-month LIBOR rates, we can calculate the present values of the two streams.
+
+The present value of the remaining floating payments will be higher than the present value of the remaining fixed payments, benefiting the fixed-rate payer. In other words, while the net present value (NPV) of the swap was zero when it was initiated, the NPV became positive for the fixed-rate payer (i.e., $\$ 28,183=\$ 346,756-$ $\$ 318,573$ ), and negative (i.e., $-\$ 28,183$ ) for the floating-rate payer after interest rates increased.
+
+\section*{Risks Associated with Interest Rate Swaps}
+In this section, we briefly discuss the main risks to which interest rate swaps are subject-namely, credit risk and interest rate risk. Furthermore, the events of 20072009 showed that it is no longer acceptable to assume that top-tier banks could never default. As a consequence, LIBOR rates should not be regarded as risk-free rates, a problem that in turn affects the valuation of interest rate swaps.
+
+Credit risk on a two-leg swap exists when one of the parties to the contract is in-the-money, because that leg of the contract will face the possibility of default by the other party. On the other hand, when a swap is agreed upon through an intermediary (i.e., a financial institution), typically the intermediary will bear the default risk in exchange for a fixed percentage of the value of the contract in the form of a bid-ask spread.
+
+The credit risk of an interest rate swap can be managed according to two dimensions:
+
+\begin{enumerate}
+  \item Contractual provisions, documentation, collateral, and contingencies
+
+  \item Diversification of the swap book across industry and market sectors ${ }^{4}$ Sundaresan, S. 2002. Fixed Income Markets and Their Derivatives. 2nd ed. Cincinnati, OH: South-Western.
+
+\end{enumerate}
+
+The risk exposure of a swap due to unanticipated interest rate changes is another potentially important risk. For example, Ferrara and Ali (2013) simulate many forward yield curves (using an arbitrage-free interest rate model), and evaluate the potential exposure of vanilla interest rate swaps under the most familiar yield curve shapes and under different volatility assumptions. ${ }^{5}$ Ferrara, P., and S. Ali. 2013. "Interest Rate Swaps: An Exposure Analysis." Society of Actuaries, July. The authors highlight that unanticipated changing interest rates can, on one hand, create substantial mark-to-market (MTM) or counterparty exposure, which may cause significant MTM losses and require substantial collateral posting. On the other hand, they also find that unanticipated changing interest rates can generate considerable MTM gains, which can lead to counterparty exposure if the swap contract is not collateralized.
+
+Credit risk and interest rate risk interact in fine ways. These interactions can be examined by estimating the MTM value of swaps for a range of term-structure scenarios and credit-risk assumptions. These estimations can be performed using Monte Carlo simulation or other techniques.
+
+\section*{The Global Financial Crisis of 2007-2009}
+The two key assumptions under which the traditional approach to pricing and valuing standard interest rate swaps is based are that LIBOR discount factors are (1) reasonable proxies for the credit quality of the counterparty when the contract is uncollateralized, and (2) suitable measures for the risk-free term structure when the contract is collateralized.
+
+Smith (2012) argues that the financial crisis of 2007 defied the second assumption. ${ }^{6}$ Smith, D. 2012. "A Teaching Note on Pricing and Valuing Interest Rate Swaps Using LIBOR and OIS Discounting." Boston University School of Management, June. This is because collateralization is now usual in the swap market, and the existence of considerable and persistent differences between LIBOR and other proxies for risk-free rates implies that LIBOR discount factors can no longer be regarded as risk-free rates. Because of this, fixed rates on overnight indexed swaps are now considered more appropriate for valuing collateralized contracts. The spread can arise in two ways-first, as a liquidity premium to compensate for liquidity risk, and second, as a credit spread.
+
+Prior to the 2007-2009 global financial crisis, most swap market participants ignored the counterparty risk associated with large global banks. The reason was that most assumed that these institutions would never default on their obligations. The global financial crisis changed all of that, and as a result, a credit spread reflecting the counterparty risk is now incorporated into swap spreads.
+
+In 2004, interest rates were historically low. Harvard University entered into a series of interest rate swaps in anticipation of the future funding needs for construction projects. According to Ferrara and Ali (2013), Harvard had entered these swaps as payer of the fixed leg. ${ }^{7}$ Ferrara, Ibid. A subsequent drop in interest rates caused the values of these interest rate swaps to negatively affect Harvard's financial position. Harvard's problems with its interest rate swaps were compounded by the fact that the swaps required the university to deliver collateral (in cash) proportional to the magnitude of the NPV on its interest rate swaps, which in this case had become negative. As Harvard's NPV became increasingly negative, the amount of cash it had to post as collateral increased, thus creating an illiquidity problem for the university. These difficulties explain, at least partially, Harvard's decision to pay almost $\$ 500$ million in fiscal year 2009 to terminate a subset of its portfolio of interest rate swaps that had a total notional value of $\$ 1.1$ billion.
+
+
+\end{document}

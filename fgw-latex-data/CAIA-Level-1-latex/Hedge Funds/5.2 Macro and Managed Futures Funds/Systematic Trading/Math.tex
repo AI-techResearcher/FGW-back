@@ -1,0 +1,73 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{multirow}
+
+\begin{document}
+\section*{APPLICATION A}
+Question : A stock price experiences the following 10 consecutive daily prices corresponding to days -10 to $-1: 100,102,99,97,95,100,109,103,103$, and 106 . What are the simple (arithmetic) moving average prices on day 0 using 3-day and 10-day moving averages, as well as the 3 -day moving average for days -2 and -1 ?
+
+\section*{Answer and Exlanation}
+The simple moving average is a sum of the prices divided by the number of days in the moving average. The key is to make sure you are starting on the correct day. In this application we need to find the 3-day simple moving average on Day 0, so the prices on Day -1, Day -2, and Day -3 are the added together and then the sum is divided by 3 (number of days in the simple moving average).
+
+Therefore, the 3-day simple moving average on Day 0 is $(106+103+103) / 3=104$. The 3 -day simple moving average on Day -1 is $(103+103+109) / 3=105$. The 3-day simple moving average on Day -2 is $(103+109+100) / 3=104$. Now, the 10 -day simple moving average on Day 0 is $(100+102+99+97+95+100+109+103+103+$ $106) / 10$ or 101.4 .
+
+\section*{APPLICATION B}
+Question : A stock price experiences the following 10 consecutive daily prices corresponding to days -10 to -1 : $100,102,99,97,95,100,109,103,103$, and 106 . What are the five-day weighted moving average prices on days -1 and 0 ?
+
+\section*{Answer and Exlanation}
+The weighted moving average for $\mathrm{N}$ days is calculated by multiplying the most recent daily price by $\mathrm{N}$, and then the second most recent daily price in the series by the number $\mathrm{N}-1$, and so on ending with the least recent daily price multiplied by 1 . Then the products are summed and divided by the sum of the numbers 1 to $\mathrm{N}$.
+
+Let's find the 5-day weighted moving average on Day 0. Day $-1,-2,-3,-4$, and -5 prices are $\$ 106.00, \$ 103.00, \$ 103.00, \$ 109.00$, and $\$ 100.00$. With those prices we need to weight them so: $(106 \times 5)+(103 \times 4)+(103 \times 3)+(109 \times 2)+(100 \times 1)=1569$. Now we need to divide that sum by the sum of the multiples: $5+4+3+2+1=$ 15. $1569 / 15=104.6$ is the 5 -day weighted moving average on Day 0.
+
+Let's find the 5-day weighted moving average on Day -1 . Day $-2,-3,-4,-5$, and -6 prices are $\$ 103.00, \$ 103.00, \$ 109.00, \$ 100.00$, and $\$ 95.00$. With those prices we need to weight them so: $(103 \times 5)+(103 \times 4)+(109 \times 3)+(100 \times 2)+(95 \times 1)=1549$. Now we need to divide that sum by the sum of the multiples: $5+4+3+2+1=15$. $1549 / 15=103.4$ is the 5 -day weighted moving average on Day -1 .
+
+\section*{APPLICATION C}
+Question : A stock price experiences the following five consecutive daily prices corresponding to days -5 to $-1: 100,109,103,103$, and 106 . What are the exponential moving average prices on days -1 and 0 using $\lambda=0.25$ ? Assume that the exponential moving average up to and including the price on day -3 was 100 .
+
+\section*{Answer and Exlanation}
+Let's find the 5-day exponential moving average on Day -1 . Day -2 is $\$ 103$. It is also important to note that the exponential moving average up to and including the price on day -3 is 100 . With those prices we need to weight them so: $103 \times(0.25)+100 \times(1-0.25)=100.75 .100 .75$ is the 5 -day exponential moving average on Day $-1$.
+
+Let's find the 5-day exponential moving average on Day 0 . Day -1 and -2 are $\$ 106.00$ and $\$ 103.00$. It is also important to note that the exponential moverage up to and including the price on day -3 is 100 . With those prices we need to weight them so: $106 \times(0.25)+100.75 \times(1-0.25)=102.0625$. 102.0625 is the 5 -day exponential moving average on Day 0 . Note we used Day -1 exponential moving average to calculate the Day 0 exponential moving average.
+
+\section*{APPLICATION D}
+Question : A stock price experiences the following 10 consecutive daily high prices corresponding to days -10 to -1 : $100,102,99,98,99,104,102,103,104$, and 100. What is the day 0 price level that signals a breakout and possibly a long position, using these 10 days of data as representative of a trading range?
+
+\section*{Answer and Exlanation}
+The Upper Bound is determined by the highest daily price over the 10 consecutive day period, in this case $\$ 104.00$ is the highest daily price. Therefore a price of 105 would signal that a long position should be established. The Lower Bound is determined by the lowest daily price over the 10 consecutive day period, in this case $\$ 98.00$. Therefore a price of 97 would be interpreted as a sell signal.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{15}{|l|}{$\sum_{\text {WORKO }}$} \\
+\hline
+ & Day -10 & Day -9 & Day -8 & Day -7 & Day -6 & Day -5 & Day -4 & Day -3 & Day -2 & Day -1 & Upper & Lower & Upper & Lower \\
+\hline
+ &  &  &  &  &  &  &  &  &  &  & Bound & Bound & Bound & Bound \\
+\hline
+ &  &  &  &  &  &  &  &  &  &  &  &  & Break Out & Break Out \\
+\hline
+\multirow{7}{*}{Stock Prices} & $\$ 100.00$ & $\$ 102.00$ & $\$ 99.00$ & $\$ 98.00$ & $\$ 99.00$ & $\$ 104.00$ & $\$ 102.00$ & $\$ 103.00$ & $\$ 104.00$ & $\$ 100.00$ & $\$ 104.00$ & $\$ 98.00$ & $\$ 105.00$ & $\$ 97.00$ \\
+\hline
+ & $\$ 50.00$ & $\$ 51.00$ & $\$ 52.00$ & $\$ 50.00$ & $\$ 49.00$ & $\$ 47.00$ & $\$ 55.00$ & $\$ 53.00$ & $\$ 51.00$ & $\$ 52.00$ & $\$ 55.00$ & $\$ 47.00$ & $\$ 56.00$ & $\$ 46.00$ \\
+\hline
+ & $\$ 30.00$ & $\$ 31.00$ & $\$ 35.00$ & $\$ 36.00$ & $\$ 37.00$ & $\$ 34.00$ & $\$ 33.00$ & $\$ 35.00$ & $\$ 36.00$ & $\$ 37.00$ & $\$ 37.00$ & $\$ 30.00$ & $\$ 38.00$ & $\$ 29.00$ \\
+\hline
+ & $\$ 20.00$ & $\$ 21.00$ & $\$ 23.00$ & $\$ 19.00$ & $\$ 18.00$ & $\$ 17.00$ & $\$ 20.00$ & $\$ 21.00$ & $\$ 22.00$ & $\$ 23.00$ & $\$ 23.00$ & $\$ 17.00$ & $\$ 24.00$ & $\$ 16.00$ \\
+\hline
+ & $\$ 45.00$ & $\$ 47.00$ & $\$ 48.00$ & $\$ 46.00$ & $\$ 45.00$ & $\$ 44.00$ & $\$ 45.00$ & $\$ 47.00$ & $\$ 48.00$ & $\$ 49.00$ & $\$ 49.00$ & $\$ 44.00$ & $\$ 50.00$ & $\$ 43.00$ \\
+\hline
+ & $\$ 35.00$ & $\$ 33.00$ & $\$ 32.00$ & $\$ 31.00$ & $\$ 30.00$ & $\$ 29.00$ & $\$ 28.00$ & $\$ 27.00$ & $\$ 30.00$ & $\$ 21.00$ & $\$ 35.00$ & $\$ 21.00$ & $\$ 36.00$ & $\$ 20.00$ \\
+\hline
+ & $\$ 10.00$ & $\$ 9.00$ & $\$ 10.00$ & $\$ 11.00$ & $\$ 12.00$ & $\$ 14.00$ & $\$ 15.00$ & $\$ 17.00$ & $\$ 18.00$ & $\$ 21.00$ & $\$ 21.00$ & $\$ 9.00$ & $\$ 22.00$ & $\$ 8.00$ \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\end{document}
